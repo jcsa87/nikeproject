@@ -1,69 +1,42 @@
-* {
-    margin: 0;
-    padding: 0;
+/* Centrar los elementos del menú */
+.navbar-nav {
+    align-items: center;
+    /* Centra verticalmente los <li> */
 }
 
-.titulo {
-    background-color: #92a8d1;
-    margin: 20px;
+/* Separar el logo y la barra de búsqueda */
+.navbar-brand {
+    margin-right: 20px;
+    /* Espacio entre el logo y el menú */
 }
 
-.parrafo {
-
-    background-color: green;
-    padding-top: 50px;
-    padding-left: 10px;
-    padding-bottom: 60px;
-    padding-right: 300px;
+.d-flex {
+    margin-left: 20px;
+    /* Espacio entre el menú y la barra de búsqueda */
 }
 
-footer {
-    background-color: GoldenRod;
-    padding: 35px 20px 30px 40px;
-    /* margin: 10px 200px; */
+/* Centrar los elementos del menú verticalmente */
+.navbar-nav {
+    align-items: center;
+    /* Centra los <li> verticalmente */
 }
 
-.menu {
-    background-color: blueviolet;
-    color: white;
-    text-align: center;
-    padding: 40px 20px 30px 40px;
+/* Separar el logo del menú */
+.navbar-brand {
+    margin-right: 30px;
+    /* Ajusta el espacio entre el logo y el menú */
 }
 
-.containerCarousel {
-    background-color: aqua;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-top: 100px;
-    padding-bottom: 100px;
+/* Separar el menú de la barra de búsqueda */
+.d-flex {
+    margin-left: 30px;
+    /* Ajusta el espacio entre el menú y la barra de búsqueda */
 }
 
-.containerParrafo {
-    background-color: green;
-    color: yellow;
+/* Opcional: Espaciado entre los elementos del menú */
+.navbar-nav .nav-item {
+    margin: 0 10px;
+    /* Espaciado horizontal entre los <li> */
 }
-
-
-
-/* .parrafoModificado {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-    font-size: 24px;
-    font-style: italic;
-    font-weight: bold
-} */
-
-
-/* .titulo {
-    color: white;
-    font-weight: bold;
-    text-align: center;
-}
-
-.estiloDivision {
-    color: yellow;
-    text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-} */
 
 ;
