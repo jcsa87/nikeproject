@@ -18,7 +18,7 @@
     <?php include(APPPATH . 'Views/components/navbar.php'); ?>
 
     <!-- Contenido dinámico -->
-    <div class="container mt-4">
+    <div class="">
         <?= $this->renderSection('content') ?>
     </div>
 

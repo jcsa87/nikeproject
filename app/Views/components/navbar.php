@@ -1,8 +1,10 @@
 <!-- BARRA DE NAVEGACIÓN -->
+<link rel="stylesheet" href="<?= base_url('/assets/css/navbarstyle.css'); ?>">
+
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="assets/img/logitosinplb.jpg" alt="Logo">
+        <img src="public/assets/img/logitosinplb.jpg" alt="Logo">
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -25,4 +27,4 @@
         </form>
       </div>
     </div>
-  </nav>
+</nav>
