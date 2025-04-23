@@ -5,7 +5,37 @@
 <link rel="stylesheet" href="<?= base_url('assets/css/homestyle.css'); ?>">
 <?= $this->endSection() ?>
 
+<<<<<<< HEAD
 
+=======
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="assets/css/homestyle.css">
+</head>
+<body>
+
+  <!-- BARRA SUPERIOR -->
+  <div class="topbar d-flex justify-content-between align-items-center px-4 py-1">
+    <div class="topbar-left">
+      <img src="assets/img/logojordan2.jpg" alt="Jordan Logo" height="24">
+    </div>
+    <div class="topbar-right d-flex gap-3">
+      <a href="#">Suscribite</a>
+      <span>|</span>
+      <a href="#">Buscar tienda</a>
+      <span>|</span>
+      <a href="#">RUN BUE</a>
+      <span>|</span>
+      <a href="#">Ayuda</a>
+    </div>
+  </div>
+
+  <!-- BARRA DE NAVEGACIÓN -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="assets/img/logitosinplb.jpg" alt="Logo">
+      </a>
+>>>>>>> 581ac8d388b9576356eb84b530151b38dc02a9e7
 
 <?= $this->section('content') ?>
 
@@ -25,6 +55,7 @@
     </div>
   </div>
 
+<<<<<<< HEAD
 <section class="seccion-principal">
     <h1>Estilo que te mueve</h1>
     <p>Descubrí nuestra colección exclusiva que combina diseño, comodidad y tecnología.</p>
@@ -33,6 +64,10 @@
 
 <!-- SECCIÓN DE IMAGEN DE FONDO -->
 <section class="imagen-fondo">
+=======
+  <!-- SECCIÓN DE IMAGEN DE FONDO -->
+  <section class="imagen-fondo">
+>>>>>>> 581ac8d388b9576356eb84b530151b38dc02a9e7
     <div class="contenido-imagen">
       <h1>Estilo que te mueve</h1>
       <p>Descubrí nuestra colección exclusiva que combina diseño, comodidad y tecnología.</p>
@@ -136,6 +171,13 @@
     }
   </script>
 
+<<<<<<< HEAD
 <?= $this->endSection() ?>
 
 
+=======
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+>>>>>>> 581ac8d388b9576356eb84b530151b38dc02a9e7
