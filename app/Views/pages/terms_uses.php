@@ -6,72 +6,10 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="<?php echo base_url('assets/img/favicon.ico'); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../assets/css/styles.css" rel="stylesheet">
+    <link href="/assets/css/terms_uses_style.css" rel="stylesheet">
     <title>Términos y Condiciones</title>
 
-    <style>
-        /* Estilos generales */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        /* Contenedor principal */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            margin-top: 50px;
-        }
-
-        /* Título principal */
-        h3 {
-            font-size: 24px;
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-
-        /* Párrafo */
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #555;
-        }
-
-        /* Estilo para la sección de términos */
-        .terms-section {
-            padding: 15px;
-            background-color: #ecf0f1;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-
-        /* Enlaces */
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Estilos de pie de página */
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 10px;
-            font-size: 14px;
-            color: #777;
-        }
-
-    </style>
+    
 </head>
 <body>
 
