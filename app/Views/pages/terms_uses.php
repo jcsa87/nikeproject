@@ -1,122 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="<?php echo base_url('assets/img/favicon.ico'); ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="public/assets/css/terms_uses_style.css" rel="stylesheet">
-    <title>Términos y Condiciones</title>
+<!-- filepath: c:\xampp\htdocs\nikeproyect\app\Views\pages\home.php -->
+<?= $this->extend('templates/main') ?>
 
-    
-</head>
-<body>
+<?= $this->section('styles') ?>
+<link rel="stylesheet" href="<?= base_url('assets/css/terms_uses_style.css'); ?>">
+<?= $this->endSection() ?>
 
-<nav class="navbar navbar-expand-lg bs-body-tertiary">
-  <div class="container-fluid">
-    <!-- logo -->
-    <img src="../assets/img/favicon.ico" alt="Logo" href="#" style="height: 40px;"></>
 
-    <!-- botones para dispositivos pequeños -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<?= $this->section('content') ?>
 
-    <!-- navbar -->
-      <div class="text-primary-emphasis d-flex text-center " >
-        <li class="nav-item dropdown">
-          <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Destacados
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Hombre
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Mujer
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Niño/a
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Accesorios
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Oportunidades
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        </div>
-      </ul>
+<div class="container my-5">
+    <h1 class="text-left">Términos y Condiciones de Uso</h1>
+    <p>POR FAVOR LEA ESTE DOCUMENTO CUIDADOSAMENTE Y NO OPERE EN LA PLATAFORMA WWW.NIKE.COM.AR (LA "PLATAFORMA") SI NO ESTÁ DE ACUERDO CON SUS TÉRMINOS Y CONDICIONES DE USO ("TÉRMINOS").
 
-     <!-- barra de búsqueda -->
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-        </div>
-        </div>
-    </nav>
+Estos Términos describen las reglas aplicables al uso de un sitio web, experiencia digital, una plataforma de medios sociales, una aplicación móvil, una tecnología portátil o uno de nuestros otros productos o servicios, todos los cuales forman parte de la Plataforma.
 
-    <div class="container border text-right overflow-x-auto">
-        <h3>Términos y condiciones de Uso
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, autem officia? Magni, harum adipisci, hic optio, ut tenetur libero dolore ipsam laborum a nemo voluptatibus fuga enim culpa dolor iure.</p>
-            <p>Etiam tristique turpis sit amet libero fringilla, et vehicula nunc ullamcorper. Sed tincidunt dui libero, quis pharetra nunc efficitur vitae. Aenean aliquam bibendum orci, et interdum arcu vehicula at.</p>
+Usted puede acceder a la Plataforma a través de una computadora, teléfono móvil, tableta, consola u otra tecnología similar (“Dispositivo”). Las tarifas y gastos de su empresa de telecomunicaciones se aplican a su Dispositivo y están a su cargo.</p>
+    <div class="accordion" id="termsAccordion">
+        <!-- Item 1 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    1. Aceptación de los Términos
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#termsAccordion">
+                <div class="accordion-body">
+                    Al acceder y utilizar este sitio web, aceptas cumplir con estos términos y condiciones. Si no estás de acuerdo con alguno de los términos, no debes utilizar este sitio.
+                </div>
+            </div>
         </div>
 
-        <footer>
-            <p>&copy; 2025 Tu Empresa. Todos los derechos reservados.</p>
-        </footer>
+        <!-- Item 2 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    2. Uso Permitido
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#termsAccordion">
+                <div class="accordion-body">
+                    Este sitio web está destinado únicamente para uso personal y no comercial. No puedes copiar, distribuir, modificar o utilizar el contenido sin autorización previa.
+                </div>
+            </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    3. Propiedad Intelectual
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#termsAccordion">
+                <div class="accordion-body">
+                    Todos los derechos de propiedad intelectual, incluidos textos, imágenes y logotipos, son propiedad de la empresa y están protegidos por las leyes aplicables.
+                </div>
+            </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    4. Limitación de Responsabilidad
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#termsAccordion">
+                <div class="accordion-body">
+                    No nos hacemos responsables de daños directos o indirectos derivados del uso de este sitio web o de la imposibilidad de acceder al mismo.
+                </div>
+            </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    5. Modificaciones de los Términos
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#termsAccordion">
+                <div class="accordion-body">
+                    Nos reservamos el derecho de modificar estos términos en cualquier momento. Los cambios serán efectivos una vez publicados en este sitio web.
+                </div>
+            </div>
+        </div>
     </div>
+    <footer class="text-center mt-5">
+        <p>&copy; 2025 Tu Empresa. Todos los derechos reservados.</p>
+    </footer>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-
+<?= $this->endSection() ?>

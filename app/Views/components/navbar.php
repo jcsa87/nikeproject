@@ -14,12 +14,10 @@
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Hombre</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Mujer</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Niño/a</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Accesorios</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Ofertas</a></li>
+          <li class="nav-item"><a class="nav-link" href="/nikeproyect/">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="/nikeproyect/comercialization" ?>Comercialización</a></li>
+          <li class="nav-item"><a class="nav-link" href="/nikeproyect/contact" ?>Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="/nikeproyect/terms-uses" ?>Términos y Condiciones</a></li>
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
