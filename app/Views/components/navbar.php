@@ -15,6 +15,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="/nikeproyect/">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="/nikeproyect/about" ?>Nosotros</a></li>
           <li class="nav-item"><a class="nav-link" href="/nikeproyect/comercialization" ?>Comercialización</a></li>
           <li class="nav-item"><a class="nav-link" href="/nikeproyect/contact" ?>Contacto</a></li>
           <li class="nav-item"><a class="nav-link" href="/nikeproyect/terms-uses" ?>Términos y Condiciones</a></li>
