@@ -2,29 +2,11 @@
 <?= $this->extend('templates/main') ?>
 
 <?= $this->section('styles') ?>
-<link rel="stylesheet" href="<?= base_url('assets/css/homestyle.css'); ?>">
+<link rel="stylesheet" href="assets/css/homestyle.css">
 <?= $this->endSection() ?>
 
 
 <?= $this->section('content') ?>
-
-<!-- BARRA SUPERIOR -->
-<div class="topbar d-flex justify-content-between align-items-center px-4 py-1">
-    <div class="topbar-left">
-      <img src="public/assets/img/logojordan2.jpg" alt="Jordan Logo" height="24">
-    </div>
-    <div class="topbar-right d-flex gap-3">
-      <a href="#">Suscribite</a>
-      <span>|</span>
-      <a href="#">Buscar tienda</a>
-      <span>|</span>
-      <a href="#">RUN BUE</a>
-      <span>|</span>
-      <a href="#">Ayuda</a>
-    </div>
-  </div>
-
-
 
 <!-- SECCIÓN DE IMAGEN DE FONDO -->
 <section class="imagen-fondo">
@@ -48,7 +30,7 @@
         <div class="carousel-container" id="carousel-scroll">
           <!-- Producto 1 -->
           <div class="card mx-2" style="min-width: 250px;">
-            <img src="public/assets/img/airmaxalpha.jpg" class="card-img-top" alt="Air Max Alpha">
+            <img src="assets/img/airmaxalpha.jpg" class="card-img-top" alt="Air Max Alpha">
             <div class="card-body text-center">
               <h5 class="card-title">Air Max Alpha</h5>
               <p class="card-text">$89.999</p>
@@ -56,7 +38,7 @@
           </div>
           <!-- Producto 2 -->
           <div class="card mx-2" style="min-width: 250px;">
-            <img src="public/assets/img/nikerevolution.jpg" class="card-img-top" alt="Nike Revolution">
+            <img src="assets/img/nikerevolution.jpg" class="card-img-top" alt="Nike Revolution">
             <div class="card-body text-center">
               <h5 class="card-title">Nike Revolution</h5>
               <p class="card-text">$76.500</p>
@@ -64,7 +46,7 @@
           </div>
           <!-- Producto 3 -->
           <div class="card mx-2" style="min-width: 250px;">
-            <img src="public/assets/img/nikepegasus.jpg" class="card-img-top" alt="Nike Pegasus">
+            <img src="assets/img/nikepegasus.jpg" class="card-img-top" alt="Nike Pegasus">
             <div class="card-body text-center">
               <h5 class="card-title">Nike Pegasus</h5>
               <p class="card-text">$105.000</p>
@@ -72,7 +54,7 @@
           </div>
           <!-- Producto 4 -->
           <div class="card mx-2" style="min-width: 250px;">
-            <img src="public/assets/img/nikeblazermid.jpg" class="card-img-top" alt="Nike Blazer Mid">
+            <img src="assets/img/nikeblazermid.jpg" class="card-img-top" alt="Nike Blazer Mid">
             <div class="card-body text-center">
               <h5 class="card-title">Nike Blazer Mid</h5>
               <p class="card-text">$92.000</p>
@@ -80,7 +62,7 @@
           </div>
           <!-- Producto 5 -->
           <div class="card mx-2" style="min-width: 250px;">
-            <img src="public/assets/img/nikefreerun.jpg" class="card-img-top" alt="Nike Free Run">
+            <img src="assets/img/nikefreerun.jpg" class="card-img-top" alt="Nike Free Run">
             <div class="card-body text-center">
               <h5 class="card-title">Nike Free Run</h5>
               <p class="card-text">$84.500</p>
@@ -88,7 +70,7 @@
           </div>
           <!-- Producto 6 -->
           <div class="card mx-2" style="min-width: 250px;">
-            <img src="public/assets/img/nikeinfinity.jpg" class="card-img-top" alt="Nike Infinity React">
+            <img src="assets/img/nikeinfinity.jpg" class="card-img-top" alt="Nike Infinity React">
             <div class="card-body text-center">
               <h5 class="card-title">Nike Infinity React</h5>
               <p class="card-text">$110.000</p>
@@ -96,7 +78,7 @@
           </div>
           <!-- Producto 7 (recomendado por mí) -->
           <div class="card mx-2" style="min-width: 250px;">
-            <img src="public/assets/img/jordanretro.jpg" class="card-img-top" alt="Jordan Retro 1">
+            <img src="assets/img/jordanretro.jpg" class="card-img-top" alt="Jordan Retro 1">
             <div class="card-body text-center">
               <h5 class="card-title">Jordan Retro 1</h5>
               <p class="card-text">$125.000</p>
@@ -104,7 +86,7 @@
           </div>
           <!-- Producto 8 (recomendado por mí) -->
           <div class="card mx-2" style="min-width: 250px;">
-            <img src="public/assets/img/nikeairforce.jpg" class="card-img-top" alt="Nike Air Force 1">
+            <img src="assets/img/nikeairforce.jpg" class="card-img-top" alt="Nike Air Force 1">
             <div class="card-body text-center">
               <h5 class="card-title">Nike Air Force 1</h5>
               <p class="card-text">$98.000</p>
