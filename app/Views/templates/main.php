@@ -18,8 +18,11 @@
     <!-- Navbar -->
     <?php include(APPPATH . 'Views/components/navbar.php'); ?>
 
+    <!-- Topbar reutilizable -->
+    <?php include(APPPATH . 'Views/components/topbar.php'); ?>
+    
     <!-- Contenido dinámico -->
-    <div style="">
+    <div>
         <?= $this->renderSection('content') ?>
     </div>
 
