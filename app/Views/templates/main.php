@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="<?= base_url('assets/img/favicon.ico'); ?>" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $title ?? 'Nike Corrientes' ?></title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+     
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="" crossorigin="">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <!-- Sección para CSS personalizado por vista -->
     <?= $this->renderSection('styles') ?>
@@ -27,6 +29,7 @@
     </div>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script href="assets/css/bootstrap.bundle.min.css" integrity="" crossorigin=""></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"> -->
 </body>
 </html>
