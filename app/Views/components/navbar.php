@@ -19,10 +19,30 @@
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/contact'); ?>">Contacto</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/terms-uses'); ?>">Términos y Condiciones</a></li>
             </ul>
-            <form class="d-flex" role="search">
+
+        <!-- social media -->
+         <div class="mb- mb-lg-0">
+
+            <a href="https://www.instagram.com/nike" target="_blank">
+            <img class="nav-item" src="<?= base_url('assets/img/social_media/icons8-instagram-50.png'); ?>" alt="Instagram Logo">
+            </a>
+
+            <a href="https://www.facebook.com/nike/" target="_blank">
+            <img class="nav-item" src="<?= base_url('assets/img/social_media/icons8-facebook-50.png'); ?>" alt="Facebook Logo">
+            </a>
+
+            <a href="https://www.twitter.com/nike/" target="_blank">
+            <img class="nav-item" src="<?= base_url('assets/img/social_media/icons8-twitter-50.png'); ?>" alt="Twitter Logo">
+            </a>
+            </div>
+
+
+            <!-- Barra de búsqueda para futura implementación -->
+            <!-- <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
                 <button class="btn btn-buscar" type="submit">Buscar</button>
-            </form>
+            </form> -->
+
         </div>
     </div>
 </nav>
