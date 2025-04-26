@@ -25,6 +25,14 @@ body {
 }
 
 video {
+  display: flex;
+  justify-content: center;
   width: 100%;
   height: auto;
+  border-radius: 50px
 }
+
+.quienes-somos {
+ padding-top: 100px;
+ font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  }
