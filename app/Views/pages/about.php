@@ -14,9 +14,11 @@
     </h1>
 </div>
 
-<div class="">
+<div class="object-fit-contain">
     <video src="assets/img/about/NIKE_COMPANY_loop_032323.mp4" autoplay muted loop playsinline>
         Tu navegador no soporta el video.
         </video>
 </div>
+
+
 <?= $this->endSection() ?>
