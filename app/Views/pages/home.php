@@ -9,8 +9,8 @@
 <!-- SECCIÓN DE IMAGEN DE FONDO -->
 <section class="imagen-fondo">
   <div class="contenido-imagen">
-    <h1>Estilo que te mueve</h1>
-    <p>Descubrí nuestra colección exclusiva que combina diseño, comodidad y tecnología.</p>
+    <h1>ESTILO QUE TE MUEVE</h1>
+    <p>DESCUBRI NUESTRA COLECCIÓN EXCLUSIVA QUE COMBINA DISEÑO, COMODIDAD Y TECNOLOGIA</p>
     <button onclick="document.getElementById('carrusel-productos').scrollIntoView({ behavior: 'smooth' })">
       Ver colección
     </button>
@@ -98,8 +98,8 @@
 
 <section class="imagen-jordan">
   <div class="contenido-jordan">
-    <h2>Descubrí la esencia de Jordan</h2>
-    <p>Estilo y rendimiento legendario</p>
+    <h2>DESCUBRI LA ESENCIA DE JORDAN</h2>
+    <p>ESTILO Y RENDIMIENTO LEGENDARIO</p>
     <button>Explorar Jordan</button>
   </div>
 </section>
@@ -199,6 +199,19 @@
     }
   }
 </script>
+
+<section class="video-section">
+  <h2 class="titulo-video">LO MAS NUEVO</h2>
+
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/vtc1JpKrWHk" 
+      title="YouTube video player" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
 
 <?= $this->endSection() ?>
 
