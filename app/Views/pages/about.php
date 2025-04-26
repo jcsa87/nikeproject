@@ -1,11 +1,22 @@
 <!-- filepath: c:\xampp\htdocs\nikeproyect\app\Views\pages\home.php -->
+
 <?= $this->extend('templates/main') ?>
+
+<?= $this->section('styles') ?>
+<link rel="stylesheet" href="assets/css/aboutstyle.css">
+<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
 
-<section class="seccion-principal ">
-    <h1>ABOUT</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus totam deserunt laboriosam ipsum eum sunt accusantium dolorum nesciunt, blanditiis quam veritatis earum molestiae, voluptate doloribus! Nihil sunt ullam autem odio?</p>
-    <button>Ver colección</button>
-</section>
+<div class="contenido-principal">
+    <h1><strong>BIENVENIDO A
+        NIKE, INC.</strong>
+    </h1>
+</div>
+
+<div class="">
+    <video src="assets/img/about/NIKE_COMPANY_loop_032323.mp4" autoplay muted loop playsinline>
+        Tu navegador no soporta el video.
+        </video>
+</div>
 <?= $this->endSection() ?>

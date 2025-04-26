@@ -1,0 +1,30 @@
+/* Reset y fondo general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  line-height: 1.6;
+}
+
+
+.contenido-principal {
+  font-family: 'Anton', sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 180px;
+  font-size: xx-large;
+  text-align: center;
+  color: #ffffff;
+  background-color: #000;
+}
+
+video {
+  width: 100%;
+  height: auto;
+}
