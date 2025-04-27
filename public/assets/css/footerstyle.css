@@ -1,0 +1,107 @@
+/* Footer personalizado */
+.footer {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    padding: 30px 0; /* Espaciado vertical */
+}
+
+.footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #3399ff; /* Color al pasar el mouse */
+}
+
+.footer ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+/* Logo de la izquierda (no está en uso ahora) */
+.footer .footer-left img {
+    height: 40px;
+}
+
+/* Sección de contacto y políticas a la izquierda */
+.footer-left {
+    width: 25%; /* Ajustado para alineación correcta */
+    text-align: left;
+    padding-right: 10px; /* Espacio entre las secciones */
+    margin-top: -15px; /* Sección movida hacia arriba */
+}
+
+.footer .footer-contact, .footer .footer-policies {
+    margin-top: 20px;
+}
+
+.footer-contact h5, .footer-policies h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Menú de navegación centrado */
+.footer-center {
+    width: 50%; /* El centro ocupa más espacio */
+    text-align: center;
+}
+
+.footer .footer-center ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Sección de redes sociales a la derecha */
+.footer-right {
+    width: 25%; /* Ajustado para alineación correcta */
+    text-align: right;
+    padding-left: 10px; /* Espacio entre las secciones */
+}
+
+.footer .footer-right ul {
+    display: flex;
+    justify-content: flex-end; /* Las redes se alinean a la derecha */
+    gap: 20px;
+}
+
+.footer .footer-right img {
+    height: 30px;
+    filter: brightness(1.2);
+    transition: transform 0.3s ease;
+}
+
+.footer .footer-right img:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+}
+
+/* Copyright centrado */
+.footer .text-center p {
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+    /* Hacemos que las secciones se apilen verticalmente en pantallas pequeñas */
+    .footer-left, .footer-center, .footer-right {
+        width: 100%;
+        text-align: center; /* Centra todo */
+        margin-bottom: 20px;
+    }
+
+    .footer-right {
+        display: flex;
+        justify-content: center; /* Centra las redes sociales */
+    }
+
+    .footer-center ul {
+        flex-direction: row;
+        gap: 15px;
+    }
+}

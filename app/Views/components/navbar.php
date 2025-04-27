@@ -21,20 +21,18 @@
             </ul>
 
         <!-- social media -->
-         <div class="mb- mb-lg-0">
-
+        <div class="social-icons d-flex mb-2 mb-lg-0">
             <a href="https://www.instagram.com/nike" target="_blank">
-            <img class="nav-item" src="assets/img/social_media/icons8-instagram-50.png" alt="Instagram Logo">
+        <img src="assets/img/social_media/icons8-instagram-50.png" alt="Instagram Logo">
             </a>
+        <a href="https://www.facebook.com/nike/" target="_blank">
+            <img src="assets/img/social_media/icons8-facebook-50.png" alt="Facebook Logo">
+            </a>
+        <a href="https://www.twitter.com/nike/" target="_blank">
+            <img src="assets/img/social_media/icons8-twitter-50.png" alt="Twitter Logo">
+            </a>
+        </div>
 
-            <a href="https://www.facebook.com/nike/" target="_blank">
-            <img class="nav-item" src="assets/img/social_media/icons8-facebook-50.png" alt="Facebook Logo">
-            </a>
-
-            <a href="https://www.twitter.com/nike/" target="_blank">
-            <img class="nav-item" src="assets/img/social_media/icons8-twitter-50.png" alt="Twitter Logo">
-            </a>
-            </div>
 
 
             <!-- Barra de búsqueda para futura implementación -->

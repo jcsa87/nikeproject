@@ -6,11 +6,9 @@
       <img src="assets/img/logojordan2.jpg" alt="Jordan Logo" height="24">
     </div>
     <div class="topbar-right d-flex gap-3">
-      <a href="#">Suscribite</a>
+      <a href="https://www.youtube.com/nike" target="_blank">Suscribite</a>
       <span>|</span>
       <a href="#">Buscar tienda</a>
-      <span>|</span>
-      <a href="#">RUN BUE</a>
       <span>|</span>
       <a href="#">Ayuda</a>
     </div>

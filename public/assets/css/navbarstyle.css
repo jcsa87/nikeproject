@@ -78,3 +78,41 @@
     cursor: pointer;
 }
 
+.social-icons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* RESPONSIVE PARA PANTALLAS PEQUEÑAS */
+@media (max-width: 768px) {
+    .navbar {
+    padding: 8px 15px;
+    }
+
+    .navbar img {
+      height: 30px; /* Logo más pequeño en celular */
+    }
+
+    .navbar .nav-link {
+    font-size: 1rem;
+    text-align: center;
+    padding: 8px 0;
+    }
+
+    .navbar .nav-item {
+    margin: 5px 0;
+    }
+
+    .social-icons {
+    justify-content: center;
+    margin-top: 10px;
+    }
+
+    .social-icons img {
+    height: 30px;
+    }
+}
+
+
+
