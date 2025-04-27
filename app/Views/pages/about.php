@@ -29,22 +29,42 @@
 
 
 <div class="container text-center p-5">
-  <div class="row">
-    <div class="col">
-      <strong>43%</strong>
-      of NIKE’s leadership positions are held by women.
+  <div class="row g-4">
+    <div class="col bg-light">
+      <p class="percentage"><strong>43%</strong></p>
+      <p>de los puestos de liderazgo en NIKE están ocupados por mujeres.</p>
     </div>
-    <div class="col">
-    <strong>78%</strong>
-    renewable energy in owned or operated facilities, up from 48% in FY20.
+    <div class="col bg-light">
+      <p class="percentage"><strong>78%</strong></p>
+      <p>de la energía utilizada en instalaciones propias u operadas es renovable, frente al 48% en el año fiscal 2020.</p>
     </div>
-    <div class="col">
-    <strong>$97.7M</strong>
-    invested in NIKE, Inc.'s fiscal year 2021 to drive positive impact in communities around the world
+    <div class="col bg-light">
+      <p class="percentage"><strong>$97.7M</strong></p>
+      <p>invertidos en el año fiscal 2021 de NIKE, Inc. para generar un impacto positivo en comunidades de todo el mundo.</p>
     </div>
   </div>
 </div>
 
 
+<div class="container text-center p-5 leadership">
+    <h2 class="mb-4 text-left">Nuestro equipo</h2>
+    <div class="row g-4">
+        <div class="col-md-4 col-sm-12">
+            <img src="https://thispersondoesnotexist.com/" alt="Líder 1" class="img-fluid rounded-circle mb-3">
+            <h5>Philip H. Knight</h5>
+            <p>CEO</p>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <img src="https://thispersondoesnotexist.com/" alt="Líder 2" class="img-fluid rounded-circle mb-3">
+            <h5>Mark Parker</h5>
+            <p>Directora de Marketing</p>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <img src="https://thispersondoesnotexist.com/" alt="Líder 3" class="img-fluid rounded-circle mb-3">
+            <h5>Elliott Hill</h5>
+            <p>Jefe de Innovación</p>
+        </div>
+    </div>
+</div>
 
 <?= $this->endSection() ?>

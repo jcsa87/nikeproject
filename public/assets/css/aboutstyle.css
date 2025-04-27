@@ -1,10 +1,27 @@
-/* Reset y fondo general */
+/* General reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Estilo para el porcentaje */
+.percentage {
+  font-size: 3rem;
+  /* Tamaño grande para pantallas grandes */
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+/* Estilo para las columnas */
+.col {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #babbbd;
+}
+
+/* Estilo para el cuerpo */
 body {
   font-family: 'Arial', sans-serif;
   background-color: #ffffff;
@@ -12,7 +29,7 @@ body {
   line-height: 1.6;
 }
 
-
+/* Estilo para el contenido principal */
 .contenido-principal {
   font-family: 'Anton', sans-serif;
   display: flex;
@@ -24,15 +41,101 @@ body {
   background-color: #000;
 }
 
+/* Video responsivo */
 video {
-  display: flex;
-  justify-content: center;
   width: 100%;
   height: auto;
-  border-radius: 50px
+  border-radius: 10px;
 }
 
+/* Estilo para el apartado "Leadership" */
+.leadership h2 {
+  font-size: 2.5rem;
+
+  color: #000;
+  text-align: left;
+}
+
+.leadership p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.leadership img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 3px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+.leadership img:hover {
+  transform: scale(1.1);
+}
+
+.leadership h5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #000;
+}
+
+.leadership p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Estilo para la sección "¿Quiénes somos?" */
 .quienes-somos {
- padding-top: 100px;
- font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  padding-top: 100px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.quienes-somos img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Responsividad con media queries */
+@media (max-width: 768px) {
+  .percentage {
+    font-size: 2.5rem;
+    /* Reduce el tamaño del porcentaje */
   }
+
+  .contenido-principal {
+    padding: 100px 20px;
+    /* Reduce el padding en pantallas pequeñas */
+    font-size: large;
+  }
+
+  .quienes-somos h3 {
+    font-size: 1rem;
+    /* Reduce el tamaño del texto */
+    padding: 20px;
+  }
+
+  .col {
+    margin-bottom: 20px;
+    /* Agrega espacio entre columnas en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 576px) {
+  .percentage {
+    font-size: 2rem;
+    /* Reduce aún más el tamaño del porcentaje */
+  }
+
+  .contenido-principal {
+    padding: 50px 10px;
+    /* Reduce el padding en pantallas muy pequeñas */
+    font-size: medium;
+  }
+
+  .quienes-somos h3 {
+    font-size: 0.9rem;
+    /* Ajusta el tamaño del texto */
+  }
+}
