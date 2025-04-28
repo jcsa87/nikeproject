@@ -36,4 +36,13 @@ class Home extends Controller
             'pageTitle'=> 'Contacto - Nike Corrientes',
         ]); //
     }
+
+    public function maintenance()
+    {
+        return view('pages/maintenance', [
+            'pageTitle'=> 'Mantenimiento - Nike Corrientes',
+        ]); //
+    }
+
+    
 }

@@ -10,3 +10,27 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
  7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
  8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 00:58:17 --> ErrorException: Cannot redeclare App\Controllers\Home::contact()
+[Method: GET, Route: /]
+in APPPATH\Controllers\Home.php on line 40.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-04-28 00:58:21 --> ErrorException: Cannot redeclare App\Controllers\Home::contact()
+[Method: GET, Route: /]
+in APPPATH\Controllers\Home.php on line 40.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-04-28 00:58:23 --> ErrorException: Cannot redeclare App\Controllers\Home::contact()
+[Method: GET, Route: comercialization]
+in APPPATH\Controllers\Home.php on line 40.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-04-28 00:58:24 --> ErrorException: Cannot redeclare App\Controllers\Home::contact()
+[Method: GET, Route: about]
+in APPPATH\Controllers\Home.php on line 40.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-04-28 00:58:25 --> ErrorException: Cannot redeclare App\Controllers\Home::contact()
+[Method: GET, Route: terms-uses]
+in APPPATH\Controllers\Home.php on line 40.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-04-28 00:58:26 --> ErrorException: Cannot redeclare App\Controllers\Home::contact()
+[Method: GET, Route: contact]
+in APPPATH\Controllers\Home.php on line 40.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

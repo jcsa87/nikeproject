@@ -100,7 +100,7 @@
   <div class="contenido-jordan">
     <h2>DESCUBRI LA ESENCIA DE JORDAN</h2>
     <p>ESTILO Y RENDIMIENTO LEGENDARIO</p>
-    <button>Explorar Jordan</button>
+    <button onclick="window.location.href='<?= base_url('/maintenance') ?>'">Explorar Jordan</button>
   </div>
 </section>
 

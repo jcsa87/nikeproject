@@ -8,8 +8,8 @@
     <div class="topbar-right d-flex gap-3">
       <a href="https://www.youtube.com/nike" target="_blank">Suscribite</a>
       <span>|</span>
-      <a href="#">Buscar tienda</a>
+      <a href="<?= base_url('/maintenance') ?>">Buscar tienda</a>
       <span>|</span>
-      <a href="#">Ayuda</a>
+      <a href="<?= base_url('/maintenance') ?>">Ayuda</a>
     </div>
 </div>
