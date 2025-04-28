@@ -59,7 +59,7 @@
                 <textarea class="form-control" id="message" name="message" rows="5" placeholder="Escribe tu mensaje aquí" required></textarea>
             </div>
             <div class="text-center">
-                <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                <button onclick="window.location.href='<?= base_url('/maintenance') ?>'" type="submit" class="btn btn-primary">Enviar Mensaje</button>
             </div>
         </form>
     </div>
