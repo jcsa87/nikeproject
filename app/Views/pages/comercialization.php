@@ -22,7 +22,7 @@
         <!-- Tiendas físicas -->
         <div class="col-md-4 text-center">
             <h4>Tiendas Físicas</h4>
-            <p>Visita nuestras tiendas oficiales para explorar la última colección de productos Nike. Encuentra la tienda más cercana <a href="<?= base_url('/store-locator'); ?>">aquí</a>.</p>
+            <p>Visita nuestras tiendas oficiales para explorar la última colección de productos Nike. Encuentra la tienda más cercana <a href="<?= base_url('/maintenance'); ?>">aquí</a>.</p>
         </div>
 
         <!-- Tienda online -->

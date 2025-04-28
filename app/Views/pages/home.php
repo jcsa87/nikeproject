@@ -34,54 +34,74 @@
       <button class="btn-carousel prev" onclick="scrollCarruselNike('left')">&#10094;</button>
 
       <div class="carousel-container" id="carousel-nike">
-        <div class="card mx-2 producto-card">
-          <img src="assets/img/nikephantom.jpg" class="card-img-top" alt="Botín Nike 1">
-          <div class="card-body text-center">
-            <h5 class="card-title">Nike Phantom GX</h5>
-            <p class="card-text">$119.000</p>
+        
+        <a href="<?= base_url('/maintenance') ?>" class="text-decoration-none text-dark">
+          <div class="card mx-2 producto-card">
+            <img src="assets/img/nikephantom.jpg" class="card-img-top" alt="Botín Nike 1">
+            <div class="card-body text-center">
+              <h5 class="card-title">Nike Phantom GX</h5>
+              <p class="card-text">$119.000</p>
+            </div>
           </div>
-        </div>
-        <div class="card mx-2 producto-card">
-          <img src="assets/img/niketiempo.jpg" class="card-img-top" alt="Botín Nike 2">
-          <div class="card-body text-center">
-            <h5 class="card-title">Nike Tiempo Legend</h5>
-            <p class="card-text">$125.000</p>
+        </a>
+
+        <a href="<?= base_url('/maintenance') ?>" class="text-decoration-none text-dark">
+          <div class="card mx-2 producto-card">
+            <img src="assets/img/niketiempo.jpg" class="card-img-top" alt="Botín Nike 2">
+            <div class="card-body text-center">
+              <h5 class="card-title">Nike Tiempo Legend</h5>
+              <p class="card-text">$125.000</p>
+            </div>
           </div>
-        </div>
-        <div class="card mx-2 producto-card">
-          <img src="assets/img/nikemercurial.jpg" class="card-img-top" alt="Botín Nike 3">
-          <div class="card-body text-center">
-            <h5 class="card-title">Nike Mercurial Superfly</h5>
-            <p class="card-text">$132.500</p>
+        </a>
+
+        <a href="<?= base_url('/maintenance') ?>" class="text-decoration-none text-dark">
+          <div class="card mx-2 producto-card">
+            <img src="assets/img/nikemercurial.jpg" class="card-img-top" alt="Botín Nike 3">
+            <div class="card-body text-center">
+              <h5 class="card-title">Nike Mercurial Superfly</h5>
+              <p class="card-text">$132.500</p>
+            </div>
           </div>
-        </div>
-        <div class="card mx-2 producto-card">
-          <img src="assets/img/nikevapor.jpg" class="card-img-top" alt="Botín Nike 4">
-          <div class="card-body text-center">
-            <h5 class="card-title">Nike Vapor Edge</h5>
-            <p class="card-text">$115.000</p>
+        </a>
+
+        <a href="<?= base_url('/maintenance') ?>" class="text-decoration-none text-dark">
+          <div class="card mx-2 producto-card">
+            <img src="assets/img/nikevapor.jpg" class="card-img-top" alt="Botín Nike 4">
+            <div class="card-body text-center">
+              <h5 class="card-title">Nike Vapor Edge</h5>
+              <p class="card-text">$115.000</p>
+            </div>
           </div>
-        </div>
-        <div class="card mx-2 producto-card">
-          <img src="assets/img/nikezoom.jpg" class="card-img-top" alt="Botín Nike 5">
-          <div class="card-body text-center">
-            <h5 class="card-title">Nike Zoom Mercurial</h5>
-            <p class="card-text">$128.000</p>
+        </a>
+
+        <a href="<?= base_url('/maintenance') ?>" class="text-decoration-none text-dark">
+          <div class="card mx-2 producto-card">
+            <img src="assets/img/nikezoom.jpg" class="card-img-top" alt="Botín Nike 5">
+            <div class="card-body text-center">
+              <h5 class="card-title">Nike Zoom Mercurial</h5>
+              <p class="card-text">$128.000</p>
+            </div>
           </div>
-        </div>
-        <div class="card mx-2 producto-card">
-          <img src="assets/img/nikepremier.jpg" class="card-img-top" alt="Botín Nike 6">
-          <div class="card-body text-center">
-            <h5 class="card-title">Nike Premier</h5>
-            <p class="card-text">$109.500</p>
+        </a>
+
+        <a href="<?= base_url('/maintenance') ?>" class="text-decoration-none text-dark">
+          <div class="card mx-2 producto-card">
+            <img src="assets/img/nikepremier.jpg" class="card-img-top" alt="Botín Nike 6">
+            <div class="card-body text-center">
+              <h5 class="card-title">Nike Premier</h5>
+              <p class="card-text">$109.500</p>
+            </div>
           </div>
-        </div>
+        </a>
+
       </div>
 
       <button class="btn-carousel next" onclick="scrollCarruselNike('right')">&#10095;</button>
     </div>
   </div>
 </section>
+
 
 <script>
   function scrollCarruselNike(direction) {
@@ -115,70 +135,95 @@
 
       <!-- Contenedor del carrusel -->
       <div class="carousel-container" id="carousel-scroll">
+
         <!-- Producto 1 -->
-        <div class="card mx-2 producto-card">
-          <img src="assets/img/airmaxalpha.jpg" class="card-img-top" alt="Air Max Alpha">
-          <div class="card-body text-center">
-            <h5 class="card-title">Air Max Alpha</h5>
-            <p class="card-text">$89.999</p>
+        <a href="<?= base_url('/maintenance') ?>" class="text-decoration-none text-dark">
+          <div class="card mx-2 producto-card">
+            <img src="assets/img/airmaxalpha.jpg" class="card-img-top" alt="Air Max Alpha">
+            <div class="card-body text-center">
+              <h5 class="card-title">Air Max Alpha</h5>
+              <p class="card-text">$89.999</p>
+            </div>
           </div>
-        </div>
+        </a>
+
         <!-- Producto 2 -->
-        <div class="card mx-2 producto-card">
-          <img src="assets/img/nikerevolution.jpg" class="card-img-top" alt="Nike Revolution">
-          <div class="card-body text-center">
-            <h5 class="card-title">Nike Revolution</h5>
-            <p class="card-text">$76.500</p>
+        <a href="<?= base_url('/maintenance') ?>" class="text-decoration-none text-dark">
+          <div class="card mx-2 producto-card">
+            <img src="assets/img/nikerevolution.jpg" class="card-img-top" alt="Nike Revolution">
+            <div class="card-body text-center">
+              <h5 class="card-title">Nike Revolution</h5>
+              <p class="card-text">$76.500</p>
+            </div>
           </div>
-        </div>
+        </a>
+
         <!-- Producto 3 -->
-        <div class="card mx-2 producto-card">
-          <img src="assets/img/nikepegasus.jpg" class="card-img-top" alt="Nike Pegasus">
-          <div class="card-body text-center">
-            <h5 class="card-title">Nike Pegasus</h5>
-            <p class="card-text">$105.000</p>
+        <a href="<?= base_url('/maintenance') ?>" class="text-decoration-none text-dark">
+          <div class="card mx-2 producto-card">
+            <img src="assets/img/nikepegasus.jpg" class="card-img-top" alt="Nike Pegasus">
+            <div class="card-body text-center">
+              <h5 class="card-title">Nike Pegasus</h5>
+              <p class="card-text">$105.000</p>
+            </div>
           </div>
-        </div>
+        </a>
+
         <!-- Producto 4 -->
-        <div class="card mx-2 producto-card">
-          <img src="assets/img/nikeblazermid.jpg" class="card-img-top" alt="Nike Blazer Mid">
-          <div class="card-body text-center">
-            <h5 class="card-title">Nike Blazer Mid</h5>
-            <p class="card-text">$92.000</p>
+        <a href="<?= base_url('/maintenance') ?>" class="text-decoration-none text-dark">
+          <div class="card mx-2 producto-card">
+            <img src="assets/img/nikeblazermid.jpg" class="card-img-top" alt="Nike Blazer Mid">
+            <div class="card-body text-center">
+              <h5 class="card-title">Nike Blazer Mid</h5>
+              <p class="card-text">$92.000</p>
+            </div>
           </div>
-        </div>
+        </a>
+
         <!-- Producto 5 -->
-        <div class="card mx-2 producto-card">
-          <img src="assets/img/nikefreerun.jpg" class="card-img-top" alt="Nike Free Run">
-          <div class="card-body text-center">
-            <h5 class="card-title">Nike Free Run</h5>
-            <p class="card-text">$84.500</p>
+        <a href="<?= base_url('/maintenance') ?>" class="text-decoration-none text-dark">
+          <div class="card mx-2 producto-card">
+            <img src="assets/img/nikefreerun.jpg" class="card-img-top" alt="Nike Free Run">
+            <div class="card-body text-center">
+              <h5 class="card-title">Nike Free Run</h5>
+              <p class="card-text">$84.500</p>
+            </div>
           </div>
-        </div>
+        </a>
+
         <!-- Producto 6 -->
-        <div class="card mx-2 producto-card">
-          <img src="assets/img/nikeinfinity.jpg" class="card-img-top" alt="Nike Infinity React">
-          <div class="card-body text-center">
-            <h5 class="card-title">Nike Infinity React</h5>
-            <p class="card-text">$110.000</p>
+        <a href="<?= base_url('/maintenance') ?>" class="text-decoration-none text-dark">
+          <div class="card mx-2 producto-card">
+            <img src="assets/img/nikeinfinity.jpg" class="card-img-top" alt="Nike Infinity React">
+            <div class="card-body text-center">
+              <h5 class="card-title">Nike Infinity React</h5>
+              <p class="card-text">$110.000</p>
+            </div>
           </div>
-        </div>
-        <!-- Producto 7-->
-        <div class="card mx-2 producto-card">
-          <img src="assets/img/jordanretro.jpg" class="card-img-top" alt="Jordan Retro 1">
-          <div class="card-body text-center">
-            <h5 class="card-title">Jordan Retro 1</h5>
-            <p class="card-text">$125.000</p>
+        </a>
+
+        <!-- Producto 7 -->
+        <a href="<?= base_url('/maintenance') ?>" class="text-decoration-none text-dark">
+          <div class="card mx-2 producto-card">
+            <img src="assets/img/jordanretro.jpg" class="card-img-top" alt="Jordan Retro 1">
+            <div class="card-body text-center">
+              <h5 class="card-title">Jordan Retro 1</h5>
+              <p class="card-text">$125.000</p>
+            </div>
           </div>
-        </div>
+        </a>
+
         <!-- Producto 8 -->
-        <div class="card mx-2 producto-card">
-          <img src="assets/img/nikeairforce.jpg" class="card-img-top" alt="Nike Air Force 1">
-          <div class="card-body text-center">
-            <h5 class="card-title">Nike Air Force 1</h5>
-            <p class="card-text">$98.000</p>
+        <a href="<?= base_url('/maintenance') ?>" class="text-decoration-none text-dark">
+          <div class="card mx-2 producto-card">
+            <img src="assets/img/nikeairforce.jpg" class="card-img-top" alt="Nike Air Force 1">
+            <div class="card-body text-center">
+              <h5 class="card-title">Nike Air Force 1</h5>
+              <p class="card-text">$98.000</p>
+            </div>
           </div>
-        </div>
+        </a>
+
       </div>
 
       <!-- Botón siguiente -->
@@ -186,6 +231,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- Script para scroll -->
 <script>

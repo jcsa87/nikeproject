@@ -14,9 +14,9 @@
             <div class="footer-policies">
                 <h5>Políticas y más</h5>
                 <ul class="list-unstyled">
-                <li><a href="<?= base_url('/terms-uses'); ?>" class="text-white">Términos y Condiciones</a></li>
-                    <li><a href="<?= base_url('/returns'); ?>" class="text-white">Devoluciones</a></li>
-                    <li><a href="<?= base_url('/shipping'); ?>" class="text-white">Envíos</a></li>
+                    <li><a href="<?= base_url('/terms-uses'); ?>" class="text-white">Términos y Condiciones</a></li>
+                    <li><a href="<?= base_url('/maintenance'); ?>" class="text-white">Devoluciones</a></li>
+                    <li><a href="<?= base_url('/maintenance'); ?>" class="text-white">Envíos</a></li>
                 </ul>
             </div>
         </div>

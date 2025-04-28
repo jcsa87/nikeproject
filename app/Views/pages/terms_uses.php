@@ -86,9 +86,6 @@ Usted puede acceder a la Plataforma a través de una computadora, teléfono móv
             </div>
         </div>
     </div>
-    <footer class="text-center mt-5">
-        <p>&copy; 2025 Tu Empresa. Todos los derechos reservados.</p>
-    </footer>
 </div>
 
 <?= $this->endSection() ?>

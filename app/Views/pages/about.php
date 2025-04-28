@@ -51,12 +51,12 @@
     <h2 class="mb-4 text-center">Nuestro equipo</h2>
     <div class="row g-4 justify-content-center">
         <div class="col-md-6 col-sm-12">
-            <img src="assets/img/WhatsApp Image 2025-04-28 at 00.22.39.jpeg" alt="Staff Empresa" class="img-fluid rounded-circle mb-3">
+            <img src="assets/img/fotomia.jpeg" alt="Staff Empresa" class="img-fluid rounded-circle mb-3">
             <h5>Máximo Riveros</h5> 
             <p>Director de Marketing y Comunicación</p>
         </div>
         <div class="col-md-6 col-sm-12">
-            <img src="ruta/imagen2.png" alt="Director de Operaciones" class="img-fluid rounded-circle mb-3">
+            <img src="assets/img/imagenacosta.jpg" alt="Director de Operaciones" class="img-fluid rounded-circle mb-3">
             <h5>Juan Acosta</h5> 
             <p>Gerente de Operaciones y Logística</p>
         </div>

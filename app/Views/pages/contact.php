@@ -45,7 +45,7 @@
     <!-- Formulario de contacto -->
     <div class="mt-5">
         <h4 class="text-center">Envíanos un mensaje</h4>
-        <form action="<?= base_url('contact/send'); ?>" method="post" class="mt-4">
+        <form class="mt-4">
             <div class="mb-3">
                 <label for="name" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="Tu nombre" required>
@@ -59,10 +59,11 @@
                 <textarea class="form-control" id="message" name="message" rows="5" placeholder="Escribe tu mensaje aquí" required></textarea>
             </div>
             <div class="text-center">
-                <button onclick="window.location.href='<?= base_url('/maintenance') ?>'" type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='<?= base_url('/maintenance') ?>'">Enviar Mensaje</button>
             </div>
         </form>
     </div>
+
 </div>
 
 <?= $this->endSection() ?>
