@@ -22,7 +22,7 @@
 </div>
 
 <div class="quienes-somos">
-    <h1>¿Quiénes somos?</h1>
+    <h1 class="text-center">¿Quiénes somos?</h1>
     <img  class="container-fluid" src="assets/img/about/logos-brands.webp">
 
     <h3 class="container-fluid text-center fst-italic p-5">NIKE, Inc. es un equipo formado por las marcas Nike, Jordan y Converse impulsadas por el propósito compartido de dejar un impacto duradero.</h3>
@@ -48,24 +48,20 @@
 
 
 <div class="container text-center p-5 leadership">
-    <h2 class="mb-4 text-left">Nuestro equipo</h2>
-    <div class="row g-4">
-        <div class="col-md-4 col-sm-12">
-            <img src="https://thispersondoesnotexist.com/" alt="Líder 1" class="img-fluid rounded-circle mb-3">
-            <h5>Philip H. Knight</h5>
-            <p>CEO</p>
+    <h2 class="mb-4 text-center">Nuestro equipo</h2>
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-sm-12">
+            <img src="assets/img/WhatsApp Image 2025-04-28 at 00.22.39.jpeg" alt="Staff Empresa" class="img-fluid rounded-circle mb-3">
+            <h5>Máximo Riveros</h5> 
+            <p>Director de Marketing y Comunicación</p>
         </div>
-        <div class="col-md-4 col-sm-12">
-            <img src="https://thispersondoesnotexist.com/" alt="Líder 2" class="img-fluid rounded-circle mb-3">
-            <h5>Mark Parker</h5>
-            <p>Directora de Marketing</p>
-        </div>
-        <div class="col-md-4 col-sm-12">
-            <img src="https://thispersondoesnotexist.com/" alt="Líder 3" class="img-fluid rounded-circle mb-3">
-            <h5>Elliott Hill</h5>
-            <p>Jefe de Innovación</p>
+        <div class="col-md-6 col-sm-12">
+            <img src="ruta/imagen2.png" alt="Director de Operaciones" class="img-fluid rounded-circle mb-3">
+            <h5>Juan Acosta</h5> 
+            <p>Gerente de Operaciones y Logística</p>
         </div>
     </div>
 </div>
+
 
 <?= $this->endSection() ?>

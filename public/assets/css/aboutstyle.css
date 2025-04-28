@@ -35,7 +35,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 180px;
-  font-size: xx-large;
+  font-size: 100px;
   text-align: center;
   color: #ffffff;
   background-color: #000;
@@ -51,39 +51,38 @@ video {
 /* Estilo para el apartado "Leadership" */
 .leadership h2 {
   font-size: 2.5rem;
-
   color: #000;
-  text-align: left;
-}
-
-.leadership p {
-  font-size: 1.2rem;
-  color: #555;
+  text-align: center; /* Ahora el título está centrado */
+  margin-bottom: 50px;
 }
 
 .leadership img {
-  width: 150px;
-  height: 150px;
+  width: 180px; /* Un poco más grande para dos personas */
+  height: 180px;
   object-fit: cover;
-  border: 3px solid #ddd;
+  border: 4px solid #ddd;
+  border-radius: 50%;
   transition: transform 0.3s ease;
 }
 
 .leadership img:hover {
-  transform: scale(1.1);
+  transform: scale(1.1); /* Aumenta suavemente */
+  border-color: #aaa; /* Opcional: cambia el borde en hover */
 }
 
 .leadership h5 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 15px;
   color: #000;
 }
 
 .leadership p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #666;
+  margin-top: 5px;
 }
+
 
 /* Estilo para la sección "¿Quiénes somos?" */
 .quienes-somos {
