@@ -4,6 +4,7 @@
 
 <?= $this->section('styles') ?>
 <link rel="stylesheet" href="assets/css/aboutstyle.css">
+
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
