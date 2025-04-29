@@ -57,7 +57,7 @@
         </div>
         <div class="col-md-6 col-sm-12">
             <img src="assets/img/imagenacosta.jpg" alt="Director de Operaciones" class="img-fluid rounded-circle mb-3">
-            <h5>Juan Acosta</h5> 
+            <h5>Juan Cruz Senicen Acosta</h5> 
             <p>Gerente de Operaciones y Logística</p>
         </div>
     </div>

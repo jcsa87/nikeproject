@@ -10,7 +10,7 @@ class Home extends Controller
     {
         return view('pages/home', [
             'pageTitle'=> 'Inicio - Nike Corrientes',
-        ]); // Llama a app/Views/index.php
+        ]);
     }
     public function about()
     {
@@ -22,27 +22,25 @@ class Home extends Controller
     {
         return view('pages/comercialization', [
             'pageTitle'=> 'Comercialización - Nike Corrientes',
-        ]); // Llama a app/Views/index.php
+        ]);
     }
     public function terms_uses()
     {
         return view('pages/terms_uses', [
             'pageTitle'=> 'Términos y Condiciones - Nike Corrientes',
-        ]); //
+        ]);
     }
     public function contact()
     {
         return view('pages/contact', [
             'pageTitle'=> 'Contacto - Nike Corrientes',
-        ]); //
+        ]);
     }
 
     public function maintenance()
     {
         return view('pages/maintenance', [
             'pageTitle'=> 'Mantenimiento - Nike Corrientes',
-        ]); //
+        ]);
     }
-
-    
 }

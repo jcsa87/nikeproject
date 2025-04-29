@@ -1,4 +1,3 @@
-/* General reset */
 * {
   margin: 0;
   padding: 0;
@@ -52,12 +51,14 @@ video {
 .leadership h2 {
   font-size: 2.5rem;
   color: #000;
-  text-align: center; /* Ahora el título está centrado */
+  text-align: center;
+  /* Ahora el título está centrado */
   margin-bottom: 50px;
 }
 
 .leadership img {
-  width: 180px; /* Un poco más grande para dos personas */
+  width: 180px;
+  /* Un poco más grande para dos personas */
   height: 180px;
   object-fit: cover;
   border: 4px solid #ddd;
@@ -66,8 +67,10 @@ video {
 }
 
 .leadership img:hover {
-  transform: scale(1.1); /* Aumenta suavemente */
-  border-color: #aaa; /* Opcional: cambia el borde en hover */
+  transform: scale(1.1);
+  /* Aumenta suavemente */
+  border-color: #aaa;
+  /* Opcional: cambia el borde en hover */
 }
 
 .leadership h5 {
