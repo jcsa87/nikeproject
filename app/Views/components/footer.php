@@ -4,6 +4,7 @@
 <footer class="footer bg-dark text-white py-4">
     <div class="container">
         <div class="row">
+            
             <!-- Sección izquierda: Contacto y Políticas -->
             <div class="col-md-4 col-sm-12 mb-4 footer-left">
                 <h5>Información</h5>

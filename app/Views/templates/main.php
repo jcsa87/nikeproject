@@ -17,11 +17,15 @@
 
 </head>
 <body>
+
+   
     <!-- Navbar -->
     <?php include(APPPATH . 'Views/components/navbar.php'); ?>
 
-    <!-- Topbar reutilizable -->
-    <?php include(APPPATH . 'Views/components/topbar.php'); ?>
+     <!-- Topbar reutilizable -->
+     <?php include(APPPATH . 'Views/components/topbar.php'); ?>
+
+
 
     <!-- Contenido dinámico -->
     <div>

@@ -4,23 +4,19 @@
   box-sizing: border-box;
 }
 
-/* Estilo para el porcentaje */
 .percentage {
   font-size: 3rem;
-  /* Tamaño grande para pantallas grandes */
   font-weight: bold;
   color: #000;
   margin-bottom: 10px;
 }
 
-/* Estilo para las columnas */
 .col {
   padding: 20px;
   border-radius: 10px;
   background-color: #babbbd;
 }
 
-/* Estilo para el cuerpo */
 body {
   font-family: 'Arial', sans-serif;
   background-color: #ffffff;
@@ -28,7 +24,6 @@ body {
   line-height: 1.6;
 }
 
-/* Estilo para el contenido principal */
 .contenido-principal {
   font-family: 'Anton', sans-serif;
   display: flex;
@@ -40,25 +35,21 @@ body {
   background-color: #000;
 }
 
-/* Video responsivo */
 video {
   width: 100%;
   height: auto;
   border-radius: 10px;
 }
 
-/* Estilo para el apartado "Leadership" */
 .leadership h2 {
   font-size: 2.5rem;
   color: #000;
   text-align: center;
-  /* Ahora el título está centrado */
   margin-bottom: 50px;
 }
 
 .leadership img {
   width: 180px;
-  /* Un poco más grande para dos personas */
   height: 180px;
   object-fit: cover;
   border: 4px solid #ddd;
@@ -70,7 +61,6 @@ video {
   transform: scale(1.1);
   /* Aumenta suavemente */
   border-color: #aaa;
-  /* Opcional: cambia el borde en hover */
 }
 
 .leadership h5 {
@@ -86,8 +76,6 @@ video {
   margin-top: 5px;
 }
 
-
-/* Estilo para la sección "¿Quiénes somos?" */
 .quienes-somos {
   padding-top: 100px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -99,45 +87,38 @@ video {
   margin-bottom: 20px;
 }
 
-/* Responsividad con media queries */
+/* responsividad */
 @media (max-width: 768px) {
   .percentage {
     font-size: 2.5rem;
-    /* Reduce el tamaño del porcentaje */
   }
 
   .contenido-principal {
     padding: 100px 20px;
-    /* Reduce el padding en pantallas pequeñas */
     font-size: large;
   }
 
   .quienes-somos h3 {
     font-size: 1rem;
-    /* Reduce el tamaño del texto */
     padding: 20px;
   }
 
   .col {
     margin-bottom: 20px;
-    /* Agrega espacio entre columnas en pantallas pequeñas */
   }
 }
 
 @media (max-width: 576px) {
   .percentage {
     font-size: 2rem;
-    /* Reduce aún más el tamaño del porcentaje */
   }
 
   .contenido-principal {
     padding: 50px 10px;
-    /* Reduce el padding en pantallas muy pequeñas */
     font-size: medium;
   }
 
   .quienes-somos h3 {
     font-size: 0.9rem;
-    /* Ajusta el tamaño del texto */
   }
 }

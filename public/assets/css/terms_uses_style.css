@@ -1,10 +1,35 @@
-body, html {
-    height: 100%;
+body {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0;
+    
 }
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; 
+    background-color: #fff;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 20px;
+}
+
+.navbar {
+    position: relative;
+    top: 60px; /* Coloca la navbar justo debajo del topbar */
+    width: 100%;
+    background-color: #fff;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 
 .container {
     max-width: 800px;
@@ -13,17 +38,14 @@ body, html {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    flex: 1 0 auto; /* Esto es MUY importante */
+    flex: 1 0 auto;
 }
 
-/* El footer */
+
 .footer {
     flex-shrink: 0;
 }
 
-
-
-/* Estilo para la sección de términos */
 .terms-section {
     padding: 15px;
     background-color: #ecf0f1;
@@ -31,7 +53,6 @@ body, html {
     margin-top: 20px;
 }
 
-/* Enlaces */
 a {
     color: #3498db;
     text-decoration: none;
