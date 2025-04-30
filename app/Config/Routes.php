@@ -13,6 +13,3 @@ $routes->get('/terms-uses', 'Home::terms_uses');
 $routes->get('/maintenance', 'Home::maintenance');
 
 
-// Redirigir a la página de mantenimiento
-return redirect()->to('/maintenance');
-
