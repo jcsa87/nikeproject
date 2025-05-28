@@ -12,5 +12,6 @@ $routes->get('/comercialization', 'Home::comercialization');
 $routes->get('/terms-uses', 'Home::terms_uses');
 $routes->get('/maintenance', 'Home::maintenance');
 $routes->get('/login', 'Home::login');
+$routes->get('/register', 'Home::register');
 
 

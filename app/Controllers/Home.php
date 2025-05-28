@@ -13,6 +13,12 @@ class Home extends Controller
             'pageTitle'=> 'Iniciar Sesión - Nike Corrientes',
         ]);
     }
+    public function register()
+    {
+        return view('pages/register', [
+            'pageTitle'=> 'Registrarse - Nike Corrientes',
+        ]);
+    }
     public function index()
     {
         return view('pages/home', [
