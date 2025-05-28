@@ -6,6 +6,13 @@ use CodeIgniter\Controller;
 
 class Home extends Controller
 {
+
+    public function login()
+    {
+        return view('pages/login', [
+            'pageTitle'=> 'Iniciar Sesión - Nike Corrientes',
+        ]);
+    }
     public function index()
     {
         return view('pages/home', [
@@ -36,6 +43,7 @@ class Home extends Controller
             'pageTitle'=> 'Contacto - Nike Corrientes',
         ]);
     }
+
 
     public function maintenance()
     {
