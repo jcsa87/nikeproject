@@ -1,4 +1,4 @@
-<?= $this->extend('templates/main') ?>
+<?= $this->extend('templates/footer_only') ?>
 
 <?= $this->section('content') ?>
 <div class="container my-5" style="max-width: 400px;">
