@@ -13,8 +13,31 @@ class Home extends Controller
             'pageTitle'=> 'Iniciar Sesión - Nike Corrientes',
         ]);
     }
+
+    // manejamos el post del registro
+    
+    
     public function register()
     {
+        helper(['form']);
+
+        if($this ->request -> getMethod() === 'post'){
+            $userModel = new \App\Models\UserModel();
+
+            $data = [
+                'nombre' => $this -> request -> getPost('nombre'),
+                'apellido' => $this -> request -> getPost('apellido'),
+                'email' => $this -> request -> getPost('email'),
+                'direccion' => $this -> request -> getPost('direccion'),
+                'password' => $this -> request -> getPost('password'),
+                'telefono' => $this -> request -> getPost('telefono'),
+
+            ];
+            $userModel ->insert($data);
+
+            return redirect()->to('login');
+        }
+
         return view('pages/register', [
             'pageTitle'=> 'Registrarse - Nike Corrientes',
         ]);

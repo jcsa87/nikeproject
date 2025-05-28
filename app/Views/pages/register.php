@@ -3,18 +3,36 @@
 <?= $this->section('content') ?>
 <div class="container my-5" style="max-width: 400px;">
     <h2 class="mb-4 text-center">Crear Cuenta</h2>
-    <form>
-        <div class="mb-3">
-            <label for="email" class="form-label">Correo electrónico</label>
+    <form method="post" action="<?= base_url('register') ?>">
+        <div class="row mb-3">
+            <div class="col">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                    <label for="nombre">Nombre</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+                    <label for="apellido">Apellido</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="direccion" placeholder="Dirección">
+            <label for="direccion">Dirección</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="tel" class="form-control" id="telefono" placeholder="Teléfono">
+            <label for="telefono">Teléfono</label>
+        </div>
+        <div class="form-floating mb-3">
             <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com">
+            <label for="email">Correo electrónico</label>
         </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="password" placeholder="Crea una contraseña">
-        </div>
-        <div class="mb-3">
-            <label for="confirm_password" class="form-label">Confirmar contraseña</label>
-            <input type="password" class="form-control" id="confirm_password" placeholder="Repite la contraseña">
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="password" placeholder="Contraseña">
+            <label for="password">Contraseña</label>
         </div>
         <button type="submit" class="btn btn-success w-100">Registrarse</button>
     </form>
