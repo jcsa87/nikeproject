@@ -15,15 +15,13 @@ class Home extends Controller
     }
 
     // manejamos el post del registro
-    
-    
     public function register()
     {
         helper(['form']);
 
         if($this ->request -> getMethod() === 'post'){
             $userModel = new \App\Models\UserModel();
-
+            
             $data = [
                 'nombre' => $this -> request -> getPost('nombre'),
                 'apellido' => $this -> request -> getPost('apellido'),
