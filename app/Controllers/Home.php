@@ -20,7 +20,7 @@ class Home extends Controller
         helper(['form']);
 
         if($this ->request -> getMethod() === 'post'){
-            $userModel = new \App\Models\UserModel();
+            $userModel = new \App\Models\UsuariosModel();
             
             $data = [
                 'nombre' => $this -> request -> getPost('nombre'),
@@ -31,9 +31,9 @@ class Home extends Controller
                 'telefono' => $this -> request -> getPost('telefono'),
 
             ];
-            $userModel ->insert($data);
 
-            return redirect()->to('login');
+            $userModel ->insert($data);
+            return redirect()->to(uri: '\login');
         }
 
         return view('pages/register', [

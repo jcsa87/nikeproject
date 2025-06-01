@@ -5,6 +5,8 @@
     <title><?= $title ?? 'Nike Corrientes' ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="<?= base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
+    <link rel="icon" href="<?= base_url('assets/img/favicon2.ico'); ?>" type="image/x-icon">
+
     <?= $this->renderSection('styles') ?>
 </head>
 <body>
