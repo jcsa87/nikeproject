@@ -3,14 +3,15 @@
 <?= $this->section('content') ?>
 <div class="container my-5" style="max-width: 400px;">
 
+    <form method='post' action="<?= base_url('login') ?>">
     <h2 class="mb-4 text-center">Iniciar Sesión</h2>
         <div class="mb-3">
             <label for="email" class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com">
+            <input type="email" class="form-control" name='email' id="email" placeholder="nombre@ejemplo.com">
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
+            <input type="password" class="form-control" name='password' id="password" placeholder="Ingrese su contraseña">
         </div>
         <button type="submit" class="btn btn-primary w-100">Ingresar</button>
         <div class="container-fluid text-center pt-3">

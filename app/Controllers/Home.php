@@ -4,14 +4,48 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 
+use App\Models\UsuariosModel;
+
 class Home extends Controller
 {
 
     public function login()
     {
-        return view('pages/login', [
+        $mensaje = session('mensaje');
+        return view('pages/login',["mensaje" => $mensaje], [
             'pageTitle'=> 'Iniciar Sesión - Nike Corrientes',
         ]);
+    }
+
+    public function loginPost()
+    {
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
+
+        $Usuario = new UsuariosModel();
+
+        $datosUsuario =  $Usuario->obtenerUsuarioPorEmail($email);
+        var_dump($datosUsuario); exit;
+
+        
+       if($datosUsuario && password_verify($password, $datosUsuario['password'])) {
+                
+
+                $data = [
+                    "usuario" =>$datosUsuario['email'],
+                    "rol" =>$datosUsuario['rol'],
+                ];
+
+                //instanciamos una sesión con php
+                $session = session();
+                $session->set($data);
+
+                return redirect()->to(base_url('/')) ->with('mensaje','1');
+
+            } else {
+                return redirect()->to(base_url('/')) ->with('mensaje','0');
+
+            }
     }
 
     // manejamos el post del registro
@@ -20,7 +54,7 @@ class Home extends Controller
         helper(['form']);
 
         if($this ->request -> getMethod() === 'post'){
-            $userModel = new \App\Models\UsuariosModel();
+            $userModel = new UsuariosModel();
             
             $data = [
                 'nombre' => $this -> request -> getPost('nombre'),
@@ -33,7 +67,8 @@ class Home extends Controller
             ];
 
             $userModel ->insert($data);
-            return redirect()->to(uri: '\login');
+
+            return redirect()->to(uri: 'login');
         }
 
         return view('pages/register', [

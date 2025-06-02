@@ -2,9 +2,18 @@
 
 namespace App\Models;
 
-use Codeigniter\Model;
+use CodeIgniter\Model;
 
 class UsuariosModel extends Model {
+
+  public function obtenerUsuarioPorEmail($email){
+
+    
+
+    return $this->where('email',$email)->first();
+  }
+
+
     protected $table = "usuarios";
     protected $primaryKey = 'id_usuario';
 
@@ -15,4 +24,5 @@ class UsuariosModel extends Model {
 
     protected $allowedFields=['nombre','apellido','direccion','telefono','email','password','rol','activo'];
     protected $useTimestamps = false;
+
   }
