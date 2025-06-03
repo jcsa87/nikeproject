@@ -5,13 +5,20 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
-$routes->get('/about', 'Home::about');
-$routes->get('/contact', 'Home::contact');
-$routes->get('/comercialization', 'Home::comercialization');
-$routes->get('/terms-uses', 'Home::terms_uses');
-$routes->get('/maintenance', 'Home::maintenance');
-$routes->get('/login', 'Home::login');
-$routes->get('/register', 'Home::register');
+//Rutas estaticas
+$routes->get('/', 'Pages::index');
+$routes->get('/about', 'Pages::about');
+$routes->get('/contact', 'Pages::contact');
+$routes->get('/comercialization', 'Pages::comercialization');
+$routes->get('/terms-uses', 'Pages::terms_uses');
+$routes->get('/maintenance', 'Pages::maintenance');
+
+//Rutas para logearse
+$routes->get('/Auth/login', 'UsuarioController::login');
+$routes->post('/Auth/login', 'UsuarioController::doLogin');
+$routes->get( '/Auth/register', 'UsuarioController::register');
+$routes->post('/Auth/register', 'UsuarioController::doRegister');
+
+
 
 

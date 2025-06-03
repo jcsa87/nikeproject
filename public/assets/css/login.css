@@ -1,0 +1,150 @@
+/* Fondo completo con imagen */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('../img/nike12.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenedor del login con efecto glassmorphism */
+.login-container {
+    background: rgba(255, 255, 255, 0.15); /* vidrio semitransparente */
+    backdrop-filter: blur(10px); /* difumina el fondo detrás */
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px 35px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+/* Título con estilo moderno */
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+/* Input groups */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #e0e0e0;
+    text-shadow: 0 0 3px rgba(0,0,0,0.5);
+}
+
+/* Inputs con efecto */
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255,255,255,0.9);
+    font-size: 1rem;
+    color: #333;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.input-group input::placeholder {
+    color: #999;
+}
+
+/* Efecto foco en inputs */
+.input-group input:focus {
+    box-shadow: 0 0 8px #007bff;
+    border: 1px solid #007bff;
+    background: #fff;
+}
+
+/* Botón de login moderno */
+.btn-login {
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    border: none;
+    background: linear-gradient(90deg, #0062E6, #33AEFF);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(51, 174, 255, 0.6);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 15px;
+}
+
+.btn-login:hover {
+    background: linear-gradient(90deg, #0050b3, #1a8cff);
+    box-shadow: 0 8px 20px rgba(26, 140, 255, 0.8);
+}
+
+/* Enlaces extra */
+.extra-links {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.extra-links a {
+    display: block;
+    color: #a8d1ff;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    text-shadow: 0 0 3px rgba(0,0,0,0.5);
+    transition: color 0.3s ease;
+}
+
+.extra-links a:hover {
+    color: #fff;
+}
+
+/* Botón de registro */
+.btn-register {
+    padding: 12px 30px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.6);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-register:hover {
+    background-color: #218838;
+    box-shadow: 0 8px 20px rgba(33, 136, 56, 0.8);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 25px 20px;
+        max-width: 320px;
+    }
+
+    .btn-register,
+    .btn-login {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
