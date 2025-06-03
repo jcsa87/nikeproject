@@ -22,3 +22,5 @@ $routes->post('/Auth/register', 'UsuarioController::doRegister');
 
 
 
+
+

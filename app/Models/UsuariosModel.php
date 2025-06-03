@@ -4,9 +4,23 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
+<<<<<<< HEAD
 class UsuariosModel extends Model
 {
     protected $table = 'usuarios';
+=======
+class UsuariosModel extends Model {
+
+  public function obtenerUsuarioPorEmail($email){
+
+    
+
+    return $this->where('email',$email)->first();
+  }
+
+
+    protected $table = "usuarios";
+>>>>>>> 94231f61bf1ec1e5f13c74cfec832f7096d5c16c
     protected $primaryKey = 'id_usuario';
 
     protected $useAutoIncrement = true;
@@ -20,6 +34,7 @@ class UsuariosModel extends Model
 
     protected $useTimestamps = false;
 
+<<<<<<< HEAD
     // Opcional: reglas de validación para insert/update
     protected $validationRules = [
         'nombre' => 'required|min_length[2]',
@@ -51,3 +66,6 @@ class UsuariosModel extends Model
         ],
     ];
 }
+=======
+  }
+>>>>>>> 94231f61bf1ec1e5f13c74cfec832f7096d5c16c
