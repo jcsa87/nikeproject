@@ -22,7 +22,7 @@
 
         <!-- social media -->
         <div class="social-icons d-flex mb-2 mb-lg-0">
-            <a class="nav-link btn btn-outline-primary px-5" href="<?= base_url('/login'); ?>">Iniciar sesión</a>
+            <a class="nav-link btn btn-outline-primary px-5" href="<?= base_url('/Auth/login'); ?>">Iniciar sesión</a>
             <a href="https://www.instagram.com/nike" target="_blank">
         <img src="assets/img/social_media/icons8-instagram-50.png" alt="Instagram Logo">
             </a>
