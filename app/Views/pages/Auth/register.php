@@ -5,20 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Crear Cuenta</title>
     <link rel="stylesheet" href="<?= base_url('assets/css/register.css') ?>" />
+    <link rel="icon" href="<?= base_url('assets/img/favicon2.ico'); ?>" type="image/x-icon">
+
 </head>
 <body>
     <div class="register-container">
-        <form class="register-form" method="post" action="<?= base_url('/Auth/doRegister') ?>">
+
+
+
+        <?php if (session('errors')): ?>
+    <div class="alert alert-danger">
+        <?php foreach (session('errors') as $error): ?>
+            <div><?= esc($error) ?></div>
+        <?php endforeach ?>
+    </div>
+<?php endif ?>
+
+<?php if (session('error')): ?>
+    <div class="alert alert-danger">
+        <?= esc(session('error')) ?>
+    </div>
+<?php endif ?>
+
+
+
+        <form class="register-form" method="post" action="<?= base_url('/Auth/register') ?>">
             <h2>Crear Cuenta</h2>
 
             <div class="input-group">
-                <label for="first_name">Nombre</label>
-                <input type="text" id="first_name" name="first_name" placeholder="Juan" required />
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Juan" required />
             </div>
 
             <div class="input-group">
-                <label for="last_name">Apellido</label>
-                <input type="text" id="last_name" name="last_name" placeholder="Pérez" required />
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Pérez" required />
             </div>
 
             <div class="input-group">
@@ -32,8 +53,8 @@
             </div>
 
             <div class="input-group">
-                <label for="phone">Teléfono <span class="opcional">(Opcional)</span></label>
-                <input type="tel" id="phone" name="phone" placeholder="+54 9 11 2345 6789" />
+                <label for="telefono">Teléfono <span class="opcional">(Opcional)</span></label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+54 9 11 2345 6789" />
             </div>
 
             <div class="input-group">

@@ -75,7 +75,9 @@ class UsuarioController extends Controller
                 return redirect()->back()->withInput()->with('errors', $userModel->errors());
             }
 
-            return redirect()->to('/login');
+            return redirect()->to('/Auth/login');
         }
+
+        return redirect() ->to('/Auth/register');
     }
 }
