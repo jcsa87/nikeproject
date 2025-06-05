@@ -21,15 +21,17 @@
     </div>
 <?php endif ?>
 
-<?php if (session('error')): ?>
+<?php if (session('errors')): ?>
     <div class="alert alert-danger">
-        <?= esc(session('error')) ?>
+        <?php foreach (session('errors') as $error): ?>
+            <div><?= esc($error) ?></div>
+        <?php endforeach ?>
     </div>
 <?php endif ?>
 
 
 
-        <form class="register-form" method="post" action="<?= base_url('/Auth/register') ?>">
+        <form class="register-form" method="post" action="<?= site_url('/Auth/register') ?>">
             <h2>Crear Cuenta</h2>
 
             <div class="input-group">
@@ -47,10 +49,10 @@
                 <input type="email" id="email" name="email" placeholder="nombre@ejemplo.com" required />
             </div>
 
-            <div class="input-group">
+            <!-- <div class="input-group">
                 <label for="email_confirm">Confirmar correo electrónico</label>
                 <input type="email" id="email_confirm" name="email_confirm" placeholder="nombre@ejemplo.com" required />
-            </div>
+            </div> -->
 
             <div class="input-group">
                 <label for="telefono">Teléfono <span class="opcional">(Opcional)</span></label>

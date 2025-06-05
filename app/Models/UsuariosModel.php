@@ -14,10 +14,8 @@ class UsuariosModel extends Model
     protected $useSoftDeletes = false;
 
     protected $allowedFields = [
-        'nombre', 'apellido', 'direccion', 'telefono',
-        'email', 'password_hash', 'rol', 'activo'
+    'nombre', 'apellido', 'email', 'direccion', 'password_hash', 'telefono', 'rol', 'activo'
     ];
-
     protected $useTimestamps = false;
 
     // Opcional: reglas de validación para insert/update
@@ -25,7 +23,7 @@ class UsuariosModel extends Model
         'nombre' => 'required|min_length[2]',
         'apellido' => 'required|min_length[2]',
         'direccion' => 'required',
-        'telefono' => 'required',
+        'telefono' => 'permit_empty',
         'email' => 'required|valid_email|is_unique[usuarios.email]',
         'password_hash' => 'required',
     ];
@@ -42,9 +40,6 @@ class UsuariosModel extends Model
         ],
         'direccion' => [
             'required' => 'La dirección es obligatoria.',
-        ],
-        'telefono' => [
-            'required' => 'El teléfono es obligatorio.',
         ],
         'password_hash' => [
             'required' => 'La contraseña es obligatoria.',

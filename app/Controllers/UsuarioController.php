@@ -55,10 +55,14 @@ class UsuarioController extends Controller
 
     public function doRegister()
     {
+
+ 
+    
         helper(['form']);
 
         if ($this->request->getMethod() === 'post') {
-            $userModel = new UsuariosModel();
+
+              $userModel = new UsuariosModel();
 
             $data = [
                 'nombre' => $this->request->getPost('nombre'),
@@ -72,12 +76,13 @@ class UsuarioController extends Controller
             ];
 
             if (!$userModel->insert($data)) {
+                
                 return redirect()->back()->withInput()->with('errors', $userModel->errors());
             }
 
             return redirect()->to('/Auth/login');
         }
 
-        return redirect() ->to('/Auth/register');
+        return redirect()->to('/Auth/register');
     }
 }
