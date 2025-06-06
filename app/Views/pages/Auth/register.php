@@ -11,6 +11,13 @@
 <body>
     <div class="register-container">
 
+    <!-- botón para volver a home -->
+        <div style="text-align:center; margin-bottom: 20px;">
+        <a href="<?= base_url('/') ?>">
+            <img src="<?= base_url('assets/img/New Project.png') ?>" alt="Volver al inicio" style="width:250px; height:250px; cursor:pointer;">
+        </a>
+         </div>
+
     <?php if (session('errors')): ?>
     <div class="alert alert-danger">
         <?php foreach (session('errors') as $error): ?>

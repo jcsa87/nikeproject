@@ -9,8 +9,19 @@
 
 </head>
 <body>
+
+    
+
     
     <div class="login-container">
+
+        <!-- botón para volver a home -->
+        <div style="text-align:center; margin-bottom: 20px;">
+        <a href="<?= base_url('/') ?>">
+            <img src="<?= base_url('assets/img/New Project.png') ?>" alt="Volver al inicio" style="width:250px; height:250px; cursor:pointer;">
+        </a>
+         </div>
+
         <form class="login-form" method="post" action="<?= base_url('/Auth/doLogin') ?>">
             <h2>Iniciar Sesión</h2>
             <?php if(session()->getFlashdata('error')): ?>
