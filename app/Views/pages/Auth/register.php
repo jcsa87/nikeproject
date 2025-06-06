@@ -11,27 +11,17 @@
 <body>
     <div class="register-container">
 
-
-
-        <?php if (session('errors')): ?>
+    <?php if (session('errors')): ?>
     <div class="alert alert-danger">
         <?php foreach (session('errors') as $error): ?>
             <div><?= esc($error) ?></div>
         <?php endforeach ?>
     </div>
-<?php endif ?>
-
-<?php if (session('errors')): ?>
-    <div class="alert alert-danger">
-        <?php foreach (session('errors') as $error): ?>
-            <div><?= esc($error) ?></div>
-        <?php endforeach ?>
-    </div>
-<?php endif ?>
+    <?php endif ?>
 
 
 
-        <form class="register-form" method="post" action="<?= site_url('/Auth/register') ?>">
+        <form class="register-form" method="post" action="<?= site_url('/Auth/doRegister') ?>">
             <h2>Crear Cuenta</h2>
 
             <div class="input-group">
@@ -49,10 +39,10 @@
                 <input type="email" id="email" name="email" placeholder="nombre@ejemplo.com" required />
             </div>
 
-            <!-- <div class="input-group">
+            <div class="input-group">
                 <label for="email_confirm">Confirmar correo electrónico</label>
                 <input type="email" id="email_confirm" name="email_confirm" placeholder="nombre@ejemplo.com" required />
-            </div> -->
+            </div>
 
             <div class="input-group">
                 <label for="telefono">Teléfono <span class="opcional">(Opcional)</span></label>
@@ -61,13 +51,13 @@
 
             <div class="input-group">
                 <label for="password">Contraseña</label>
-                <input type="password" id="password" name="password" placeholder="Crea una contraseña segura" required />
+                <input type="password" id="password_hash" name="password" placeholder="Crea una contraseña segura" required />
             </div>
 
             <button type="submit" class="btn-register">Registrarme</button>
 
             <div class="extra-links">
-                <a href="<?= base_url('/Auth/login') ?>">¿Ya tenés cuenta? Iniciar sesión</a>
+                <a href="<?= base_url('/Auth/Login') ?>">¿Ya tenés cuenta? Iniciar sesión</a>
             </div>
         </form>
     </div>

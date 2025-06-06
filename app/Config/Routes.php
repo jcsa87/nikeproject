@@ -14,10 +14,10 @@ $routes->get('/terms-uses', 'Pages::terms_uses');
 $routes->get('/maintenance', 'Pages::maintenance');
 
 //Rutas para logearse
-$routes->get('/Auth/login', 'UsuarioController::login');
-$routes->post('/Auth/login', 'UsuarioController::doLogin');
-$routes->get( '/Auth/register', 'UsuarioController::register');
-$routes->post('/Auth/register', 'UsuarioController::doRegister');
+$routes->get('/Auth/Login', 'UsuarioController::login');
+$routes->post('/Auth/doLogin', 'UsuarioController::doLogin');
+$routes->get( '/Auth/Register', 'UsuarioController::register');
+$routes->post('/Auth/doRegister', 'UsuarioController::doRegister');
 
 
 
