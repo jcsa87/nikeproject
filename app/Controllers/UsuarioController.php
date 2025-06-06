@@ -36,6 +36,7 @@ class UsuarioController extends Controller
                 'user_id' => $user['id_usuario'],
                 'user_name' => $user['nombre'],
                 'user_email' => $user['email'],
+                'user_rol'   => $user['rol'],
                 'logged_in' => true
             ]);
 
