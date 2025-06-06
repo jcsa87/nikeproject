@@ -21,6 +21,7 @@ $routes->post('/Auth/doRegister', 'UsuarioController::doRegister');
 
 $routes->post('/logout', 'UsuarioController::logout');
 
+$routes->get('/Admin/stock', 'AdminController::stock');
 
 
 

@@ -19,6 +19,9 @@
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/contact'); ?>">Contacto</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/terms-uses'); ?>">Términos y Condiciones</a></li>
             </ul>
+        <?php if(session()-> get('logged_in') && session()->get('user_rol') === 'admin'): ?>
+            <li class="nav-item"><a class='nav-link' href="<?= base_url('/admin/stock'); ?>"> Gestión de Stock </a></li>
+        <?php endif; ?>
 
         <!-- social media -->
         <div class="social-icons d-flex mb-2 mb-lg-0">
