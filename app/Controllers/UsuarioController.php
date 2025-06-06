@@ -45,6 +45,12 @@ class UsuarioController extends Controller
         return redirect()->back()->withInput()->with('error', 'Credenciales incorrectas.');
     }
 
+    public function logout()
+    {
+    session()->destroy();
+    return redirect()->to('/')->with('success', 'Sesión cerrada correctamente.');
+    }
+
     public function register()
     {
         return view('pages/Auth/Register', [

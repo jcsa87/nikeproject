@@ -19,6 +19,8 @@ $routes->post('/Auth/doLogin', 'UsuarioController::doLogin');
 $routes->get( '/Auth/Register', 'UsuarioController::register');
 $routes->post('/Auth/doRegister', 'UsuarioController::doRegister');
 
+$routes->post('/logout', 'UsuarioController::logout');
+
 
 
 
