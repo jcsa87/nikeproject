@@ -19,15 +19,15 @@
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/contact'); ?>">Contacto</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/terms-uses'); ?>">Términos y Condiciones</a></li>
             </ul>
-        <?php if(session()-> get('logged_in') && session()->get('user_rol') === 'admin'): ?>
-            <li class="nav-item"><a class='nav-link' href="<?= base_url('/admin/stock'); ?>"> Gestión de Stock </a></li>
-        <?php endif; ?>
 
         <!-- social media -->
         <div class="social-icons d-flex mb-2 mb-lg-0">
             <?php if (session()->get('logged_in')): ?>
                 <span class="navbar-text me-3 text-light">
              Bienvenido, <?= esc(session()->get('user_name')) ?>
+             <?php if(session()->get('user_rol') === 'admin'): ?>
+                <li class="badge bg-warning text-dark ms-2"><a class="nav-link text-dark" href="<?= base_url('/Admin/adminPage'); ?>" >ADMIN</a></li>
+             <?php endif; ?>
                 </span>
             <form action="<?= base_url('/logout') ?>" method="post" style="display:inline;">
                  <button type="submit" class="btn btn-danger btn-sm ms-2">Cerrar sesión</button>

@@ -18,10 +18,11 @@ $routes->get('/Auth/Login', 'UsuarioController::login');
 $routes->post('/Auth/doLogin', 'UsuarioController::doLogin');
 $routes->get( '/Auth/Register', 'UsuarioController::register');
 $routes->post('/Auth/doRegister', 'UsuarioController::doRegister');
-
 $routes->post('/logout', 'UsuarioController::logout');
 
-$routes->get('/Admin/stock', 'AdminController::stock');
+// admin
+
+$routes->get('/Admin/adminPage', 'AdminController::adminPage');
 
 
 
