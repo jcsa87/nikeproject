@@ -2,6 +2,7 @@
 
 namespace Config;
 
+
 use CodeIgniter\Config\Filters as BaseFilters;
 use CodeIgniter\Filters\Cors;
 use CodeIgniter\Filters\CSRF;
@@ -60,6 +61,8 @@ class Filters extends BaseFilters
             'toolbar',     // Debug Toolbar
         ],
     ];
+
+    
 
     /**
      * List of filter aliases that are always

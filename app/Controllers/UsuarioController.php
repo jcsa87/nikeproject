@@ -36,6 +36,7 @@ class UsuarioController extends Controller
                 'user_id' => $user['id_usuario'],
                 'user_name' => $user['nombre'],
                 'user_email' => $user['email'],
+                'user_rol'   => $user['rol'],
                 'logged_in' => true
             ]);
 
@@ -43,6 +44,12 @@ class UsuarioController extends Controller
         }
 
         return redirect()->back()->withInput()->with('error', 'Credenciales incorrectas.');
+    }
+
+    public function logout()
+    {
+    session()->destroy();
+    return redirect()->to('/')->with('success', 'Sesión cerrada correctamente.');
     }
 
     public function register()

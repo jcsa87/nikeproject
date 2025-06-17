@@ -22,7 +22,19 @@
 
         <!-- social media -->
         <div class="social-icons d-flex mb-2 mb-lg-0">
-            <a class="nav-link btn btn-outline-primary px-5" href="<?= base_url('/Auth/Login'); ?>">Iniciar sesión</a>
+            <?php if (session()->get('logged_in')): ?>
+                <span class="navbar-text me-3 text-light">
+             Bienvenido, <?= esc(session()->get('user_name')) ?>
+             <?php if(session()->get('user_rol') === 'admin'): ?>
+                <li class="badge bg-warning text-dark ms-2"><a class="nav-link text-dark" href="<?= base_url('/Admin/adminPage'); ?>" >ADMIN</a></li>
+             <?php endif; ?>
+                </span>
+            <form action="<?= base_url('/logout') ?>" method="post" style="display:inline;">
+                 <button type="submit" class="btn btn-danger btn-sm ms-2">Cerrar sesión</button>
+              </form>
+            <?php else: ?>
+             <a class="nav-link btn btn-outline-primary px-5" href="<?= base_url('/Auth/Login'); ?>">Iniciar sesión</a>
+                <?php endif; ?>
             <a href="https://www.instagram.com/nike" target="_blank">
         <img src="assets/img/social_media/icons8-instagram-50.png" alt="Instagram Logo">
             </a>
