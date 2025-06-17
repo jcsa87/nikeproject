@@ -23,28 +23,40 @@
         <!-- social media -->
         <div class="social-icons d-flex mb-2 mb-lg-0">
             <?php if (session()->get('logged_in')): ?>
-                <span class="navbar-text me-3 text-light">
-             Bienvenido, <?= esc(session()->get('user_name')) ?>
-             <?php if(session()->get('user_rol') === 'admin'): ?>
-                <li class="badge bg-warning text-dark ms-2"><a class="nav-link text-dark" href="<?= base_url('/Admin/adminPage'); ?>" >ADMIN</a></li>
-             <?php endif; ?>
-                </span>
-            <form action="<?= base_url('/logout') ?>" method="post" style="display:inline;">
-                 <button type="submit" class="btn btn-danger btn-sm ms-2">Cerrar sesión</button>
-              </form>
-            <?php else: ?>
-             <a class="nav-link btn btn-outline-primary px-5" href="<?= base_url('/Auth/Login'); ?>">Iniciar sesión</a>
-                <?php endif; ?>
-            <a href="https://www.instagram.com/nike" target="_blank">
-        <img src="assets/img/social_media/icons8-instagram-50.png" alt="Instagram Logo">
+        <span class="navbar-text me-3 text-light">
+            Bienvenido, <?= esc(session()->get('user_name')) ?>
+            <?php if(session()->get('user_rol') === 'admin'): ?>
+                <li class="badge bg-warning text-dark ms-2">
+                    <a class="nav-link text-dark" href="<?= base_url('/Admin/adminPage'); ?>">ADMIN</a>
+                </li>
+            <?php endif; ?>
+        </span>
+        <form action="<?= base_url('/logout') ?>" method="post" style="display:inline;">
+            <button type="submit" class="btn btn-danger btn-sm ms-2">Cerrar sesión</button>
+        </form>
+        <?php else: ?>
+            <!-- BOTÓN SOLO CON ICONO DE PERSONA -->
+            <a class="user-icon" href="<?= base_url('/Auth/Login'); ?>" title="Iniciar sesión">
+                <i class="bi bi-person"></i>
             </a>
-        <a href="https://www.facebook.com/nike/" target="_blank">
-            <img src="assets/img/social_media/icons8-facebook-50.png" alt="Facebook Logo">
-            </a>
-        <a href="https://www.twitter.com/nike/" target="_blank">
-            <img src="assets/img/social_media/icons8-twitter-50.png" alt="Twitter Logo">
-            </a>
-        </div>
+        <?php endif; ?>
+
+
+    <!-- Íconos redes sociales con Bootstrap Icons y clase social-btn -->
+        <a href="https://www.instagram.com/nike" target="_blank" class="social-btn" title="Instagram">
+            <i class="bi bi-instagram"></i>
+        </a>
+
+        <a href="https://www.facebook.com/nike/" target="_blank" class="social-btn" title="Facebook">
+            <i class="bi bi-facebook"></i>
+        </a>
+
+        <a href="https://www.twitter.com/nike/" target="_blank" class="social-btn" title="Twitter">
+            <i class="bi bi-twitter"></i>
+        </a>
+
+    </div>
+
 
 
 

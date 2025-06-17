@@ -9,8 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $title ?? 'Nike Corrientes' ?></title>
 
-    <!-- Bootstrap -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="" crossorigin="">
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
 
     <!-- Sección para CSS personalizado por vista -->
     <?= $this->renderSection('styles') ?>

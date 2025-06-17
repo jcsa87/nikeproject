@@ -82,6 +82,53 @@
     align-items: center;
 }
 
+.social-btn {
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 1.4rem; /* tamaño del ícono */
+}
+
+.social-btn:hover {
+    border-color: #3399ff;
+    color: #3399ff;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+
+/* Estilo para el ícono de usuario */
+.user-icon {
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.user-icon:hover {
+    border-color: #3399ff;
+    color: #3399ff;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
 /* RESPONSIVE PARA PANTALLAS PEQUEÑAS */
 @media (max-width: 768px) {
     .navbar {
