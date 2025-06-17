@@ -15,9 +15,13 @@ class AdminController extends Controller
 
     public function adminPage()
     {
+        if(!session () ->get('logged_in') || session()->get('user_rol' !== 'admin')){
+            return redirect() -> to('/')->with('error', 'Acceso denegado.');
+        } else {
         return view('pages/Admin/adminPage', [
             'pageTitle' => 'Panel de gestión de administrador'
         ]);
+        }
     }
 
     //función para administrar usuarios
