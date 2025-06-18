@@ -13,16 +13,17 @@ body {
 
 /* Contenedor del login con efecto glassmorphism */
 .login-container {
-    background: rgba(255, 255, 255, 0.15); /* vidrio semitransparente */
-    backdrop-filter: blur(10px); /* difumina el fondo detrás */
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 40px 35px;
     width: 100%;
     max-width: 420px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
     color: #fff;
+    margin-top: 20px; /* Opcional para dar un poco más de separación */
 }
 
 /* Título con estilo moderno */
@@ -45,7 +46,7 @@ body {
     margin-bottom: 8px;
     font-weight: 600;
     font-size: 1rem;
-    color: #e0e0e0;
+    color: #fff;
     text-shadow: 0 0 3px rgba(0,0,0,0.5);
 }
 
