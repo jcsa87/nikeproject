@@ -33,7 +33,26 @@
     <div class="carousel-wrapper position-relative">
       <button class="btn-carousel prev" onclick="scrollCarruselNike('left')">&#10094;</button>
 
-      <div class="carousel-container" id="carousel-nike">
+      
+    <div class="carousel-container" id="carousel-nike">
+    <?php if (!empty($botines)): ?>
+        <?php foreach ($botines as $producto): ?>
+            <a href="<?= base_url('producto/' . $producto['id_producto']) ?>" class="text-decoration-none text-dark">
+                <div class="card mx-2 producto-card">
+                    <img src="<?= base_url('assets/img/' . ($producto['imagen'] ?? 'default.jpg')) ?>" class="card-img-top" alt="<?= esc($producto['nombre']) ?>">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><?= esc($producto['nombre']) ?></h5>
+                        <p class="card-text">$<?= number_format($producto['precio'], 0, ',', '.') ?></p>
+                    </div>
+                </div>
+            </a>
+          <?php endforeach; ?>
+          <?php else: ?>
+            <p>No hay botines disponibles.</p>
+        <?php endif; ?>
+      </div>
+      <!-- viejo carousel -->
+      <!-- <div class="carousel-container" id="carousel-nike">
         
         <a href="<?= base_url('/maintenance') ?>" class="text-decoration-none text-dark">
           <div class="card mx-2 producto-card">
@@ -95,7 +114,7 @@
           </div>
         </a>
 
-      </div>
+      </div> -->
 
       <button class="btn-carousel next" onclick="scrollCarruselNike('right')">&#10095;</button>
     </div>

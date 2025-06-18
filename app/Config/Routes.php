@@ -21,8 +21,10 @@ $routes->post('/Auth/doRegister', 'UsuarioController::doRegister');
 $routes->post('/logout', 'UsuarioController::logout');
 
 // admin
-
 $routes->get('/Admin/adminPage', 'AdminController::adminPage');
+
+//productos
+$routes->get('/producto/(:num)', 'ProductosController::show/$1');
 
 
 
