@@ -27,14 +27,24 @@ class AdminController extends Controller
     //función para administrar usuarios
     public function manageUsers()
     {
-
-        return view('pages/Admin/users');
+        if(!session () ->get('logged_in') || session()->get('user_rol' !== 'admin')){
+            return redirect() -> to('/')->with('error', 'Acceso denegado.');
+        } else {
+        return view('pages/Admin/manageUsers', [
+            'pageTitle' => 'Panel de gestión de usuarios'
+        ]);
+        }
     }
 
     //función para administrarStock
     public function manageStock()
     {
-        // Lógica para gestión de usuarios
-        return view('pages/Admin/users');
+        if(!session () ->get('logged_in') || session()->get('user_rol' !== 'admin')){
+            return redirect() -> to('/')->with('error', 'Acceso denegado.');
+        } else {
+        return view('pages/Admin/manageStock', [
+            'pageTitle' => 'Panel de gestión de stock'
+        ]);
+        }
     }
 }

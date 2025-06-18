@@ -5,7 +5,7 @@
 <div class="container py-5">
     <div class="row">
         <div class="col-md-6">
-            // <!-- Cambia 'imagen' por el nombre real del campo si lo tienes -->
+
             <img src="<?= base_url('assets/img/' . ($producto['imagen'] ?? 'default.jpg')) ?>" class="img-fluid" alt="<?= esc($producto['nombre']) ?>">
         </div>
         <div class="col-md-6">
