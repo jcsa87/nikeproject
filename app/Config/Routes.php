@@ -24,6 +24,9 @@ $routes->post('/logout', 'UsuarioController::logout');
 $routes->get('/Admin/adminPage', 'AdminController::adminPage');
 $routes->get('/Admin/manageStock', 'AdminController::manageStock');
 $routes->get('/Admin/manageUsers', 'AdminController::manageUsers');
+//stock
+$routes->get('/Admin/addStock', 'AdminController::addStock');
+$routes->post('/Admin/addStock', 'AdminController::saveStock');
 
 //productos
 $routes->get('/producto/(:num)', 'ProductosController::show/$1');
