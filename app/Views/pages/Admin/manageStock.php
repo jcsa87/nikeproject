@@ -26,18 +26,22 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Ejemplo de fila, reemplaza por bucle PHP -->
-            <tr>
-                <td>1</td>
-                <td>Botín Nike</td>
-                <td>Botines</td>
-                <td>10</td>
-                <td>
-                    <a href="#" class="btn btn-sm btn-warning">Editar</a>
-                    <a href="#" class="btn btn-sm btn-danger">Eliminar</a>
-                </td>
-            </tr>
-            <!-- Fin ejemplo -->
+            <?php if (!empty($productos)): ?>
+                <?php foreach ($productos as $producto): ?>
+                    <tr>
+                        <td><?= esc($producto['id_producto']) ?></td>
+                        <td><?= esc($producto['nombre']) ?></td>
+                        <td><?= esc($producto['categoria_nombre']) ?></td>
+                        <td><?= esc($producto['cantidad']) ?></td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-warning">Editar</a>
+                            <a href="#" class="btn btn-sm btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <tr><td colspan="5">No hay productos registrados.</td></tr>
+            <?php endif; ?>
         </tbody>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

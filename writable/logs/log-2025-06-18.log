@@ -73,3 +73,236 @@ DEBUG - 2025-06-18 22:30:01 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-06-18 22:30:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-06-18 22:30:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-06-18 22:30:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 22:30:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 22:30:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 22:30:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 22:36:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-18 22:36:05 --> Error: Class "Codeigniter\Model" not found
+[Method: GET, Route: Admin/manageStock]
+in APPPATH\Models\ProductosModel.php on line 7.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(316): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\nikeproject\\app\\Models\\ProductosModel.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\ProductosModel')
+ 4 APPPATH\Controllers\AdminController.php(53): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\ProductosModel')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->manageStock()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-18 22:37:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-18 22:37:05 --> Error: Class "Codeigniter\Model" not found
+[Method: GET, Route: Admin/manageStock]
+in APPPATH\Models\ProductosModel.php on line 7.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(316): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\nikeproject\\app\\Models\\ProductosModel.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\ProductosModel')
+ 4 APPPATH\Controllers\AdminController.php(53): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\ProductosModel')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->manageStock()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-18 22:37:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-18 22:37:37 --> Error: Class "Codeigniter\Model" not found
+[Method: GET, Route: Admin/manageStock]
+in APPPATH\Models\ProductosModel.php on line 7.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(316): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\nikeproject\\app\\Models\\ProductosModel.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\ProductosModel')
+ 4 APPPATH\Controllers\AdminController.php(53): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\ProductosModel')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->manageStock()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-18 22:39:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-18 22:39:25 --> Error: Class "Codeigniter\Model" not found
+[Method: GET, Route: Admin/manageStock]
+in APPPATH\Models\ProductosModel.php on line 7.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(316): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\nikeproject\\app\\Models\\ProductosModel.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\ProductosModel')
+ 4 APPPATH\Controllers\AdminController.php(53): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\ProductosModel')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->manageStock()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-18 22:39:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 22:39:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-18 22:39:26 --> Error: Class "Codeigniter\Model" not found
+[Method: GET, Route: Admin/manageStock]
+in APPPATH\Models\ProductosModel.php on line 7.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(316): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\nikeproject\\app\\Models\\ProductosModel.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\ProductosModel')
+ 4 APPPATH\Controllers\AdminController.php(53): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\ProductosModel')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->manageStock()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-18 22:39:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-18 22:39:28 --> ErrorException: Undefined array key "user_rol"
+[Method: GET, Route: Admin/manageUsers]
+in APPPATH\Views\pages\Admin\manageUsers.php on line 33.
+ 1 APPPATH\Views\pages\Admin\manageUsers.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_rol"', 'C:\\xampp\\htdocs\\nikeproject\\app\\Views\\pages\\Admin\\manageUsers.php', 33)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\nikeproject\\app\\Views\\pages\\Admin\\manageUsers.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/Admin/manageUsers', [], true)
+ 5 APPPATH\Controllers\AdminController.php(40): view('pages/Admin/manageUsers', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->manageUsers()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-18 22:39:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-18 22:39:33 --> Error: Class "Codeigniter\Model" not found
+[Method: GET, Route: Admin/manageStock]
+in APPPATH\Models\ProductosModel.php on line 7.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(316): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\nikeproject\\app\\Models\\ProductosModel.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\ProductosModel')
+ 4 APPPATH\Controllers\AdminController.php(53): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\ProductosModel')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->manageStock()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-18 22:39:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-18 22:39:58 --> Error: Class "App\Models\Model" not found
+[Method: GET, Route: Admin/manageStock]
+in APPPATH\Models\ProductosModel.php on line 7.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(316): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\nikeproject\\app\\Models\\ProductosModel.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\ProductosModel')
+ 4 APPPATH\Controllers\AdminController.php(53): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\ProductosModel')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->manageStock()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-18 22:39:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-18 22:39:59 --> Error: Class "App\Models\Model" not found
+[Method: GET, Route: Admin/manageStock]
+in APPPATH\Models\ProductosModel.php on line 7.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(316): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\nikeproject\\app\\Models\\ProductosModel.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\ProductosModel')
+ 4 APPPATH\Controllers\AdminController.php(53): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\ProductosModel')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->manageStock()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-18 22:40:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-18 22:40:00 --> Error: Class "App\Models\Model" not found
+[Method: GET, Route: Admin/manageStock]
+in APPPATH\Models\ProductosModel.php on line 7.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(316): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\nikeproject\\app\\Models\\ProductosModel.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\ProductosModel')
+ 4 APPPATH\Controllers\AdminController.php(53): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\ProductosModel')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->manageStock()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-18 22:40:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-18 22:40:00 --> Error: Class "App\Models\Model" not found
+[Method: GET, Route: Admin/manageStock]
+in APPPATH\Models\ProductosModel.php on line 7.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(316): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\nikeproject\\app\\Models\\ProductosModel.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\ProductosModel')
+ 4 APPPATH\Controllers\AdminController.php(53): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\ProductosModel')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->manageStock()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-18 22:40:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-18 22:40:01 --> Error: Class "App\Models\Model" not found
+[Method: GET, Route: Admin/manageStock]
+in APPPATH\Models\ProductosModel.php on line 7.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(316): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\nikeproject\\app\\Models\\ProductosModel.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\ProductosModel')
+ 4 APPPATH\Controllers\AdminController.php(53): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\ProductosModel')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->manageStock()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-18 22:40:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-18 22:40:09 --> Error: Class "Codeigniter\Model" not found
+[Method: GET, Route: Admin/manageStock]
+in APPPATH\Models\ProductosModel.php on line 7.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(316): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\nikeproject\\app\\Models\\ProductosModel.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\ProductosModel')
+ 4 APPPATH\Controllers\AdminController.php(53): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\ProductosModel')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->manageStock()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-18 22:40:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-18 22:40:10 --> Error: Class "Codeigniter\Model" not found
+[Method: GET, Route: Admin/manageStock]
+in APPPATH\Models\ProductosModel.php on line 7.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(316): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\nikeproject\\app\\Models\\ProductosModel.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\ProductosModel')
+ 4 APPPATH\Controllers\AdminController.php(53): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\ProductosModel')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->manageStock()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-18 22:40:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-18 22:40:11 --> Error: Class "Codeigniter\Model" not found
+[Method: GET, Route: Admin/manageStock]
+in APPPATH\Models\ProductosModel.php on line 7.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(316): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\nikeproject\\app\\Models\\ProductosModel.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\ProductosModel')
+ 4 APPPATH\Controllers\AdminController.php(53): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\ProductosModel')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->manageStock()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-18 22:40:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 22:40:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 22:40:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-18 22:40:47 --> ErrorException: Undefined array key "user_rol"
+[Method: GET, Route: Admin/manageUsers]
+in APPPATH\Views\pages\Admin\manageUsers.php on line 33.
+ 1 APPPATH\Views\pages\Admin\manageUsers.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_rol"', 'C:\\xampp\\htdocs\\nikeproject\\app\\Views\\pages\\Admin\\manageUsers.php', 33)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\nikeproject\\app\\Views\\pages\\Admin\\manageUsers.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/Admin/manageUsers', [], true)
+ 5 APPPATH\Controllers\AdminController.php(40): view('pages/Admin/manageUsers', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->manageUsers()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-18 22:41:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

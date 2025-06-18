@@ -24,18 +24,23 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Ejemplo de fila, reemplaza por bucle PHP -->
-            <tr>
-                <td>1</td>
-                <td>Juan Pérez</td>
-                <td>juan@email.com</td>
-                <td>usuario</td>
-                <td>Sí</td>
-                <td>
-                    <a href="#" class="btn btn-sm btn-warning">Editar</a>
-                    <a href="#" class="btn btn-sm btn-danger">Eliminar</a>
-                </td>
-            </tr>
+            <?php if (!empty($usuarios)): ?>
+                <?php foreach ($usuarios as $usuario): ?>
+                    <tr>
+                        <td><?= esc($usuario['id_usuario']) ?></td>
+                        <td><?= esc($usuario['nombre']) ?></td>
+                        <td><?= esc($usuario['email']) ?></td>
+                        <td><?= esc($usuario['rol']) ?></td>
+                        <td><?= $usuario['activo'] ? 'Sí' : 'No' ?></td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-warning">Editar</a>
+                            <a href="#" class="btn btn-sm btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <tr><td colspan="6">No hay usuarios registrados.</td></tr>
+            <?php endif; ?>
             
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
             
