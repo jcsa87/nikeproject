@@ -44,8 +44,39 @@
             <?php endif; ?>
         </tbody>
 
+
+
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </table>
-    <a href="<?= base_url('/Admin/addStock') ?>" class="btn btn-primary">Agregar nuevo producto</a>
+
+    <div class="container py-5">
+    <h1 class="mb-4">Categorías disponibles</h1>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID Categoría</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if (!empty($categorias)): ?>
+                <?php foreach ($categorias as $categoria): ?>
+                    <tr>
+                        <td><?= esc($categoria['id_categoria']) ?></td>
+                        <td><?= esc($categoria['nombre']) ?></td>
+                        <td><?= esc($categoria['descripcion']) ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <tr><td colspan="5">No hay categorías registradas.</td></tr>
+            <?php endif; ?>
+        </tbody>
+         </table>
+
+    <a href="<?= base_url('/Admin/addStock') ?>" class="btn btn-primary">Agregar producto</a>
+    <a href="<?= base_url('/Admin/addCategory') ?>" class="btn btn-primary">Agregar categoría</a>
 </div>
 <?= $this->endSection() ?>

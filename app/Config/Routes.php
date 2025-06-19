@@ -20,14 +20,16 @@ $routes->get( '/Auth/Register', 'UsuarioController::register');
 $routes->post('/Auth/doRegister', 'UsuarioController::doRegister');
 $routes->post('/logout', 'UsuarioController::logout');
 
-// admin
+// apartado admin
 $routes->get('/Admin/adminPage', 'AdminController::adminPage');
 $routes->get('/Admin/manageStock', 'AdminController::manageStock');
 $routes->get('/Admin/manageUsers', 'AdminController::manageUsers');
 //stock
 $routes->get('/Admin/addStock', 'AdminController::addStock');
 $routes->post('/Admin/addStock', 'AdminController::saveStock');
-
+//categoría
+$routes->get('/Admin/addCategory', 'AdminController::addCategory');
+$routes->post('/Admin/addCategory', 'AdminController::saveCategory');
 //productos
 $routes->get('/producto/(:num)', 'ProductosController::show/$1');
 

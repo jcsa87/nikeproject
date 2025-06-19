@@ -43,6 +43,62 @@ class AdminController extends Controller
         ]);
     }
 
+
+//categoría
+    public function addCategory()
+{
+    if ($this->request->getMethod() === 'post') {
+        $rules = [
+            'nombre' => 'required',
+            'descripcion' => 'required',
+        ];
+
+        if (!$this->validate($rules)) {
+            return view('pages/Admin/addCategory', [
+                'errors' => $this->validator->getErrors()
+            ]);
+        }
+
+        $categoriaModel = new \App\Models\CategoriaModel();
+        $categoriaModel->insert([
+            'nombre' => $this->request->getPost('nombre'),
+            'descripcion' => $this->request->getPost('descripcion'),
+            'activo' => 1
+        ]);
+
+        return redirect()->to('/Admin/manageCategories')->with('success', 'Categoría agregada correctamente.');
+    }
+
+    // Si es GET, muestra el formulario
+    return view('pages/Admin/addCategory');
+}
+
+public function saveCategory()
+{
+    if(!session()->get('logged_in') || session()->get('user_rol') !== 'admin'){
+        return redirect()->to('/')->with('error', 'Acceso denegado.');
+    }
+
+    $rules = [
+        'nombre' => 'required',
+        'descripcion' => 'required',
+    ];
+
+    if (!$this->validate($rules)) {
+        return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+    }
+
+    $categoriaModel = new \App\Models\CategoriaModel();
+    $categoriaModel->insert([
+        'nombre' => $this->request->getPost('nombre'),
+        'descripcion' => $this->request->getPost('descripcion'),
+        'activo' => 1
+    ]);
+
+    return redirect()->to('/Admin/manageStock')->with('success', 'Categoría agregada correctamente.');
+}
+
+
     //stock
     public function addStock()
 {
@@ -111,6 +167,8 @@ public function saveStock()
         $productosModel = new ProductosModel();
         $categoriaModel = new CategoriaModel();
 
+        $categorias = $categoriaModel->findAll();
+
         $productos = $productosModel
             ->select('productos.*, categoria.nombre as categoria_nombre')
             ->join('categoria', 'categoria.id_categoria = productos.id_categoria')
@@ -118,7 +176,8 @@ public function saveStock()
 
         return view('pages/Admin/manageStock', [
             'pageTitle' => 'Panel de gestión de stock',
-            'productos' => $productos
+            'productos' => $productos,
+            'categorias' => $categorias
         ]);
     }
 }
