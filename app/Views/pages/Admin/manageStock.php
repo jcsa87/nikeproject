@@ -29,13 +29,22 @@
             <?php if (!empty($productos)): ?>
                 <?php foreach ($productos as $producto): ?>
                     <tr>
-                        <td><?= esc($producto['id_producto']) ?></td>
-                        <td><?= esc($producto['nombre']) ?></td>
-                        <td><?= esc($producto['categoria_nombre']) ?></td>
-                        <td><?= esc($producto['cantidad']) ?></td>
-                        <td>
+                        <td class="<?= $producto['activo'] == 0 ? 'text-danger' : '' ?>"><?= esc($producto['id_producto']) ?></td>
+                        <td class="<?= $producto['activo'] == 0 ? 'text-danger' : '' ?>"><?= esc($producto['nombre']) ?></td>
+                        <td class="<?= $producto['activo'] == 0 ? 'text-danger' : '' ?>"><?= esc($producto['categoria_nombre']) ?></td>
+                        <td class="<?= $producto['activo'] == 0 ? 'text-danger' : '' ?>"><?= esc($producto['cantidad']) ?></td>
+                    <td>
                             <a href="#" class="btn btn-sm btn-warning">Editar</a>
-                            <a href="#" class="btn btn-sm btn-danger">Eliminar</a>
+                            <?php if ($producto['activo'] == 1): ?>
+                            <form action="<?= base_url('/Admin/deleteProduct/' . $producto['id_producto']) ?>" method="post" style="display:inline;" onsubmit="return confirm('¿Seguro que quieres desactivar este producto?');">
+                                <button type="submit" class="btn btn-sm btn-danger">Desactivar</button>
+                            </form>
+                            <?php endif; ?>
+                            <?php if ($producto['activo'] == 0): ?>
+                            <form action="<?= base_url('/Admin/activateProduct/' . $producto['id_producto']) ?>" method="post" style="display:inline;" onsubmit="return confirm('¿Seguro que quieres activar este producto?');">
+                                <button type="submit" class="btn btn-sm btn-success">Activar</button>
+                            </form>
+                            <?php endif; ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -43,11 +52,8 @@
                 <tr><td colspan="5">No hay productos registrados.</td></tr>
             <?php endif; ?>
         </tbody>
-
-
-
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </table>
 
     <div class="container py-5">

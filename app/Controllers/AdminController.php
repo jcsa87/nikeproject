@@ -114,6 +114,29 @@ public function saveCategory()
     ]);
 }
 
+public function deleteProduct($id_producto)
+{
+    if(!session()->get('logged_in') || session()->get('user_rol') !== 'admin'){
+        return redirect()->to('/')->with('error', 'Acceso denegado.');
+    }
+
+    $productosModel = new \App\Models\ProductosModel();
+    $productosModel->update($id_producto, ['activo' => 0]);
+
+    return redirect()->to('/Admin/manageStock')->with('success', 'Producto desactivado correctamente.');
+}
+public function activateProduct($id_producto)
+{
+    if(!session()->get('logged_in') || session()->get('user_rol') !== 'admin'){
+        return redirect()->to('/')->with('error', 'Acceso denegado.');
+    }
+
+    $productosModel = new \App\Models\ProductosModel();
+    $productosModel->update($id_producto, ['activo' => 1]);
+
+    return redirect()->to('/Admin/manageStock')->with('success', 'Producto activado correctamente.');
+}
+
 public function saveStock()
 {
     if(!session()->get('logged_in') || session()->get('user_rol') !== 'admin'){

@@ -27,6 +27,8 @@ $routes->get('/Admin/manageUsers', 'AdminController::manageUsers');
 //stock
 $routes->get('/Admin/addStock', 'AdminController::addStock');
 $routes->post('/Admin/addStock', 'AdminController::saveStock');
+$routes->post('/Admin/deleteProduct/(:num)', 'AdminController::deleteProduct/$1');
+$routes->post('/Admin/activateProduct/(:num)', 'AdminController::activateProduct/$1');
 //categoría
 $routes->get('/Admin/addCategory', 'AdminController::addCategory');
 $routes->post('/Admin/addCategory', 'AdminController::saveCategory');
