@@ -21,7 +21,9 @@
         </div>
     <?php endif; ?>
 
-    <form action="<?= base_url('/Admin/editStock/' . $producto['id_producto']) ?>" method="post" enctype="multipart/form-data">
+    <form action="<?= base_url('/Admin/actualizar') ?>" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id_producto" value="<?= esc($producto['id_producto']) ?>">
+    <!-- ...resto del formulario... -->
         <div class="mb-3">
 
         <?php if ($producto['activo'] == 1): ?>
@@ -67,7 +69,7 @@
         </div>
         <div class="mb-3">
             <label for="talle" class="form-label">Talle</label>
-            <input type="number" class="form-control" id="talle" name="talle" value="<?= old('talle', $producto['talle']) ?>" required>
+            <input type="number" step="0.1" class="form-control" id="talle" name="talle" value="<?= old('talle', $producto['talle']) ?>" required>
         </div>
         <div class="mb-3">
             <label for="imagen" class="form-label">Imagen (opcional)</label>

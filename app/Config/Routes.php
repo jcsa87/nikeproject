@@ -30,7 +30,9 @@ $routes->post('/Admin/addStock', 'AdminController::saveStock');
 $routes->post('/Admin/deleteProduct/(:num)', 'AdminController::deleteProduct/$1');
 $routes->post('/Admin/activateProduct/(:num)', 'AdminController::activateProduct/$1');
 
-$routes->match(['GET', 'POST'], '/Admin/editStock/(:num)', 'AdminController::editStock/$1');
+$routes->get('/Admin/editStock/(:num)', 'AdminController::editar_producto/$1');
+$routes->post('/Admin/actualizar', 'AdminController::actualizar_producto');
+
 //categoría
 $routes->get('/Admin/addCategory', 'AdminController::addCategory');
 $routes->post('/Admin/addCategory', 'AdminController::saveCategory');

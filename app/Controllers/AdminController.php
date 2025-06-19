@@ -204,87 +204,88 @@ public function saveStock()
         ]);
     }
     
-    public function editStock($id_producto)
-{
-    if (!session()->get('logged_in') || session()->get('user_rol') !== 'admin') {
-        return redirect()->to('/')->with('error', 'Acceso denegado.');
+    public function editar_producto($id=null){
+        $producto = new ProductosModel();
+        $categoria = new CategoriaModel();
+        $data['categorias'] = $categoria->findAll();
+        $data['producto'] = $producto->where('id_producto', $id)->first();
+        $data['titulo'] = 'Editar Producto';
+
+        return view('pages/Admin/editStock', $data);
+    
     }
 
-    $productosModel = new \App\Models\ProductosModel();
-    $categoriaModel = new \App\Models\CategoriaModel();
+    public function actualizar_producto(){
+        $request = \Config\Services::request();
+        $validation = \Config\Services::validation();
 
-    $producto = $productosModel->find($id_producto);
-    $categorias = $categoriaModel->findAll();
-
-    if (!$producto) {
-        return redirect()->to('/Admin/manageStock')->with('error', 'Producto no encontrado.');
-    }
-
-    if ($this->request->getMethod() === 'post') {
-        $rules = [
-            'nombre'      => 'required|max_length[100]',
-            'descripcion' => 'required|max_length[255]',
-            'id_categoria'=> 'required|is_natural_no_zero',
-            'precio'      => 'required|decimal',
-            'cantidad'    => 'required|integer',
-            'sexo'        => 'required',
-            'talle'       => 'required|numeric'
+        $validation->setRules([
+            'nombre' => 'required|max_length[50]',
+            'descripcion' => 'required|max_length[300]',
+            'id_categoria' => 'required|is_not_unique[categoria.id_categoria]',
+            'precio' => 'required|decimal',
+            'cantidad' => 'required|integer',
+            'sexo' => 'required',
+            'talle' => 'required|decimal',
+            'imagen' => 'max_size[imagen,4096]|is_image[imagen]'
+        ],
+        [   //Errors
+            'nombre' => [
+            'required' => 'El nombre del producto es obligatorio.',
+            'max_length' => 'El nombre no puede exceder los 50 caracteres.'
+        ],
+        'descripcion' => [
+            'required' => 'La descripción del producto es obligatoria.',
+            'max_length' => 'La descripción no puede exceder los 300 caracteres.'
+        ],
+        'id_categoria' => [
+            'required' => 'La categoría del producto es obligatoria.',
+            'is_not_unique' => 'La categoría seleccionada no existe.'
+        ],
+        'precio' => [
+            'required' => 'El precio del producto es obligatorio.',
+            'decimal' => 'El precio debe ser un número decimal válido.'
+        ],
+        'cantidad' => [
+            'required' => 'La cantidad del producto es obligatoria.',
+            'integer' => 'La cantidad debe ser un número entero.'
+        ],
+        'sexo' => [
+            'required' => 'El sexo es obligatorio.'
+        ],
+        'talle' => [
+            'required' => 'El talle es obligatorio.',
+            'integer' => 'El talle debe ser un número.'
+        ],
+        'imagen' => [
+            'max_size' => 'La imagen no puede exceder los 4MB.',
+            'is_image' => 'El archivo seleccionado debe ser una imagen válida.'
+        ]
+        ]);
+        
+        if($validation->withRequest($request)->run()){
+            $id = $request->getPost('id_producto');
+            $data = [
+            'nombre' => $request->getPost('nombre'),
+            'id_categoria' => $request->getPost('id_categoria'),
+            'descripcion' => $request->getPost('descripcion'),
+            'precio' => $request->getPost('precio'),
+            'cantidad' => $request->getPost('cantidad'),
+            'sexo' => $request->getPost('sexo'),
+            'talle' => $request->getPost('talle')
         ];
-
-        $img = $this->request->getFile('imagen');
-        if ($img && $img->isValid() && $img->getError() === UPLOAD_ERR_OK) {
-            $rules['imagen'] = 'is_image[imagen]|max_size[imagen,4096]';
+                $producto = new ProductosModel();
+                $producto->update($id, $data);
+                return redirect()->to('/Admin/manageStock')->with('success', 'Producto actualizado correctamente!');
+    }else {           
+            $validationErrors = $validation->getErrors();
+            $productoModel = new ProductosModel();
+            $categoriaModel = new CategoriaModel();
+            $data['errors'] = $validationErrors;
+            $data['producto'] = $productoModel->where('id_producto', $request->getPost('id_producto'))->first();
+            $data['categorias'] = $categoriaModel->findAll();
+            $data['titulo'] = 'Editar Producto';
+            return view('pages/Admin/editStock', $data);
         }
-
-        if (!$this->validate($rules)) {
-            $producto = array_merge($producto, $this->request->getPost());
-            return view('pages/Admin/editStock', [
-                'producto' => $producto,
-                'categorias' => $categorias,
-                'errors' => $this->validator->getErrors()
-            ]);
-        }
-
-        $data = [
-            'nombre'      => $this->request->getPost('nombre'),
-            'descripcion' => $this->request->getPost('descripcion'),
-            'id_categoria'=> (int) $this->request->getPost('id_categoria'),
-            'precio'      => (float) $this->request->getPost('precio'),
-            'cantidad'    => (int) $this->request->getPost('cantidad'),
-            'sexo'        => $this->request->getPost('sexo'),
-            'talle'       => (float) $this->request->getPost('talle'),
-            'activo'      => $producto['activo']
-        ];
-
-        // Si hay imagen nueva, la sube y la guarda
-        if ($img && $img->isValid() && $img->getError() === UPLOAD_ERR_OK) {
-            $imgName = $img->getRandomName();
-            $img->move('assets/img', $imgName);
-            $data['imagen'] = $imgName;
-        }
-
-        log_message('debug', 'Datos a actualizar: ' . json_encode($data));
-
-        $result = $productosModel->update($id_producto, $data);
-
-        log_message('debug', 'Resultado update: ' . json_encode($result));
-
-        if (!$result) {
-            log_message('error', 'Errores del modelo: ' . json_encode($productosModel->errors()));
-            return view('pages/Admin/editStock', [
-                'producto' => $producto,
-                'categorias' => $categorias,
-                'errors' => ['No se pudo actualizar el producto.']
-            ]);
-        }
-
-        return redirect()->to('/Admin/manageStock')->with('success', 'Producto actualizado correctamente.');
     }
-
-    return view('pages/Admin/editStock', [
-        'producto' => $producto,
-        'categorias' => $categorias,
-        'errors' => []
-    ]);
-}
 }
