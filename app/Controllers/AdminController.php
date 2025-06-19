@@ -206,7 +206,7 @@ public function saveStock()
     
     public function editStock($id_producto)
 {
-    if(!session()->get('logged_in') || session()->get('user_rol') !== 'admin'){
+    if (!session()->get('logged_in') || session()->get('user_rol') !== 'admin') {
         return redirect()->to('/')->with('error', 'Acceso denegado.');
     }
 
@@ -214,7 +214,7 @@ public function saveStock()
     $categoriaModel = new \App\Models\CategoriaModel();
 
     $producto = $productosModel->find($id_producto);
-    $categorias = $categoriaModel->where('activo', 1)->findAll();
+    $categorias = $categoriaModel->findAll();
 
     if (!$producto) {
         return redirect()->to('/Admin/manageStock')->with('error', 'Producto no encontrado.');
@@ -222,21 +222,22 @@ public function saveStock()
 
     if ($this->request->getMethod() === 'post') {
         $rules = [
-            'nombre'      => 'required',
+            'nombre'      => 'required|max_length[100]',
+            'descripcion' => 'required|max_length[255]',
             'id_categoria'=> 'required|is_natural_no_zero',
-            'descripcion' => 'required',
             'precio'      => 'required|decimal',
             'cantidad'    => 'required|integer',
             'sexo'        => 'required',
-            'talle'       => 'required'
+            'talle'       => 'required|numeric'
         ];
 
-        // Si se sube una nueva imagen, agregar reglas
-        if ($this->request->getFile('imagen')->isValid() && !$this->request->getFile('imagen')->hasMoved()) {
-            $rules['imagen'] = 'uploaded[imagen]|is_image[imagen]|max_size[imagen,2048]';
+        $img = $this->request->getFile('imagen');
+        if ($img && $img->isValid() && $img->getError() === UPLOAD_ERR_OK) {
+            $rules['imagen'] = 'is_image[imagen]|max_size[imagen,4096]';
         }
 
         if (!$this->validate($rules)) {
+            $producto = array_merge($producto, $this->request->getPost());
             return view('pages/Admin/editStock', [
                 'producto' => $producto,
                 'categorias' => $categorias,
@@ -246,30 +247,44 @@ public function saveStock()
 
         $data = [
             'nombre'      => $this->request->getPost('nombre'),
-            'id_categoria'=> $this->request->getPost('id_categoria'),
             'descripcion' => $this->request->getPost('descripcion'),
-            'precio'      => $this->request->getPost('precio'),
-            'cantidad'    => $this->request->getPost('cantidad'),
+            'id_categoria'=> (int) $this->request->getPost('id_categoria'),
+            'precio'      => (float) $this->request->getPost('precio'),
+            'cantidad'    => (int) $this->request->getPost('cantidad'),
             'sexo'        => $this->request->getPost('sexo'),
-            'talle'       => $this->request->getPost('talle')
+            'talle'       => (float) $this->request->getPost('talle'),
+            'activo'      => $producto['activo']
         ];
 
-        // Manejo de imagen nueva
-        $img = $this->request->getFile('imagen');
-        if ($img && $img->isValid() && !$img->hasMoved()) {
+        // Si hay imagen nueva, la sube y la guarda
+        if ($img && $img->isValid() && $img->getError() === UPLOAD_ERR_OK) {
             $imgName = $img->getRandomName();
             $img->move('assets/img', $imgName);
             $data['imagen'] = $imgName;
         }
 
-        $productosModel->update($id_producto, $data);
+        log_message('debug', 'Datos a actualizar: ' . json_encode($data));
+
+        $result = $productosModel->update($id_producto, $data);
+
+        log_message('debug', 'Resultado update: ' . json_encode($result));
+
+        if (!$result) {
+            log_message('error', 'Errores del modelo: ' . json_encode($productosModel->errors()));
+            return view('pages/Admin/editStock', [
+                'producto' => $producto,
+                'categorias' => $categorias,
+                'errors' => ['No se pudo actualizar el producto.']
+            ]);
+        }
 
         return redirect()->to('/Admin/manageStock')->with('success', 'Producto actualizado correctamente.');
     }
 
     return view('pages/Admin/editStock', [
         'producto' => $producto,
-        'categorias' => $categorias
+        'categorias' => $categorias,
+        'errors' => []
     ]);
 }
 }

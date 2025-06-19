@@ -23,6 +23,13 @@
 
     <form action="<?= base_url('/Admin/editStock/' . $producto['id_producto']) ?>" method="post" enctype="multipart/form-data">
         <div class="mb-3">
+
+        <?php if ($producto['activo'] == 1): ?>
+            <p class="text-success text-center fw-bold">PRODUCTO ACTIVO</p>
+         <?php else: ?>
+            <p class="text-danger text-center fw-bold">PRODUCTO INACTIVO</p>
+        <?php endif; ?>
+
             <label for="nombre" class="form-label">Nombre</label>
             <input type="text" class="form-control" id="nombre" name="nombre" value="<?= old('nombre', $producto['nombre']) ?>" required>
         </div>
@@ -60,7 +67,7 @@
         </div>
         <div class="mb-3">
             <label for="talle" class="form-label">Talle</label>
-            <input type="text" class="form-control" id="talle" name="talle" value="<?= old('talle', $producto['talle']) ?>" required>
+            <input type="number" class="form-control" id="talle" name="talle" value="<?= old('talle', $producto['talle']) ?>" required>
         </div>
         <div class="mb-3">
             <label for="imagen" class="form-label">Imagen (opcional)</label>

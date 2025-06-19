@@ -10,6 +10,13 @@
 <link rel="stylesheet" href="<?= base_url('assets/css/navbarstyle.css') ?>">
 <link rel="stylesheet" href="<?= base_url('assets/css/footerstyle.css') ?>">
 
+<?php if (session()->getFlashdata('success')): ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <?= session()->getFlashdata('success') ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>
+
 
 <div class="container py-5">
     <h1 class="mb-4">Administrar Stock</h1>
@@ -56,6 +63,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </table>
 
+    <a href="<?= base_url('/Admin/addStock') ?>" class="btn btn-primary">Agregar producto</a>
+
     <div class="container py-5">
     <h1 class="mb-4">Categorías disponibles</h1>
 
@@ -82,7 +91,6 @@
         </tbody>
          </table>
 
-    <a href="<?= base_url('/Admin/addStock') ?>" class="btn btn-primary">Agregar producto</a>
     <a href="<?= base_url('/Admin/addCategory') ?>" class="btn btn-primary">Agregar categoría</a>
 </div>
 <?= $this->endSection() ?>
