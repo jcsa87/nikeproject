@@ -1,81 +1,129 @@
-/* Fondo completo con imagen */
+/* Fondo con imagen y capa oscura */
 body {
     margin: 0;
-    padding: 0;
+    padding: 40px 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: url('../img/nike12.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    position: relative;
 }
 
-/* Contenedor del login con efecto glassmorphism */
-.login-container {
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.card-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 420px;
+    margin: 0 20px;
+}
+
+/* Logo dentro del container */
+.logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.logo-wrapper img {
+    max-width: 160px;
+    height: auto;
+    margin-bottom: 5px;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));
+}
+
+/* Formulario */
+.login-card {
     background: rgba(0, 0, 0, 0.55);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 40px 35px;
+    padding: 15px 50px;
     width: 100%;
     max-width: 420px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
     color: #fff;
-    margin-top: 20px; /* Opcional para dar un poco más de separación */
 }
 
-/* Título con estilo moderno */
 .login-form h2 {
+    margin-top: 10px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-weight: 700;
     font-size: 2rem;
-    letter-spacing: 2px;
-    text-shadow: 0 0 10px rgba(0,0,0,0.6);
 }
 
-/* Input groups */
 .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+    position: relative; /* Para posicionar iconos dentro */
 }
 
 .input-group label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    font-size: 1rem;
     color: #fff;
-    text-shadow: 0 0 3px rgba(0,0,0,0.5);
 }
 
-/* Inputs con efecto */
 .input-group input {
     width: 100%;
-    padding: 12px 15px;
+    padding: 12px 10px; /* Padding horizontal igual para ambos lados */
     border-radius: 12px;
     border: none;
     background: rgba(255,255,255,0.9);
     font-size: 1rem;
     color: #333;
-    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    outline: none;
+    box-sizing: border-box; /* Incluye padding en el ancho */
 }
 
-.input-group input::placeholder {
-    color: #999;
-}
-
-/* Efecto foco en inputs */
 .input-group input:focus {
+    outline: none;
     box-shadow: 0 0 8px #007bff;
     border: 1px solid #007bff;
     background: #fff;
 }
 
-/* Botón de login moderno */
+/* Estilos específicos para el input de contraseña */
+.input-group.password-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper input {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    font-size: 1.2rem;
+}
+
 .btn-login {
     width: 100%;
     padding: 15px;
@@ -86,38 +134,25 @@ body {
     font-weight: 700;
     font-size: 1.1rem;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(51, 174, 255, 0.6);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
     margin-top: 15px;
 }
 
 .btn-login:hover {
     background: linear-gradient(90deg, #0050b3, #1a8cff);
-    box-shadow: 0 8px 20px rgba(26, 140, 255, 0.8);
 }
 
-/* Enlaces extra */
 .extra-links {
     text-align: center;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .extra-links a {
-    display: block;
     color: #a8d1ff;
-    margin-bottom: 15px;
-    font-weight: 600;
-    font-size: 0.95rem;
     text-decoration: none;
-    text-shadow: 0 0 3px rgba(0,0,0,0.5);
-    transition: color 0.3s ease;
+    display: block;
+    margin-bottom: 10px;
 }
 
-.extra-links a:hover {
-    color: #fff;
-}
-
-/* Botón de registro */
 .btn-register {
     padding: 12px 30px;
     background-color: #28a745;
@@ -127,25 +162,38 @@ body {
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.6);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.btn-register:hover {
-    background-color: #218838;
-    box-shadow: 0 8px 20px rgba(33, 136, 56, 0.8);
+.alert {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.alert-danger {
+    background: rgba(220, 53, 69, 0.85);
+    color: white;
+}
+
+.alert-success {
+    background: rgba(40, 167, 69, 0.85);
+    color: white;
 }
 
 /* Responsive */
 @media (max-width: 480px) {
-    .login-container {
+    .login-card {
         padding: 25px 20px;
         max-width: 320px;
     }
 
-    .btn-register,
-    .btn-login {
+    .btn-login,
+    .btn-register {
         font-size: 1rem;
         padding: 12px;
+    }
+
+    .logo-wrapper img {
+        max-width: 120px;
     }
 }
