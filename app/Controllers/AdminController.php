@@ -265,6 +265,8 @@ public function saveStock()
         
         if($validation->withRequest($request)->run()){
             $id = $request->getPost('id_producto');
+            $productoModel = new ProductosModel();
+            $productoActual = $productoModel->where('id_producto', $id)->first();
             $data = [
             'nombre' => $request->getPost('nombre'),
             'id_categoria' => $request->getPost('id_categoria'),
@@ -274,9 +276,19 @@ public function saveStock()
             'sexo' => $request->getPost('sexo'),
             'talle' => $request->getPost('talle')
         ];
+
+        $img = $request->getFile('imagen');
+        if ($img && $img->isValid() && !$img->hasMoved()) {
+            $imgName = $img->getRandomName();
+            $img->move('assets/img', $imgName);
+            $data['imagen'] = $imgName;
+        } else {
+            // Mantener la imagen anterior si no se subió una nueva
+            $data['imagen'] = $productoActual['imagen'];
+        }
                 $producto = new ProductosModel();
                 $producto->update($id, $data);
-                return redirect()->to('/Admin/manageStock')->with('success', 'Producto actualizado correctamente!');
+                return redirect()->to('/Admin/manageStock')->with('success', '¡Producto actualizado correctamente!');
     }else {           
             $validationErrors = $validation->getErrors();
             $productoModel = new ProductosModel();
