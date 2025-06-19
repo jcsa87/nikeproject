@@ -34,7 +34,7 @@
                         <td class="<?= $producto['activo'] == 0 ? 'text-danger' : '' ?>"><?= esc($producto['categoria_nombre']) ?></td>
                         <td class="<?= $producto['activo'] == 0 ? 'text-danger' : '' ?>"><?= esc($producto['cantidad']) ?></td>
                     <td>
-                            <a href="#" class="btn btn-sm btn-warning">Editar</a>
+                            <a href="<?= base_url('/Admin/editStock/' . $producto['id_producto']) ?>" class="btn btn-sm btn-warning">Editar</a>
                             <?php if ($producto['activo'] == 1): ?>
                             <form action="<?= base_url('/Admin/deleteProduct/' . $producto['id_producto']) ?>" method="post" style="display:inline;" onsubmit="return confirm('¿Seguro que quieres desactivar este producto?');">
                                 <button type="submit" class="btn btn-sm btn-danger">Desactivar</button>

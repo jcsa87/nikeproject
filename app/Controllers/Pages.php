@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\ProductosModel;
 
 use CodeIgniter\Controller;
 
@@ -8,8 +9,15 @@ class Pages extends Controller
 {
     public function index()
     {
-        return view('Pages/home', [
+        $productosModel = new ProductosModel();
+        $botines = $productosModel
+            ->where('id_categoria', 1)
+            ->where('activo', 1)
+            ->findAll();
+
+        return view('pages/home', [
             'pageTitle'=> 'Inicio - Nike Corrientes',
+            'botines'  => $botines
         ]);
     }
     public function about()

@@ -203,4 +203,73 @@ public function saveStock()
             'categorias' => $categorias
         ]);
     }
+    
+    public function editStock($id_producto)
+{
+    if(!session()->get('logged_in') || session()->get('user_rol') !== 'admin'){
+        return redirect()->to('/')->with('error', 'Acceso denegado.');
+    }
+
+    $productosModel = new \App\Models\ProductosModel();
+    $categoriaModel = new \App\Models\CategoriaModel();
+
+    $producto = $productosModel->find($id_producto);
+    $categorias = $categoriaModel->where('activo', 1)->findAll();
+
+    if (!$producto) {
+        return redirect()->to('/Admin/manageStock')->with('error', 'Producto no encontrado.');
+    }
+
+    if ($this->request->getMethod() === 'post') {
+        $rules = [
+            'nombre'      => 'required',
+            'id_categoria'=> 'required|is_natural_no_zero',
+            'descripcion' => 'required',
+            'precio'      => 'required|decimal',
+            'cantidad'    => 'required|integer',
+            'sexo'        => 'required',
+            'talle'       => 'required'
+        ];
+
+        // Si se sube una nueva imagen, agregar reglas
+        if ($this->request->getFile('imagen')->isValid() && !$this->request->getFile('imagen')->hasMoved()) {
+            $rules['imagen'] = 'uploaded[imagen]|is_image[imagen]|max_size[imagen,2048]';
+        }
+
+        if (!$this->validate($rules)) {
+            return view('pages/Admin/editStock', [
+                'producto' => $producto,
+                'categorias' => $categorias,
+                'errors' => $this->validator->getErrors()
+            ]);
+        }
+
+        $data = [
+            'nombre'      => $this->request->getPost('nombre'),
+            'id_categoria'=> $this->request->getPost('id_categoria'),
+            'descripcion' => $this->request->getPost('descripcion'),
+            'precio'      => $this->request->getPost('precio'),
+            'cantidad'    => $this->request->getPost('cantidad'),
+            'sexo'        => $this->request->getPost('sexo'),
+            'talle'       => $this->request->getPost('talle')
+        ];
+
+        // Manejo de imagen nueva
+        $img = $this->request->getFile('imagen');
+        if ($img && $img->isValid() && !$img->hasMoved()) {
+            $imgName = $img->getRandomName();
+            $img->move('assets/img', $imgName);
+            $data['imagen'] = $imgName;
+        }
+
+        $productosModel->update($id_producto, $data);
+
+        return redirect()->to('/Admin/manageStock')->with('success', 'Producto actualizado correctamente.');
+    }
+
+    return view('pages/Admin/editStock', [
+        'producto' => $producto,
+        'categorias' => $categorias
+    ]);
+}
 }

@@ -51,6 +51,7 @@
             <p>No hay botines disponibles.</p>
         <?php endif; ?>
       </div>
+      
       <!-- viejo carousel -->
       <!-- <div class="carousel-container" id="carousel-nike">
         
