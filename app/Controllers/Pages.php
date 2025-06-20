@@ -59,4 +59,11 @@ class Pages extends Controller
             'pageTitle'=> 'Mantenimiento - Nike Corrientes',
         ]);
     }
+
+    public function catalogo()
+    {
+        return view('producto/catalogo', [
+            'pageTitle'=> 'Catálogo - Nike Corrientes',
+        ]);
+    }
 }

@@ -16,7 +16,7 @@
         </div>
         <div class="col-md-6">
             <h2><?= esc($producto['nombre']) ?></h2>
-
+            
             <?php if ($producto['activo'] == 0 || $producto['cantidad'] == 0 ): ?>
                 <p class="text-danger">PRODUCTO NO DISPONIBLE</p>
             <?php else: ?>

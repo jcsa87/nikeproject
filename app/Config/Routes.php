@@ -43,7 +43,8 @@ $routes->post('/Admin/addCategory', 'AdminController::saveCategory');
 //productos
 $routes->get('/producto/(:num)', 'ProductosController::show/$1');
 
-$routes->get('/', 'ProductosController::getProduct');
+//catalogo
+$routes->get('producto/catalogo', 'ProductosController::catalogo');
 
 
 

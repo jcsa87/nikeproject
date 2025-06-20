@@ -72,4 +72,47 @@ class ProductosController extends Controller
         return view('pages/producto/producto_detalle' , ['producto' => $producto]);
 
     }
+
+    public function catalogo()
+    {
+    $productosModel = new ProductosModel();
+    $categoriaModel = new CategoriaModel();
+
+    // Filtros
+    $categoria = $this->request->getGet('categoria');
+    $minPrecio = $this->request->getGet('min_precio');
+    $maxPrecio = $this->request->getGet('max_precio');
+    $disponible = $this->request->getGet('disponible');
+
+    $productosModel->select('productos.*, categoria.nombre as categoria_nombre')
+        ->join('categoria', 'categoria.id_categoria = productos.id_categoria');
+
+    if ($categoria) {
+        $productosModel->where('productos.id_categoria', $categoria);
+    }
+    if ($minPrecio) {
+        $productosModel->where('productos.precio >=', $minPrecio);
+    }
+    if ($maxPrecio) {
+        $productosModel->where('productos.precio <=', $maxPrecio);
+    }
+    if ($disponible === '1') {
+        $productosModel->where('productos.cantidad >', 0);
+    }
+    $productosModel->where('productos.activo', 1);
+
+    $productos = $productosModel->findAll();
+    $categorias = $categoriaModel->where('activo', 1)->findAll();
+
+    return view('producto/catalogo', [
+        'productos' => $productos,
+        'categorias' => $categorias,
+        'filtros' => [
+            'categoria' => $categoria,
+            'min_precio' => $minPrecio,
+            'max_precio' => $maxPrecio,
+            'disponible' => $disponible,
+        ]
+    ]);
+  }
 }
