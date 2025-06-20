@@ -10,22 +10,23 @@ class Pages extends Controller
     public function index()
     {
         $productosModel = new ProductosModel();
-        $botines = $productosModel
-            ->where('id_categoria', 1)
-            ->where('activo', 1)
-            ->findAll();
+    $botines = $productosModel
+        ->where('id_categoria', 1)
+        ->where('activo', 1)
+        ->findAll();
 
-            $calzados = $productosModel
-            -> select ('productos.*, categoria.nombre as categoria_nombre')
-            -> join ('categoria', 'categoria.id_categoria = productos.id_categoria')
-            -> where ('productos.activo' , '1')
-            -> findAll();
+    $productosModel2 = new ProductosModel();
+    $calzados = $productosModel2
+        ->select('productos.*, categoria.nombre as categoria_nombre')
+        ->join('categoria', 'categoria.id_categoria = productos.id_categoria')
+        ->where('productos.activo', '1')
+        ->findAll();
 
-        return view('pages/home', [
-            'pageTitle'=> 'Inicio - Nike Corrientes',
-            'botines'  => $botines,
-            'calzados' => $calzados,
-        ]);
+    return view('pages/home', [
+        'pageTitle'=> 'Inicio - Nike Corrientes',
+        'botines'  => $botines,
+        'calzados' => $calzados,
+    ]);
     }
     public function about()
     {
@@ -60,10 +61,4 @@ class Pages extends Controller
         ]);
     }
 
-    public function catalogo()
-    {
-        return view('producto/catalogo', [
-            'pageTitle'=> 'Catálogo - Nike Corrientes',
-        ]);
-    }
 }

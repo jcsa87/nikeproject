@@ -69,7 +69,7 @@ class ProductosController extends Controller
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Producto no disponible.');
         }
 
-        return view('pages/producto/producto_detalle' , ['producto' => $producto]);
+        return view('producto/producto_detalle' , ['producto' => $producto]);
 
     }
 
