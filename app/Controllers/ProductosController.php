@@ -35,7 +35,6 @@ class ProductosController extends Controller
         $calzados = $productosModel
             -> select ('productos.*, categoria.nombre as categoria_nombre')
             -> join ('categoria', 'categoria.id_categoria = productos.id_categoria')
-            -> where ('categoria.nombre' , 'Calzados')
             -> where ('productos.activo' , '1')
             -> findAll();
 
@@ -56,7 +55,7 @@ class ProductosController extends Controller
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Producto no encontrado.');
         }
 
-        return view('pages/producto_detalle' , ['producto' => $producto]);
+        return view('pages/producto/producto_detalle' , ['producto' => $producto]);
 
     }
 }

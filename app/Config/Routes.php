@@ -12,6 +12,9 @@ $routes->get('/contact', 'Pages::contact');
 $routes->get('/comercialization', 'Pages::comercialization');
 $routes->get('/terms-uses', 'Pages::terms_uses');
 $routes->get('/maintenance', 'Pages::maintenance');
+$routes->get('/maintenance', 'Pages::maintenance');
+
+
 
 //Rutas para logearse
 $routes->get('/Auth/Login', 'UsuarioController::login');
@@ -37,6 +40,7 @@ $routes->post('/Admin/actualizar', 'AdminController::actualizar_producto');
 $routes->get('/Admin/addCategory', 'AdminController::addCategory');
 $routes->post('/Admin/addCategory', 'AdminController::saveCategory');
 //productos
+
 $routes->get('/producto/(:num)', 'ProductosController::show/$1');
 
 
