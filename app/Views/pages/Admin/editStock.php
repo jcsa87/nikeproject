@@ -68,7 +68,7 @@
             </select>
         </div>
         <div class="mb-3">
-            <label for="talle" class="form-label">Talle</label>
+            <label for="talle" class="form-label">Talle (numérico)</label>
             <input type="number" step="0.1" class="form-control" id="talle" name="talle" value="<?= old('talle', $producto['talle']) ?>" required>
         </div>
         <div class="mb-3">

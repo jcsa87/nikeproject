@@ -255,7 +255,7 @@ public function saveStock()
         ],
         'talle' => [
             'required' => 'El talle es obligatorio.',
-            'integer' => 'El talle debe ser un número.'
+            'float' => 'El talle debe ser un número.'
         ],
         'imagen' => [
             'max_size' => 'La imagen no puede exceder los 4MB.',

@@ -16,10 +16,17 @@
         </div>
         <div class="col-md-6">
             <h2><?= esc($producto['nombre']) ?></h2>
+
+            <?php if ($producto['activo'] == 0 || $producto['cantidad'] == 0 ): ?>
+                <p class="text-danger">PRODUCTO NO DISPONIBLE</p>
+            <?php else: ?>
+                <p class="text-success">PRODUCTO DISPONIBLE</p>
+            <?php endif; ?>
             
             <h4 class="text-success">$<?= number_format($producto['precio'], 0, ',', '.') ?></h4>
             <p><?= esc($producto['descripcion']) ?></p>
-            <p><strong>Stock:</strong> <?= esc($producto['cantidad']) ?></p>
+            <p><strong>Tipo:</strong> <?= esc($producto['categoria_nombre']) ?></p>
+            <p><strong>Sexo:</strong> <?= esc($producto['sexo']) ?></p>
             <p><strong>Talle:</strong> <?= esc($producto['talle']) ?></p>
             <a href="<?= base_url('/') ?>" class="btn btn-secondary mt-3">Volver al inicio</a>
         </div>

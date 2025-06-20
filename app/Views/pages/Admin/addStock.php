@@ -62,8 +62,8 @@
             </select>
         </div>
         <div class="mb-3">
-            <label for="talle" class="form-label">Talle</label>
-            <input type="text" class="form-control" id="talle" name="talle" value="<?= old('talle') ?>" required>
+            <label for="talle" class="form-label">Talle (numérico)</label>
+            <input type="number" class="form-control" id="talle" name="talle" value="<?= old('talle') ?>" required>
         </div>
         <div class="mb-3">
             <label for="imagen" class="form-label">Imagen</label>
