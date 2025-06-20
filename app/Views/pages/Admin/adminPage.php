@@ -24,7 +24,7 @@
     <div class="container">
         <h1 class="mb-4">Gestión de administrador</h1>
         <div class="d-flex gap-3">
-            <a href="<?= base_url('/Admin/manageStock'); ?>" class="btn btn-primary btn-lg">Agregar Stock</a>
+            <a href="<?= base_url('/Admin/manageStock'); ?>" class="btn btn-primary btn-lg">Modificar Stock</a>
             <a href="<?= base_url('/Admin/manageUsers'); ?>" class="btn btn-seconday btn-lg">Administrar Usuarios</a>
         </div>
     </div>
