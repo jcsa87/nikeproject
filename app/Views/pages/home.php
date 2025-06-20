@@ -101,7 +101,7 @@
               </div>
           </div>
         </a>
-<?php endforeach; ?>
+        <?php endforeach; ?>
         <?php else: ?>
           <p>No hay productos recomendados.</p>
         <?php endif; ?>

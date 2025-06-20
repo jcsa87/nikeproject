@@ -39,9 +39,11 @@ $routes->post('/Admin/actualizar', 'AdminController::actualizar_producto');
 //categoría
 $routes->get('/Admin/addCategory', 'AdminController::addCategory');
 $routes->post('/Admin/addCategory', 'AdminController::saveCategory');
-//productos
 
+//productos
 $routes->get('/producto/(:num)', 'ProductosController::show/$1');
+
+$routes->get('/', 'ProductosController::getProduct');
 
 
 

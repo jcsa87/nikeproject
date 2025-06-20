@@ -15,9 +15,16 @@ class Pages extends Controller
             ->where('activo', 1)
             ->findAll();
 
+            $calzados = $productosModel
+            -> select ('productos.*, categoria.nombre as categoria_nombre')
+            -> join ('categoria', 'categoria.id_categoria = productos.id_categoria')
+            -> where ('productos.activo' , '1')
+            -> findAll();
+
         return view('pages/home', [
             'pageTitle'=> 'Inicio - Nike Corrientes',
-            'botines'  => $botines
+            'botines'  => $botines,
+            'calzados' => $calzados,
         ]);
     }
     public function about()

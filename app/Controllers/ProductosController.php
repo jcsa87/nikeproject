@@ -32,7 +32,9 @@ class ProductosController extends Controller
             -> where ('productos.activo' , '1')
             -> findAll();
 
-        $calzados = $productosModel
+        $productosModel2 = new ProductosModel();
+
+        $calzados = $productosModel2
             -> select ('productos.*, categoria.nombre as categoria_nombre')
             -> join ('categoria', 'categoria.id_categoria = productos.id_categoria')
             -> where ('productos.activo' , '1')
