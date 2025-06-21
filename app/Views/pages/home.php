@@ -92,10 +92,10 @@
       <div class="carousel-container" id="carousel-scroll">
         <?php if(!empty($calzados)): ?>
           <?php foreach($calzados as $producto): ?>
-         <a href="<?= base_url('producto/' . $producto['id_producto']) ?>" class="text-decoration-none text-dark">
+        <a href="<?= base_url('producto/' . $producto['id_producto']) ?>" class="text-decoration-none text-dark">
               <div class="card mx-2 producto-card">
-               <img src="<?= base_url('assets/img/' . ($producto['imagen'] ?? 'default.jpg')) ?>" class="card-img-top" alt="<?= esc($producto['nombre']) ?>">
-                 <div class="card-body text-center">
+              <img src="<?= base_url('assets/img/' . ($producto['imagen'] ?? 'default.jpg')) ?>" class="card-img-top" alt="<?= esc($producto['nombre']) ?>">
+                <div class="card-body text-center">
                   <h5 class="card-title"><?= esc($producto['nombre']) ?></h5>
                 <p class="card-text">$<?= number_format($producto['precio'], 0, ',', '.') ?></p>
               </div>

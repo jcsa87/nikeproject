@@ -114,5 +114,5 @@ class ProductosController extends Controller
             'disponible' => $disponible,
         ]
     ]);
-  }
+}
 }

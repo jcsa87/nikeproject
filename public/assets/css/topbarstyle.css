@@ -33,3 +33,54 @@
 .topbar-right span {
   color: #888;
 }
+
+.topbar-right {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Estilos para los íconos de redes sociales en el topbar - SIN BORDE Y MÁS PEQUEÑOS */
+.social-btn-topbar {
+  width: 20px;  /* Reducido de 30px a 20px */
+  height: 20px; /* Reducido de 30px a 20px */
+  border: none; /* Eliminado el borde blanco */
+  border-radius: 0; /* Eliminado el border-radius circular */
+  color: beige;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 0.8rem; /* Reducido de 1rem a 0.8rem */
+}
+
+.social-btn-topbar:hover {
+  border-color: transparent; /* Sin borde en hover */
+  color: #3399ff;
+  transform: scale(1.1); /* Ligeramente más de escala para compensar el tamaño menor */
+  cursor: pointer;
+}
+
+/* RESPONSIVE PARA PANTALLAS PEQUEÑAS */
+@media (max-width: 768px) {
+  .topbar {
+    padding: 4px 10px;
+    font-size: 0.8rem;
+  }
+
+  .topbar-center {
+    gap: 8px;
+  }
+
+  .topbar-right {
+    gap: 8px;
+  }
+
+  .social-btn-topbar {
+    width: 18px;  /* Aún más pequeños en móvil */
+    height: 18px;
+    font-size: 0.7rem;
+  }
+}
