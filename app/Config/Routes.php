@@ -12,7 +12,7 @@ $routes->get('/contact', 'Pages::contact');
 $routes->get('/comercialization', 'Pages::comercialization');
 $routes->get('/terms-uses', 'Pages::terms_uses');
 $routes->get('/maintenance', 'Pages::maintenance');
-$routes->get('/maintenance', 'Pages::maintenance');
+$routes->get('/consulta', 'Pages::consulta');
 
 
 

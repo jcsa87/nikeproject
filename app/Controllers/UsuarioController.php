@@ -24,10 +24,9 @@ class UsuarioController extends Controller
             ]
         ],
         'password' => [
-            'rules' => 'required|min_length[6]',
+            'rules' => 'required',
             'errors' => [
                 'required'    => 'La contraseña es obligatoria.',
-                'min_length'  => 'La contraseña debe tener al menos 6 caracteres.',
             ]
         ]
     ];
@@ -100,6 +99,11 @@ class UsuarioController extends Controller
             'alpha_space' => 'El nombre solo puede contener letras y espacios.',
             'required' => 'El nombre es obligatorio.',
         ],
+        'password' => [
+    'required'    => 'La contraseña es obligatoria.',
+    'min_length'  => 'La contraseña debe tener al menos 8 caracteres.',
+    'max_length'  => 'La contraseña no puede superar los 30 caracteres.',
+],
         'apellido' => [
             'alpha_space' => 'El apellido solo puede contener letras y espacios.',
             'required' => 'El apellido es obligatorio.',

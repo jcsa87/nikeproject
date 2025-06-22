@@ -23,7 +23,7 @@ body {
 
 .navbar {
     position: relative;
-    top: 60px; /* Coloca la navbar justo debajo del topbar */
+    /* top: 60px; Coloca la navbar justo debajo del topbar */
     width: 100%;
     background-color: #fff;
     z-index: 999;

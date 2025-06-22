@@ -79,14 +79,20 @@ class ProductosController extends Controller
     $categoriaModel = new CategoriaModel();
 
     // Filtros
+    $nombre = $this->request->getGet('nombre');
     $categoria = $this->request->getGet('categoria');
     $minPrecio = $this->request->getGet('min_precio');
     $maxPrecio = $this->request->getGet('max_precio');
     $disponible = $this->request->getGet('disponible');
+    $sexo = $this->request->getGet('sexo');
+    $talle = $this->request->getGet('talle');
 
     $productosModel->select('productos.*, categoria.nombre as categoria_nombre')
         ->join('categoria', 'categoria.id_categoria = productos.id_categoria');
-
+    
+    if($nombre){
+        $productosModel->like('productos.nombre',$nombre);
+    }
     if ($categoria) {
         $productosModel->where('productos.id_categoria', $categoria);
     }
@@ -99,6 +105,14 @@ class ProductosController extends Controller
     if ($disponible === '1') {
         $productosModel->where('productos.cantidad >', 0);
     }
+    if($sexo) {
+        $productosModel->where('productos.sexo', $sexo);
+    }
+
+    if($talle) {
+        $productosModel->where('productos.talle',$talle);
+    }
+
     $productosModel->where('productos.activo', 1);
 
     $productos = $productosModel->findAll();
@@ -112,6 +126,9 @@ class ProductosController extends Controller
             'min_precio' => $minPrecio,
             'max_precio' => $maxPrecio,
             'disponible' => $disponible,
+            'sexo' => $sexo,
+            'talle' => $talle,
+            'nombre' => $nombre,
         ]
     ]);
 }

@@ -1,9 +1,9 @@
-<link rel="stylesheet" href="assets/css/navbarstyle.css">
+<link rel="stylesheet" href="<?= base_url('assets/css/navbarstyle.css') ?>">
 
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
         <a class="navbar-brand" href="<?= base_url('/'); ?>">
-            <img src="assets/img/logitosinplb.jpg" alt="Logo">
+            <img src="<?= base_url('assets/img/logitosinplb.jpg') ?>" alt="Logo">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -17,7 +17,11 @@
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('producto/catalogo'); ?>">Catálogo</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/about'); ?>">Nosotros</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/comercialization'); ?>">Comercialización</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?= base_url('/contact'); ?>">Contacto</a></li>
+                <?php if(!session()->get('logged_in')): ?>
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url('/contact'); ?>">Contacto</a></li>
+                    <?php else: ?>
+                        <li class="nav-item"><a class="nav-link" href="<?= base_url('/consulta'); ?>">Consulta</a></li>
+                        <?php endif; ?>
             </ul>
 
             <!-- Acciones de usuario y carrito -->

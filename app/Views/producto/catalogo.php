@@ -9,10 +9,12 @@
 
 <div class="container py-5">
     <h1 class="mb-4">Catálogo de Productos</h1>
-
+    
+    <label class="form-label">Buscar</label>
+    <input type="text" name="nombre" class="form-control" placeholder="Nombre del producto" value="<?= esc($filtros['nombre'] ?? '') ?>">
     <!-- Filtros -->
     <form method="get" class="row g-3 mb-4">
-        <div class="col-md-3">
+        <div class="col-md-2">
             <label class="form-label">Categoría</label>
             <select name="categoria" class="form-select">
                 <option value="">Todas</option>
@@ -31,16 +33,27 @@
             <label class="form-label">Precio máximo</label>
             <input type="number" name="max_precio" class="form-control" value="<?= esc($filtros['max_precio']) ?>">
         </div>
-        <div class="col-md-2 d-flex align-items-end">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="disponible" value="1" <?= ($filtros['disponible'] == '1') ? 'checked' : '' ?>>
-                <label class="form-check-label">Solo disponibles</label>
-            </div>
-        </div>
-        <div class="col-md-3 d-flex align-items-end">
-            <button type="submit" class="btn btn-primary w-100">Filtrar</button>
-        </div>
-    </form>
+        <div class="col-md-1">
+        <label class="form-label">Sexo</label>
+        <select name="sexo" class="form-select">
+            <option value="">Todos</option>
+            <option value="Hombre" <?= ($filtros['sexo'] == 'Hombre') ? 'selected' : '' ?>>Hombre</option>
+            <option value="Mujer" <?= ($filtros['sexo'] == 'Mujer') ? 'selected' : '' ?>>Mujer</option>
+            <option value="Unisex" <?= ($filtros['sexo'] == 'Unisex') ? 'selected' : '' ?>>Unisex</option>
+        </select>
+    </div>
+    <div class="col-md-1">
+        <label class="form-label">Talle</label>
+        <input type="number" step="0.1" name="talle" class="form-control" value="<?= esc($filtros['talle']) ?>">
+    </div>
+    <div class="col-md-2 d-flex align-items-end">
+        <button type="submit" class="btn btn-primary w-100">Filtrar</button>
+    </div>
+    <div class="col-md-2 d-flex align-items-end">
+        <a href="<?= base_url('producto/catalogo') ?>" class="btn btn-secondary w-100">Limpiar filtros</a>
+    </div>
+    
+</form>
 
     <!-- Listado de productos -->
     <div class="row">

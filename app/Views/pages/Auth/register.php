@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Crear Cuenta</title>
     <link rel="stylesheet" href="<?= base_url('assets/css/register.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/navbarstyle.css') ?>" />
     <link rel="icon" href="<?= base_url('assets/img/favicon2.ico'); ?>" type="image/x-icon">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
 </head>
 <body>
+
+    
 
     <div class="background-overlay"></div>
 
