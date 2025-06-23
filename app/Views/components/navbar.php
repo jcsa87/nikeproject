@@ -19,35 +19,43 @@
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/comercialization'); ?>">Comercialización</a></li>
                 <?php if(!session()->get('logged_in')): ?>
                     <li class="nav-item"><a class="nav-link" href="<?= base_url('/contact'); ?>">Contacto</a></li>
-                    <?php else: ?>
-                        <li class="nav-item"><a class="nav-link" href="<?= base_url('/consulta'); ?>">Consulta</a></li>
-                        <?php endif; ?>
+                <?php else: ?>
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url('/consulta'); ?>">Consulta</a></li>
+                <?php endif; ?>
             </ul>
 
             <!-- Acciones de usuario y carrito -->
-            <div class="user-actions d-flex align-items-center gap-2">
-                <?php if (session()->get('logged_in')): ?>
-                    <span class="navbar-text me-3 text-light">
-                        Bienvenido, <?= esc(session()->get('user_name')) ?>
-                        <?php if(session()->get('user_rol') === 'admin'): ?>
-                            <li class="badge bg-warning text-dark ms-2">
-                                <a class="nav-link text-dark" href="<?= base_url('/Admin/adminPage'); ?>">ADMIN</a>
+            <div class="user-actions d-flex align-items-center gap-3">
+                <!-- Menú de usuario -->
+                <div class="user-icon <?php echo session()->get('logged_in') ? 'logged-in' : ''; ?>">
+                    <?php if (!session()->get('logged_in')): ?>
+                        <a class="login-link text-light" href="<?= base_url('/Auth/Login'); ?>">
+                            <i class="bi bi-person"></i>
+                        </a>
+                    <?php else: ?>
+                        <a class="dropdown-toggle text-light" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown" style="z-index: 1001;">
+                            <li><h6 class="dropdown-header">Hola, <?= esc(session()->get('user_name')) ?>!</h6></li>
+                            <li><a class="dropdown-item" href="<?= base_url('/perfil'); ?>">👤 Ver perfil</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('/consulta'); ?>">📩 Consulta</a></li>
+                            <?php if(session()->get('user_rol') === 'admin'): ?>
+                                <li><a class="dropdown-item" href="<?= base_url('/Admin/adminPage'); ?>">🛠 Panel Admin</a></li>
+                            <?php endif; ?>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <form action="<?= base_url('/logout') ?>" method="post" class="px-3">
+                                    <button type="submit" class="btn btn-danger btn-sm w-100">Cerrar sesión</button>
+                                </form>
                             </li>
-                        <?php endif; ?>
-                    </span>
-                    <form action="<?= base_url('/logout') ?>" method="post" style="display:inline;">
-                        <button type="submit" class="btn btn-danger btn-sm ms-2">Cerrar sesión</button>
-                    </form>
-                <?php else: ?>
-                    <!-- Ícono de usuario -->
-                    <a class="user-icon" href="<?= base_url('/Auth/Login'); ?>" title="Iniciar sesión">
-                        <i class="bi bi-person"></i>
-                    </a>
-                <?php endif; ?>
+                        </ul>
+                    <?php endif; ?>
+                </div>
 
                 <!-- Ícono de carrito -->
                 <a class="cart-icon"
-                    href="<?= session()->get('logged_in') ? base_url('/cart') : base_url('/Auth/Login'); ?>"
+                    href="<?= session()->get('logged_in') ? base_url('/carrito') : base_url('/Auth/Login'); ?>"
                     title="Carrito de compras">
                     <i class="bi bi-cart3"></i>
                 </a>

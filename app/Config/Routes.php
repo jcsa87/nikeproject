@@ -46,6 +46,12 @@ $routes->get('/producto/(:num)', 'ProductosController::show/$1');
 //catalogo
 $routes->get('producto/catalogo', 'ProductosController::catalogo');
 
+//Rutas del carrito
+$routes->get('carrito/checkout', 'CarritoController::checkout');
+$routes->get('carrito', 'CarritoController::index');
+$routes->get('carrito/agregar/(:num)', 'CarritoController::agregar/$1');
+$routes->get('carrito/eliminar/(:num)', 'CarritoController::eliminar/$1');
+$routes->get('carrito/vaciar', 'CarritoController::vaciar');
 
 
 
