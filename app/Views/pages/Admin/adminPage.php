@@ -16,7 +16,7 @@
     <!-- navbar -->
      <nav class="navbar navbar-light bg-light mb-4">
         <div class="container-fluid">
-            <a class="navbar-brand" href="<?= base_url('/') ?>">Volver al inicio</a>
+            <a class="navbar-brand" href="<?= base_url('/home_usuario') ?>">Ir al home usuario</a>
             <span class="navbar-text fw-bold">Panel de Administración</span>
         </div>
     </nav>
@@ -25,7 +25,8 @@
         <h1 class="mb-4">Gestión de administrador</h1>
         <div class="d-flex gap-3">
             <a href="<?= base_url('/Admin/manageStock'); ?>" class="btn btn-primary btn-lg">Modificar Stock</a>
-            <a href="<?= base_url('/Admin/manageUsers'); ?>" class="btn btn-seconday btn-lg">Administrar Usuarios</a>
+            <a href="<?= base_url('/Admin/manageUsers'); ?>" class="btn btn-info btn-lg">Administrar Usuarios</a>
+            <a href="<?= base_url('/Admin/manageUsers'); ?>" class="btn btn-warning btn-lg">Consultar ventas/a>
         </div>
     </div>
 

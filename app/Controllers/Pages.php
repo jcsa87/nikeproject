@@ -43,9 +43,36 @@ class Pages extends Controller
          
          } else {
             return view('pages/home/home', $data);
-        }
+        }}
 
+        public function homeUsuario()
+    {
+    $categoriaModel = new CategoriaModel();
+    $categorias = $categoriaModel->where('activo', 1)->findAll();
+
+    $productosModel = new ProductosModel();
+    $botines = $productosModel
+        ->where('id_categoria', 1)
+        ->where('activo', 1)
+        ->findAll();
+
+    $productosModel2 = new ProductosModel();
+    $calzados = $productosModel2
+        ->select('productos.*, categoria.nombre as categoria_nombre')
+        ->join('categoria', 'categoria.id_categoria = productos.id_categoria')
+        ->where('productos.activo', '1')
+        ->findAll();
+
+    $data = [
+        'categorias' => $categorias,
+        'calzados' => $calzados,
+        'botines' => $botines,
+    ];
+    
+
+    return view('pages/home/home', $data);
     }
+
     public function about()
     {
         return view('Pages/about', [
