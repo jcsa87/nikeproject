@@ -23,11 +23,12 @@ $routes->get( '/Auth/Register', 'UsuarioController::register');
 $routes->post('/Auth/doRegister', 'UsuarioController::doRegister');
 $routes->post('/logout', 'UsuarioController::logout');
 
-// apartado admin
+//                                         apartado admin
 $routes->get('/Admin/adminPage', 'AdminController::adminPage');
 $routes->get('/Admin/manageStock', 'AdminController::manageStock');
 $routes->get('/Admin/manageUsers', 'AdminController::manageUsers');
 $routes->get('/home_usuario', 'Pages::homeUsuario');
+
 //stock
 $routes->get('/Admin/addStock', 'AdminController::addStock');
 $routes->post('/Admin/addStock', 'AdminController::saveStock');
@@ -37,12 +38,17 @@ $routes->post('/Admin/activateProduct/(:num)', 'AdminController::activateProduct
 $routes->get('/Admin/editStock/(:num)', 'AdminController::editar_producto/$1');
 $routes->post('/Admin/actualizar', 'AdminController::actualizar_producto');
 
+$routes->get('/Admin/consultarVentas', 'AdminController::consultarVentas');
+
 //categoría
 $routes->get('/Admin/addCategory', 'AdminController::addCategory');
 $routes->post('/Admin/addCategory', 'AdminController::saveCategory');
 
 //productos
 $routes->get('/producto/(:num)', 'ProductosController::show/$1');
+
+//factura
+$routes->get('factura/ver/(:num)', 'FacturaController::ver/$1');
 
 //catalogo
 $routes->get('producto/catalogo', 'ProductosController::catalogo');

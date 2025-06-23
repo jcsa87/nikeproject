@@ -26,7 +26,7 @@
         <div class="d-flex gap-3">
             <a href="<?= base_url('/Admin/manageStock'); ?>" class="btn btn-primary btn-lg">Modificar Stock</a>
             <a href="<?= base_url('/Admin/manageUsers'); ?>" class="btn btn-info btn-lg">Administrar Usuarios</a>
-            <a href="<?= base_url('/Admin/manageUsers'); ?>" class="btn btn-warning btn-lg">Consultar ventas/a>
+            <a href="<?= base_url('/Admin/consultarVentas'); ?>" class="btn btn-warning btn-lg">Consultar ventas</a>
         </div>
     </div>
 

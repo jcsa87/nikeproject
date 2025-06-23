@@ -10,6 +10,7 @@
     <h2>¡Gracias por tu compra!</h2>
     <p>Tu factura ha sido generada correctamente.</p>
     <p>Número de factura: <strong><?= esc($factura_id) ?></strong></p>
+    <a href="<?= base_url('factura/ver/' . $factura_id) ?>" class="btn btn-info mt-3">Ver/Imprimir factura</a>
     <a href="<?= base_url('producto/catalogo') ?>" class="btn btn-primary mt-3">Volver al catálogo</a>
 </div>
 

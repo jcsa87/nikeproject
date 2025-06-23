@@ -1,6 +1,8 @@
 <?php
 namespace App\Controllers;
 
+use App\Models\DetalleFacturaModel;
+use App\Models\FacturaModel;
 use CodeIgniter\Controller;
 use App\Models\UsuariosModel;
 use App\Models\ProductosModel;
@@ -300,4 +302,24 @@ public function saveStock()
             return view('pages/Admin/editStock', $data);
         }
     }
+
+    public function consultarVentas()
+    {
+        $facturaModel = new FacturaModel();
+        $detalleModel = new DetalleFacturaModel();
+        $usuarioModel = new UsuariosModel();
+
+        // Trae todas las facturas con usuario
+        $facturas = $facturaModel->orderBy('fecha_hora', 'DESC')->findAll();
+
+        // Opcional: Traer detalles de cada factura
+        foreach ($facturas as &$factura) {
+         $factura['usuario'] = $usuarioModel->find($factura['id_usuario']);
+         $factura['detalles'] = $detalleModel->where('id_factura', $factura['id_factura'])->findAll();
+        }
+
+        return view('pages/Admin/consultarVentas', [
+            'facturas' => $facturas
+            ]);
+        }
 }
