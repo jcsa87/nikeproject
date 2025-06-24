@@ -2,12 +2,13 @@
 
 <?= $this->section('content') ?>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<?= $this->section('styles') ?>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="<?= base_url('assets/css/topbarstyle.css') ?>">
 <link rel="stylesheet" href="<?= base_url('assets/css/navbarstyle.css') ?>">
 <link rel="stylesheet" href="<?= base_url('assets/css/footerstyle.css') ?>">
 <link rel="stylesheet" href="<?= base_url('assets/css/catalogo.css') ?>">
+<?= $this->endSection() ?>
 
 <!-- Hero Section -->
 <div class="catalog-hero">
@@ -206,7 +207,7 @@
     <?php endif; ?>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');

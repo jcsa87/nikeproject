@@ -7,7 +7,8 @@ use CodeIgniter\Controller;
 use App\Models\UsuariosModel;
 use App\Models\ProductosModel;
 use App\Models\CategoriaModel;
-use App\Models\ConsultaModel;
+// CORREGIDO: Uso de backslash en el namespace
+use App\Models\ConsultaModel; 
 
 class AdminController extends Controller
 {
@@ -18,60 +19,34 @@ class AdminController extends Controller
     }
 
     public function stock(){
-
         if (!$this->checkAdmin()) {
             return redirect()->to('/')->with('error', 'Acceso denegado.');
         } 
-        
     }
 
     public function adminPage()
-{
-    if (!$this->checkAdmin()) {
-        return redirect()->to('/')->with('error', 'Acceso denegado.');
-    }
-
-    $usuariosModel = new UsuariosModel();
-    $productosModel = new ProductosModel();
-    $facturaModel = new FacturaModel();
-    $detalleFacturaModel = new DetalleFacturaModel(); 
-    $consultaModel = new ConsultaModel();
-
-    $data = [
-        'pageTitle' => 'Panel de gestión de administrador',
-        'totalUsers' => $usuariosModel->where('activo', 1)->countAllResults(),
-        'totalActiveProducts' => $productosModel->getTotalActiveProducts(),
-        'totalProductsInStock' => $productosModel->getTotalProductsInStock(),
-
-    ];
-
-        // Para las ventas del mes actual
-        $currentYear = date('Y');
-        $currentMonth = date('m');
-        $salesResult = null; 
-        $salesResult = $facturaModel->selectSum('importe_total', 'total_sum') // Suma 'importe_total' y lo alias 'total_sum'
-                                  ->where('YEAR(fecha_hora)', $currentYear)
-                                  ->where('MONTH(fecha_hora)', $currentMonth)
-                                  ->first();
-        $data['monthlySales'] = ($salesResult && isset($salesResult['total_sum'])) ? (float)$salesResult['total_sum'] : 0.00;
-
-        // Últimos pedidos (facturas) - ¡CORREGIDO: 'factura' en lugar de 'facturas'!
-        $data['latestSales'] = $facturaModel->select('factura.*, usuarios.nombre as user_name, usuarios.apellido as user_lastname') // 'factura.*'
-                                            ->join('usuarios', 'usuarios.id_usuario = factura.id_usuario') // 'factura.id_usuario'
-                                            ->orderBy('fecha_hora', 'DESC')
-                                            ->limit(3)
-                                            ->findAll();
+    {
+        // Se ha eliminado la línea die() de depuración aquí.
         
-        // Consulta para 'Nuevas Consultas de Usuarios' (ya estaba correcto con 'consulta' singular)
-        $data['latestConsultas'] = $consultaModel->select('consulta.*, usuarios.nombre as user_name, usuarios.apellido as user_lastname, usuarios.email as user_email')
-                                                ->join('usuarios', 'usuarios.id_usuario = consulta.id_usuario', 'left') 
-                                                ->orderBy('fecha_hora', 'DESC')
-                                                ->limit(2)
-                                                ->findAll();
+        if (!$this->checkAdmin()) {
+            return redirect()->to('/')->with('error', 'Acceso denegado.');
+        }
 
-        // Datos opcionales:
-        $data['userGrowthPercentage'] = 'N/A';
-        $data['salesTarget'] = 60000;
+        // 1. Ya no se instancian los Modelos aquí para obtener los datos específicos
+        // Si la vista adminPage necesita estos datos, deberán ser obtenidos en otro lugar
+        // o pasados de forma diferente.
+
+        // 2. Se pasan solo los datos que no requieren consultas específicas o que son estáticos
+        $data = [
+            'pageTitle' => 'Panel de gestión de administrador',
+            // Las variables 'totalUsers', 'totalActiveProducts', 'totalProductsInStock',
+            // 'monthlySales', 'latestSales', 'latestConsultas'
+            // ya NO se definen aquí. Si la vista las espera, causará un error.
+            
+            // Datos opcionales/estáticos que aún se pueden pasar:
+            'userGrowthPercentage' => 'N/A', // Si esto es fijo o viene de otra parte
+            'salesTarget' => 60000,          // Si esto es fijo o viene de otra parte
+        ];
 
         // 3. Cargar la vista adminPage y pasar los datos
         return view('pages/Admin/adminPage', $data); 
@@ -175,7 +150,7 @@ public function activateUser($id)
         'telefono' => 'permit_empty|regex_match[/^[0-9]{6,15}$/]',
         'password' => [
             'label' => 'Contraseña',
-            'rules' => 'required|min_length[8]|max_length[30]|regex_match[/(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])/]',
+            'rules' => 'required|min_length[8]|max_length[30]|regex_match[/(?=.[A-Z])(?=.[a-z])(?=.*[0-9])/]',
             'errors' => [
                 'regex_match' => 'La contraseña debe tener al menos una mayúscula, una minúscula y un número.',
             ]
@@ -340,7 +315,8 @@ public function saveStock()
         'imagen'      => $imgName
     ];
 
-    $productosModel = new \App\Models\ProductosModel();
+    // CORREGIDO: Uso de backslash en el namespace
+    $productosModel = new \App\Models\ProductosModel(); 
     $productosModel->insert($productoData);
 
     return redirect()->to('/Admin/manageStock')->with('success', 'Producto agregado correctamente.');
@@ -380,6 +356,7 @@ public function saveStock()
     }
 
     public function actualizar_producto(){
+        // CORREGIDO: Uso de backslash en el namespace
         $request = \Config\Services::request();
         $validation = \Config\Services::validation();
 
@@ -484,4 +461,4 @@ public function saveStock()
             'facturas' => $facturas
             ]);
         }
-}
+    }

@@ -8,6 +8,26 @@
 
 <?= $this->section('content') ?>
 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="<?= base_url('/') ?>">
+            <img src="<?= base_url('assets/img/logitosinplb.jpg') ?>" alt="Logo" style="height:40px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSimple"
+            aria-controls="navbarSimple" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSimple">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="<?= base_url('/') ?>">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url('/about') ?>">Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url('/comercialization') ?>">Comercialización</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url('/contact') ?>">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <div class="container my-5">
     <h2 class="text-center mb-4">Comercialización</h2>
     <p class="text-center">En Nike, nos comprometemos a ofrecer productos de alta calidad y a garantizar una experiencia de compra excepcional para nuestros clientes. A continuación, te presentamos información clave sobre nuestra política de comercialización:</p>
