@@ -7,32 +7,81 @@ use CodeIgniter\Controller;
 use App\Models\UsuariosModel;
 use App\Models\ProductosModel;
 use App\Models\CategoriaModel;
+use App\Models\ConsultaModel;
 
 class AdminController extends Controller
 {
+    //Método privado para verificar acceso admin
+    private function checkAdmin()
+    {
+        return session()->get('logged_in') && strtolower(session()->get('user_rol')) === 'admin';
+    }
+
     public function stock(){
 
-        if(!session () ->get('logged_in') || session()->get('user_rol' !== 'admin')){
-            return redirect() -> to('/')->with('error', 'Acceso denegado.');
+        if (!$this->checkAdmin()) {
+            return redirect()->to('/')->with('error', 'Acceso denegado.');
         } 
         
     }
 
     public function adminPage()
     {
-        if(!session () ->get('logged_in') || session()->get('user_rol' !== 'admin')){
-            return redirect() -> to('/')->with('error', 'Acceso denegado.');
-        } else {
-        return view('pages/Admin/adminPage', [
-            'pageTitle' => 'Panel de gestión de administrador'
-        ]);
+        if (!$this->checkAdmin()) {
+            return redirect()->to('/')->with('error', 'Acceso denegado.');
         }
+
+        // 1. Instanciar los Modelos que necesitas para el dashboard
+        $usuariosModel = new UsuariosModel();
+        $productosModel = new ProductosModel();
+        $facturaModel = new FacturaModel();
+        $detalleFacturaModel = new DetalleFacturaModel(); 
+        $consultaModel = new ConsultaModel();
+
+        // 2. Obtener los datos del Dashboard usando los Modelos
+        $data = [
+            'pageTitle' => 'Panel de gestión de administrador',
+            'totalUsers' => $usuariosModel->where('activo', 1)->countAllResults(),
+            'totalActiveProducts' => $productosModel->getTotalActiveProducts(),
+            'totalProductsInStock' => $productosModel->getTotalProductsInStock(),
+        ];
+
+        // Para las ventas del mes actual
+        $currentYear = date('Y');
+        $currentMonth = date('m');
+        $salesResult = null; 
+        $salesResult = $facturaModel->selectSum('importe_total', 'total_sum') // Suma 'importe_total' y lo alias 'total_sum'
+                                  ->where('YEAR(fecha_hora)', $currentYear)
+                                  ->where('MONTH(fecha_hora)', $currentMonth)
+                                  ->first();
+        $data['monthlySales'] = ($salesResult && isset($salesResult['total_sum'])) ? (float)$salesResult['total_sum'] : 0.00;
+
+        // Últimos pedidos (facturas) - ¡CORREGIDO: 'factura' en lugar de 'facturas'!
+        $data['latestSales'] = $facturaModel->select('factura.*, usuarios.nombre as user_name, usuarios.apellido as user_lastname') // 'factura.*'
+                                            ->join('usuarios', 'usuarios.id_usuario = factura.id_usuario') // 'factura.id_usuario'
+                                            ->orderBy('fecha_hora', 'DESC')
+                                            ->limit(3)
+                                            ->findAll();
+        
+        // Consulta para 'Nuevas Consultas de Usuarios' (ya estaba correcto con 'consulta' singular)
+        $data['latestConsultas'] = $consultaModel->select('consulta.*, usuarios.nombre as user_name, usuarios.apellido as user_lastname, usuarios.email as user_email')
+                                                ->join('usuarios', 'usuarios.id_usuario = consulta.id_usuario', 'left') 
+                                                ->orderBy('fecha_hora', 'DESC')
+                                                ->limit(2)
+                                                ->findAll();
+
+        // Datos opcionales:
+        $data['userGrowthPercentage'] = 'N/A';
+        $data['salesTarget'] = 60000;
+
+        // 3. Cargar la vista adminPage y pasar los datos
+        return view('pages/Admin/adminPage', $data); 
     }
 
     //función para administrar usuarios
     public function manageUsers()
     {
-         if(!session()->get('logged_in') || session()->get('user_rol') !== 'admin'){
+        if (!$this->checkAdmin()) {
             return redirect()->to('/')->with('error', 'Acceso denegado.');
         }
 
@@ -191,9 +240,9 @@ public function activateUser($id)
 
 public function saveCategory()
 {
-    if(!session()->get('logged_in') || session()->get('user_rol') !== 'admin'){
-        return redirect()->to('/')->with('error', 'Acceso denegado.');
-    }
+    if (!$this->checkAdmin()) {
+            return redirect()->to('/')->with('error', 'Acceso denegado.');
+        }
 
     $rules = [
         'nombre' => 'required',
@@ -218,9 +267,9 @@ public function saveCategory()
     //stock
     public function addStock()
 {
-    if(!session()->get('logged_in') || session()->get('user_rol') !== 'admin'){
+    if (!$this->checkAdmin()) {
         return redirect()->to('/')->with('error', 'Acceso denegado.');
-    }
+        }
 
     $categoriaModel = new \App\Models\CategoriaModel();
     $categorias = $categoriaModel->where('activo', 1)->findAll();
@@ -232,9 +281,9 @@ public function saveCategory()
 
 public function deleteProduct($id_producto)
 {
-    if(!session()->get('logged_in') || session()->get('user_rol') !== 'admin'){
-        return redirect()->to('/')->with('error', 'Acceso denegado.');
-    }
+    if (!$this->checkAdmin()) {
+            return redirect()->to('/')->with('error', 'Acceso denegado.');
+        }
 
     $productosModel = new \App\Models\ProductosModel();
     $productosModel->update($id_producto, ['activo' => 0]);
@@ -243,9 +292,9 @@ public function deleteProduct($id_producto)
 }
 public function activateProduct($id_producto)
 {
-    if(!session()->get('logged_in') || session()->get('user_rol') !== 'admin'){
+    if (!$this->checkAdmin()) {
         return redirect()->to('/')->with('error', 'Acceso denegado.');
-    }
+        }
 
     $productosModel = new \App\Models\ProductosModel();
     $productosModel->update($id_producto, ['activo' => 1]);
@@ -255,9 +304,9 @@ public function activateProduct($id_producto)
 
 public function saveStock()
 {
-    if(!session()->get('logged_in') || session()->get('user_rol') !== 'admin'){
+    if (!$this->checkAdmin()) {
         return redirect()->to('/')->with('error', 'Acceso denegado.');
-    }
+        }
 
     $validation = \Config\Services::validation();
     $rules = [
@@ -299,7 +348,7 @@ public function saveStock()
 }
     public function manageStock()
     {
-        if(!session()->get('logged_in') || session()->get('user_rol') !== 'admin'){
+        if (!$this->checkAdmin()) {
             return redirect()->to('/')->with('error', 'Acceso denegado.');
         }
 
@@ -428,8 +477,8 @@ public function saveStock()
 
         // Opcional: Traer detalles de cada factura
         foreach ($facturas as &$factura) {
-         $factura['usuario'] = $usuarioModel->find($factura['id_usuario']);
-         $factura['detalles'] = $detalleModel->where('id_factura', $factura['id_factura'])->findAll();
+        $factura['usuario'] = $usuarioModel->find($factura['id_usuario']);
+        $factura['detalles'] = $detalleModel->where('id_factura', $factura['id_factura'])->findAll();
         }
 
         return view('pages/Admin/consultarVentas', [

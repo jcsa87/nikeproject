@@ -46,7 +46,7 @@ class UsuarioController extends Controller
             'user_id'    => $user['id_usuario'],
             'user_name'  => $user['nombre'],
             'user_email' => $user['email'],
-            'user_rol'   => $user['rol'],
+            'user_rol'   => strtolower($user['rol']),
             'logged_in'  => true
         ]);
 
@@ -133,7 +133,7 @@ class UsuarioController extends Controller
         'telefono'      => $this->request->getPost('telefono'),
         'email'         => $this->request->getPost('email'),
         'password_hash' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
-        'rol'           => 'usuario',
+        'rol' => strtolower($this->request->getPost('rol')),
         'activo'        => 1
     ];
 

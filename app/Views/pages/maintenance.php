@@ -1,4 +1,3 @@
-<!-- filepath: c:\xampp\htdocs\nikeproyect\app\Views\pages\maintenance.php -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,7 +13,17 @@
         <h1>¡Volveremos pronto!</h1>
         <p>Estamos realizando tareas de mantenimiento para mejorar tu experiencia. Por favor, vuelve más tarde.</p>
         <img src="<?= base_url('assets/img/maintenance/nike-2-logo-svg-vector.svg'); ?>" alt="Mantenimiento" class="maintenance-image">
-        <a href="<?= base_url('/'); ?>" class="btn-home">Volver al Inicio</a>
+        
+        <?php
+        // Determina la URL de redirección basada en el rol del usuario
+        $redirectUrl = base_url('/'); // URL por defecto para usuarios no admin o no logueados
+
+        if (session()->get('logged_in') && strtolower(session()->get('user_rol')) === 'admin') {
+            $redirectUrl = base_url('/Admin/adminPage'); // Redirige a adminPage si es admin
+        }
+        ?>
+        
+        <a href="<?= esc($redirectUrl); ?>" class="btn-home">Volver al Inicio</a>
     </div>
 </body>
 </html>

@@ -1,0 +1,431 @@
+/* Variables para consistencia con carrito */
+:root {
+    --nike-blue: #1e3a8a;
+    --nike-blue-light: #3b82f6;
+    --nike-blue-dark: #1e40af;
+    --nike-black: #111;
+    --nike-dark-gray: #1e1e1e;
+    --nike-light-gray: #f7f7f7;
+    --nike-white: #ffffff;
+    --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    --gradient-secondary: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    --shadow-light: 0 4px 20px rgba(30, 58, 138, 0.15);
+    --shadow-heavy: 0 10px 40px rgba(0, 0, 0, 0.3);
+    --shadow-blue: 0 8px 25px rgba(30, 58, 138, 0.3);
+    --shadow-card: 0 8px 32px rgba(30, 58, 138, 0.12);
+}
+
+/* Reset para sobrescribir Bootstrap */
+body {
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%) !important;
+    color: #ffffff !important;
+    min-height: 100vh !important;
+    background-attachment: fixed !important;
+}
+
+/* Header del catálogo */
+.catalog-hero {
+    background: var(--gradient-primary);
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.catalog-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.catalog-title {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.catalog-title h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin: 0;
+}
+
+.catalog-subtitle {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+/* Container principal */
+.catalog-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Sección de filtros */
+.filters-section {
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(30, 58, 138, 0.2);
+    box-shadow: var(--shadow-heavy);
+}
+
+.filters-title {
+    color: var(--nike-blue-light);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Campos de formulario personalizados */
+.form-label {
+    color: var(--nike-white) !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.form-control, .form-select {
+    background: rgba(30, 30, 30, 0.9) !important;
+    border: 2px solid rgba(30, 58, 138, 0.3) !important;
+    border-radius: 10px !important;
+    color: var(--nike-white) !important;
+    padding: 0.75rem 1rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.form-control:focus, .form-select:focus {
+    background: rgba(30, 30, 30, 1) !important;
+    border-color: var(--nike-blue-light) !important;
+    box-shadow: 0 0 0 0.2rem rgba(30, 58, 138, 0.25) !important;
+    color: var(--nike-white) !important;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.form-select option {
+    background: var(--nike-dark-gray) !important;
+    color: var(--nike-white) !important;
+}
+
+/* Botones personalizados */
+.btn-primary {
+    background: var(--gradient-primary) !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: var(--shadow-blue) !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 30px rgba(30, 58, 138, 0.4) !important;
+}
+
+.btn-secondary {
+    background: transparent !important;
+    border: 2px solid var(--nike-blue-light) !important;
+    border-radius: 50px !important;
+    color: var(--nike-blue-light) !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-secondary:hover {
+    background: var(--nike-blue-light) !important;
+    border-color: var(--nike-blue-light) !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-light) !important;
+}
+
+/* Tarjetas de productos */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.product-card {
+    background: rgba(30, 30, 30, 0.8) !important;
+    border: 1px solid rgba(30, 58, 138, 0.2) !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: var(--shadow-card) !important;
+    height: 100% !important;
+}
+
+.product-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 0 20px 40px rgba(30, 58, 138, 0.2) !important;
+    border-color: var(--nike-blue-light) !important;
+}
+
+.product-image {
+    width: 100% !important;
+    height: 250px !important;
+    object-fit: cover !important;
+    transition: transform 0.3s ease !important;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05) !important;
+}
+
+.product-body {
+    padding: 1.5rem !important;
+    text-align: center !important;
+}
+
+.product-title {
+    color: var(--nike-white) !important;
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.product-category {
+    color: var(--nike-blue-light) !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.product-price {
+    color: var(--nike-white) !important;
+    font-size: 1.4rem !important;
+    font-weight: 900 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.stock-available {
+    color: #10b981 !important;
+    font-weight: 600 !important;
+}
+
+.stock-unavailable {
+    color: #ef4444 !important;
+    font-weight: 600 !important;
+}
+
+.btn-add-cart {
+    background: var(--gradient-primary) !important;
+    border: none !important;
+    border-radius: 50px !important;
+    color: white !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    margin-top: 1rem !important;
+    box-shadow: var(--shadow-blue) !important;
+}
+
+.btn-add-cart:hover {
+    transform: translateY(-2px) scale(1.05) !important;
+    box-shadow: 0 10px 30px rgba(30, 58, 138, 0.4) !important;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+/* Estado sin productos */
+.no-products {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(30, 58, 138, 0.2);
+    box-shadow: var(--shadow-heavy);
+}
+
+.no-products-icon {
+    font-size: 4rem;
+    color: var(--nike-blue-light);
+    margin-bottom: 1.5rem;
+    opacity: 0.7;
+}
+
+.no-products h3 {
+    color: var(--nike-white);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.no-products p {
+    color: #cccccc;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* Búsqueda en tiempo real */
+.search-container {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--nike-blue-light);
+    z-index: 10;
+}
+
+.search-input {
+    padding-left: 3rem !important;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.product-card {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.product-card:nth-child(even) {
+    animation-delay: 0.1s;
+}
+
+.product-card:nth-child(3n) {
+    animation-delay: 0.2s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .catalog-hero {
+        padding: 2rem 0;
+    }
+    
+    .catalog-title h1 {
+        font-size: 2rem;
+    }
+    
+    .filters-section {
+        padding: 1.5rem;
+        border-radius: 15px;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .product-image {
+        height: 200px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .catalog-container {
+        padding: 0 0.5rem;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .filters-section {
+        padding: 1rem;
+    }
+}
+/* Estilos adicionales para el botón de búsqueda integrado */
+.search-container {
+    position: relative;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--nike-blue-light);
+    z-index: 10;
+}
+
+.search-input {
+    padding-left: 3rem !important;
+    padding-right: 4rem !important; /* Espacio para el botón */
+    flex: 1;
+}
+
+.search-button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--gradient-primary) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    color: white !important;
+    padding: 8px 12px !important;
+    font-size: 0.9rem !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    z-index: 10;
+    height: 36px;
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(30, 58, 138, 0.3) !important;
+}
+
+.search-button:hover {
+    background: var(--nike-blue-dark) !important;
+    transform: translateY(-50%) scale(1.05) !important;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.4) !important;
+}
+
+.search-button:active {
+    transform: translateY(-50%) scale(0.98) !important;
+}
+
+/* Asegurar que el contenedor tenga la posición correcta */
+.search-container .form-control {
+    margin-bottom: 0 !important;
+}

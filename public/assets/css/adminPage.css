@@ -1,0 +1,61 @@
+/* Estilos específicos para el Panel de Administración */
+
+.main-container {
+    padding: 20px;
+    background-color: #f0f2f5; /* Un fondo ligeramente gris para el contenido principal */
+    min-height: calc(100vh - 150px); /* Asegura que ocupe al menos la altura de la ventana menos navbar/footer */
+}
+
+.list-group-item {
+    background-color: #f8f9fa;
+    border: 1px solid rgba(0,0,0,.125); /* Añade un borde ligero para distinguirlos */
+    margin-bottom: 5px; /* Espacio entre los items de la lista */
+    border-radius: .25rem; /* Bordes ligeramente redondeados */
+}
+
+.list-group-item:hover {
+    background-color: #e9ecef; /* Un color más claro al pasar el ratón */
+}
+
+.list-group-item.active {
+    background-color: #3399ff; /* El azul distintivo que tenías */
+    color: white;
+    border-color: #3399ff;
+}
+
+/* Estilos para las tarjetas de resumen */
+.admin-card {
+    background-color: #ffffff;
+    border-radius: .5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.admin-card h4 {
+    margin-bottom: 15px;
+    color: #495057;
+}
+
+.admin-card .display-4 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    color: #007bff; /* Un color azul para los números clave */
+}
+
+.admin-card.users .display-4 { color: #28a745; } /* Verde para usuarios */
+.admin-card.products .display-4 { color: #ffc107; } /* Amarillo para productos */
+.admin-card.sales .display-4 { color: #dc3545; } /* Rojo para ventas */
+
+/* Estilos para tablas de datos (ej. usuarios recientes, pedidos recientes) */
+.table-admin th {
+    background-color: #e9ecef;
+    color: #495057;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table-admin td {
+    vertical-align: middle;
+}

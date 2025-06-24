@@ -89,7 +89,7 @@
                 <tr><td colspan="5">No hay categorías registradas.</td></tr>
             <?php endif; ?>
         </tbody>
-         </table>
+        </table>
 
     <a href="<?= base_url('/Admin/addCategory') ?>" class="btn btn-primary">Agregar categoría</a>
 </div>
