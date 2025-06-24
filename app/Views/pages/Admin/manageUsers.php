@@ -33,19 +33,31 @@
                         <td><?= esc($usuario['rol']) ?></td>
                         <td><?= $usuario['activo'] ? 'Sí' : 'No' ?></td>
                         <td>
-                            <a href="#" class="btn btn-sm btn-warning">Editar</a>
-                            <a href="#" class="btn btn-sm btn-danger">Eliminar</a>
-                        </td>
+    <a href="<?= base_url('/Admin/editUser/' . $usuario['id_usuario']) ?>" class="btn btn-sm btn-warning">Editar</a>
+    <?php if ($usuario['rol'] !== 'admin'): ?>
+        <?php if ($usuario['activo']): ?>
+            <form action="<?= base_url('/Admin/deactivateUser/' . $usuario['id_usuario']) ?>" method="post" style="display:inline;">
+                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Seguro que deseas desactivar este usuario?')">Desactivar</button>
+            </form>
+        <?php else: ?>
+            <form action="<?= base_url('/Admin/activateUser/' . $usuario['id_usuario']) ?>" method="post" style="display:inline;">
+                <button type="submit" class="btn btn-sm btn-success" onclick="return confirm('¿Seguro que deseas activar este usuario?')">Activar</button>
+            </form>
+        <?php endif; ?>
+    <?php else: ?>
+        <span class="badge bg-secondary">Admin activo</span>
+    <?php endif; ?>
+</td>
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>
                 <tr><td colspan="6">No hay usuarios registrados.</td></tr>
             <?php endif; ?>
             
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
             
         </tbody>
     </table>
-    <a href="#" class="btn btn-primary">Agregar nuevo usuario</a>
+    <a href="<?= base_url('/Admin/addUser') ?>" class="btn btn-primary">Agregar nuevo usuario</a>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <?= $this->endSection() ?>

@@ -141,4 +141,18 @@ class UsuarioController extends Controller
     return redirect()->to('/Auth/Login')->with('success', 'Usuario registrado correctamente');
     }
 
+    public function perfil()
+{
+    if (!session()->get('logged_in')) {
+        return redirect()->to('/Auth/Login');
+    }
+
+    $model = new \App\Models\UsuariosModel();
+    $usuario = $model->find(session()->get('user_id'));
+
+    return view('pages/perfil', [
+        'usuario' => $usuario
+    ]);
+}
+
 }

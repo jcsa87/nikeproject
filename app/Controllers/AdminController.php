@@ -45,6 +45,120 @@ class AdminController extends Controller
         ]);
     }
 
+    public function editUser($id)
+{
+    $usuariosModel = new UsuariosModel();
+    $usuario = $usuariosModel->find($id);
+
+    if (!$usuario) {
+        return redirect()->to('/Admin/manageUsers')->with('error', 'Usuario no encontrado.');
+    }
+
+    return view('pages/Admin/editUser', [
+        'usuario' => $usuario
+    ]);
+}
+
+public function updateUser($id)
+{
+    $usuariosModel = new UsuariosModel();
+    $usuario = $usuariosModel->find($id);
+
+    if (!$usuario) {
+        return redirect()->to('/Admin/manageUsers')->with('error', 'Usuario no encontrado.');
+    }
+
+    $rules = [
+        'nombre'   => 'required|alpha_space|min_length[2]',
+        'apellido' => 'required|alpha_space|min_length[2]',
+        'email'    => 'required|valid_email',
+        'rol'      => 'required|in_list[admin,usuario]',
+    ];
+
+    if (!$this->validate($rules)) {
+        return view('pages/Admin/editUser', [
+            'usuario' => $usuario,
+            'errors'  => $this->validator->getErrors()
+        ]);
+    }
+
+    $data = [
+        'nombre'   => $this->request->getPost('nombre'),
+        'apellido' => $this->request->getPost('apellido'),
+        'email'    => $this->request->getPost('email'),
+        'rol'      => $this->request->getPost('rol'),
+        'telefono' => $this->request->getPost('telefono'),
+        'direccion'=> $this->request->getPost('direccion'),
+    ];
+
+    // Si se ingresó una nueva contraseña, actualizarla
+    $password = $this->request->getPost('password');
+    if ($password) {
+        $data['password_hash'] = password_hash($password, PASSWORD_DEFAULT);
+    }
+
+    $usuariosModel->update($id, $data);
+
+    return redirect()->to('/Admin/manageUsers')->with('success', 'Usuario actualizado correctamente.');
+}
+
+public function deactivateUser($id)
+{
+    $usuariosModel = new UsuariosModel();
+    $usuariosModel->update($id, ['activo' => 0]);
+    return redirect()->to('/Admin/manageUsers')->with('success', 'Usuario desactivado.');
+}
+
+public function activateUser($id)
+{
+    $usuariosModel = new UsuariosModel();
+    $usuariosModel->update($id, ['activo' => 1]);
+    return redirect()->to('/Admin/manageUsers')->with('success', 'Usuario activado.');
+}
+
+    public function addUser()
+{
+    if ($this->request->getMethod() === 'post') {
+        $rules = [
+        'nombre' => 'required|alpha_space|min_length[2]',
+        'apellido' => 'required|alpha_space|min_length[2]',
+        'email' => 'required|valid_email|is_unique[usuarios.email]',
+        'email_confirm' => 'required|matches[email]',
+        'telefono' => 'permit_empty|regex_match[/^[0-9]{6,15}$/]',
+        'password' => [
+            'label' => 'Contraseña',
+            'rules' => 'required|min_length[8]|max_length[30]|regex_match[/(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])/]',
+            'errors' => [
+                'regex_match' => 'La contraseña debe tener al menos una mayúscula, una minúscula y un número.',
+            ]
+        ],
+        'password_confirm' => 'required|matches[password]',
+        ];
+
+        if (!$this->validate($rules)) {
+            return view('pages/Admin/addUser', [
+                'errors' => $this->validator->getErrors()
+            ]);
+        }
+
+        $userModel = new UsuariosModel();
+        $userModel ->insert([
+            'nombre' => $this->request->getPost('nombre'),
+            'apellido' => $this->request->getPost('apellido'),
+            'direccion' => $this->request->getPost('direccion'),
+            'email' => $this->request->getPost('email'),
+            'password_hash'  => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+            'telefono'      => $this->request->getPost('telefono'),
+            'rol'      => 'usuario',
+            'activo'   => 1,
+        ]);
+    
+     return redirect()->to('/Admin/manageUsers')->with('success', 'Usuario agregado correctamente.');
+    } 
+    
+    return view('pages/Admin/addUser');
+}
+
 
 //categoría
     public function addCategory()

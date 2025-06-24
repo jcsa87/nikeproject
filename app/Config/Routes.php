@@ -14,6 +14,8 @@ $routes->get('/terms-uses', 'Pages::terms_uses');
 $routes->get('/maintenance', 'Pages::maintenance');
 $routes->get('/consulta', 'Pages::consulta');
 
+$routes->get('/perfil', 'UsuarioController::perfil');
+
 
 
 //Rutas para logearse
@@ -26,7 +28,7 @@ $routes->post('/logout', 'UsuarioController::logout');
 //                                         apartado admin
 $routes->get('/Admin/adminPage', 'AdminController::adminPage');
 $routes->get('/Admin/manageStock', 'AdminController::manageStock');
-$routes->get('/Admin/manageUsers', 'AdminController::manageUsers');
+
 $routes->get('/home_usuario', 'Pages::homeUsuario');
 
 //stock
@@ -43,6 +45,15 @@ $routes->get('/Admin/consultarVentas', 'AdminController::consultarVentas');
 //categoría
 $routes->get('/Admin/addCategory', 'AdminController::addCategory');
 $routes->post('/Admin/addCategory', 'AdminController::saveCategory');
+
+//user
+$routes->get('/Admin/manageUsers', 'AdminController::manageUsers');
+$routes->get('/Admin/addUser', 'AdminController::addUser');
+$routes->post('/Admin/addUser', 'AdminController::addUser');
+$routes->get('/Admin/editUser/(:num)', 'AdminController::editUser/$1');
+$routes->post('/Admin/editUser/(:num)', 'AdminController::updateUser/$1');
+$routes->post('/Admin/deactivateUser/(:num)', 'AdminController::deactivateUser/$1');
+$routes->post('/Admin/activateUser/(:num)', 'AdminController::activateUser/$1');
 
 //productos
 $routes->get('/producto/(:num)', 'ProductosController::show/$1');
