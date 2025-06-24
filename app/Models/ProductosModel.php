@@ -15,7 +15,6 @@ class ProductosModel extends Model
     // Cómo se va a comportar la eliminación de registros.
     // Si 'true', los registros no se eliminan físicamente, solo se marcan con un campo 'deleted_at'.
     protected $useSoftDeletes = false; 
-
     // Campos que están permitidos ser insertados/actualizados a través del modelo
     protected $allowedFields = ['id_categoria', 'nombre', 'descripcion', 'precio', 'cantidad', 'sexo', 'talle', 'activo', 'imagen'];
     

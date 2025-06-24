@@ -26,25 +26,24 @@ class AdminController extends Controller
     }
 
     public function adminPage()
-    {
-        if (!$this->checkAdmin()) {
-            return redirect()->to('/')->with('error', 'Acceso denegado.');
-        }
+{
+    if (!$this->checkAdmin()) {
+        return redirect()->to('/')->with('error', 'Acceso denegado.');
+    }
 
-        // 1. Instanciar los Modelos que necesitas para el dashboard
-        $usuariosModel = new UsuariosModel();
-        $productosModel = new ProductosModel();
-        $facturaModel = new FacturaModel();
-        $detalleFacturaModel = new DetalleFacturaModel(); 
-        $consultaModel = new ConsultaModel();
+    $usuariosModel = new UsuariosModel();
+    $productosModel = new ProductosModel();
+    $facturaModel = new FacturaModel();
+    $detalleFacturaModel = new DetalleFacturaModel(); 
+    $consultaModel = new ConsultaModel();
 
-        // 2. Obtener los datos del Dashboard usando los Modelos
-        $data = [
-            'pageTitle' => 'Panel de gestión de administrador',
-            'totalUsers' => $usuariosModel->where('activo', 1)->countAllResults(),
-            'totalActiveProducts' => $productosModel->getTotalActiveProducts(),
-            'totalProductsInStock' => $productosModel->getTotalProductsInStock(),
-        ];
+    $data = [
+        'pageTitle' => 'Panel de gestión de administrador',
+        'totalUsers' => $usuariosModel->where('activo', 1)->countAllResults(),
+        'totalActiveProducts' => $productosModel->getTotalActiveProducts(),
+        'totalProductsInStock' => $productosModel->getTotalProductsInStock(),
+
+    ];
 
         // Para las ventas del mes actual
         $currentYear = date('Y');

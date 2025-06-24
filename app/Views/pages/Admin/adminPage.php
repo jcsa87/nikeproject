@@ -21,6 +21,7 @@ Panel de Administración - Nike Store
                 <a href="<?= base_url('/maintenance'); ?>" class="list-group-item list-group-item-action">Consultas</a> <!-- Asegúrate que esta ruta exista en tu AdminController -->
             </div>
         </div>
+
         <div class="col-md-9">
             <div class="row mb-4">
                 <div class="col-md-4">
@@ -73,7 +74,7 @@ Panel de Administración - Nike Store
                                         <tr>
                                             <td><?= esc($sale['id_factura']); ?></td>
                                             <td><?= esc($sale['user_name'] . ' ' . $sale['user_lastname']); ?></td>
-                                            <td>$<?= esc(number_format($sale['importe_total'], 2)); ?></td> 
+                                            <td>$<?= esc(number_format($sale['importe_total'], 2)); ?></td>
                                             <td><span class="badge bg-<?= ($sale['estado'] == 'completado') ? 'success' : (($sale['estado'] == 'pendiente') ? 'warning text-dark' : 'info'); ?>"><?= esc(ucfirst($sale['estado'])); ?></span></td>
                                             <td><?= esc(date('Y-m-d H:i', strtotime($sale['fecha_hora']))); ?></td>
                                         </tr>
@@ -88,7 +89,7 @@ Panel de Administración - Nike Store
                         <a href="<?= base_url('/Admin/consultarVentas') ?>" class="btn btn-outline-secondary btn-sm mt-3">Ver todos los pedidos</a>
                     </div>
                 </div>
-                
+
                 <div class="col-md-12">
                     <div class="admin-card">
                         <h3 class="mb-3">Nuevas Consultas de Usuarios</h3>
@@ -112,7 +113,8 @@ Panel de Administración - Nike Store
                                                     <?= esc($consulta['user_name'] . ' ' . $consulta['user_lastname']); ?>
                                                 <?php else: ?>
                                                     Desconocido (ID: <?= esc($consulta['id_usuario']); ?>)
-                                                <?php endif; // <<< --- CORRECCIÓN AQUÍ (faltaba este endif;) ?>
+                                                <?php endif; // <<< --- CORRECCIÓN AQUÍ (faltaba este endif;) 
+                                                ?>
                                             </td>
                                             <td><?= esc($consulta['asunto']); ?></td>
                                             <td><?= esc(date('Y-m-d H:i', strtotime($consulta['fecha_hora']))); ?></td>
@@ -130,7 +132,7 @@ Panel de Administración - Nike Store
                     </div>
                 </div>
             </div>
-            
+
             <p class="mt-4">Bienvenido al panel de administración. Aquí puedes gestionar las operaciones principales de la tienda.</p>
         </div>
     </div>
