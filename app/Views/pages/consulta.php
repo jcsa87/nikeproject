@@ -1,4 +1,3 @@
-
 <?= $this->extend('templates/main') ?>
 
 <?= $this->section('styles') ?>

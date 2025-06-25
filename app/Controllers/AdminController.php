@@ -32,16 +32,11 @@ class AdminController extends Controller
             return redirect()->to('/')->with('error', 'Acceso denegado.');
         }
 
-        // 1. Ya no se instancian los Modelos aquí para obtener los datos específicos
-        // Si la vista adminPage necesita estos datos, deberán ser obtenidos en otro lugar
-        // o pasados de forma diferente.
+        
 
         // 2. Se pasan solo los datos que no requieren consultas específicas o que son estáticos
         $data = [
             'pageTitle' => 'Panel de gestión de administrador',
-            // Las variables 'totalUsers', 'totalActiveProducts', 'totalProductsInStock',
-            // 'monthlySales', 'latestSales', 'latestConsultas'
-            // ya NO se definen aquí. Si la vista las espera, causará un error.
             
             // Datos opcionales/estáticos que aún se pueden pasar:
             'userGrowthPercentage' => 'N/A', // Si esto es fijo o viene de otra parte
@@ -54,22 +49,26 @@ class AdminController extends Controller
 
     //función para administrar usuarios
     public function manageUsers()
-    {
-        if (!$this->checkAdmin()) {
-            return redirect()->to('/')->with('error', 'Acceso denegado.');
-        }
-
-        $usuariosModel = new UsuariosModel();
-        $usuarios = $usuariosModel->findAll();
-
-        return view('pages/Admin/manageUsers', [
-            'pageTitle' => 'Panel de gestión de usuarios',
-            'usuarios'  => $usuarios
-        ]);
+{
+    if (!$this->checkAdmin()) {
+        return redirect()->to('/')->with('error', 'Acceso denegado.');
     }
+
+    $usuariosModel = new UsuariosModel();
+    $usuarios = $usuariosModel->findAll();
+
+    return view('pages/Admin/manageUsers', [
+        'pageTitle' => 'Panel de gestión de usuarios',
+        'usuarios'  => $usuarios
+    ]);
+}
 
     public function editUser($id)
 {
+    if (!$this->checkAdmin()) {
+        return redirect()->to('/')->with('error', 'Acceso denegado.');
+    }
+
     $usuariosModel = new UsuariosModel();
     $usuario = $usuariosModel->find($id);
 
@@ -84,6 +83,10 @@ class AdminController extends Controller
 
 public function updateUser($id)
 {
+    if (!$this->checkAdmin()) {
+        return redirect()->to('/')->with('error', 'Acceso denegado.');
+    }
+
     $usuariosModel = new UsuariosModel();
     $usuario = $usuariosModel->find($id);
 
@@ -127,6 +130,9 @@ public function updateUser($id)
 
 public function deactivateUser($id)
 {
+    if (!$this->checkAdmin()) {
+        return redirect()->to('/')->with('error', 'Acceso denegado.');
+    }
     $usuariosModel = new UsuariosModel();
     $usuariosModel->update($id, ['activo' => 0]);
     return redirect()->to('/Admin/manageUsers')->with('success', 'Usuario desactivado.');
@@ -134,6 +140,9 @@ public function deactivateUser($id)
 
 public function activateUser($id)
 {
+    if (!$this->checkAdmin()) {
+        return redirect()->to('/')->with('error', 'Acceso denegado.');
+    }
     $usuariosModel = new UsuariosModel();
     $usuariosModel->update($id, ['activo' => 1]);
     return redirect()->to('/Admin/manageUsers')->with('success', 'Usuario activado.');
@@ -141,21 +150,25 @@ public function activateUser($id)
 
     public function addUser()
 {
+    if (!$this->checkAdmin()) {
+        return redirect()->to('/')->with('error', 'Acceso denegado.');
+    }
+
     if ($this->request->getMethod() === 'post') {
         $rules = [
-        'nombre' => 'required|alpha_space|min_length[2]',
-        'apellido' => 'required|alpha_space|min_length[2]',
-        'email' => 'required|valid_email|is_unique[usuarios.email]',
-        'email_confirm' => 'required|matches[email]',
-        'telefono' => 'permit_empty|regex_match[/^[0-9]{6,15}$/]',
-        'password' => [
-            'label' => 'Contraseña',
-            'rules' => 'required|min_length[8]|max_length[30]|regex_match[/(?=.[A-Z])(?=.[a-z])(?=.*[0-9])/]',
-            'errors' => [
-                'regex_match' => 'La contraseña debe tener al menos una mayúscula, una minúscula y un número.',
-            ]
-        ],
-        'password_confirm' => 'required|matches[password]',
+            'nombre' => 'required|alpha_space|min_length[2]',
+            'apellido' => 'required|alpha_space|min_length[2]',
+            'email' => 'required|valid_email|is_unique[usuarios.email]',
+            'email_confirm' => 'required|matches[email]',
+            'telefono' => 'permit_empty|regex_match[/^[0-9]{6,15}$/]',
+            'password' => [
+                'label' => 'Contraseña',
+                'rules' => 'required|min_length[8]|max_length[30]|regex_match[/(?=.[A-Z])(?=.[a-z])(?=.*[0-9])/]',
+                'errors' => [
+                    'regex_match' => 'La contraseña debe tener al menos una mayúscula, una minúscula y un número.',
+                ]
+            ],
+            'password_confirm' => 'required|matches[password]',
         ];
 
         if (!$this->validate($rules)) {
@@ -165,7 +178,7 @@ public function activateUser($id)
         }
 
         $userModel = new UsuariosModel();
-        $userModel ->insert([
+        $userModel->insert([
             'nombre' => $this->request->getPost('nombre'),
             'apellido' => $this->request->getPost('apellido'),
             'direccion' => $this->request->getPost('direccion'),
@@ -175,10 +188,10 @@ public function activateUser($id)
             'rol'      => 'usuario',
             'activo'   => 1,
         ]);
-    
-     return redirect()->to('/Admin/manageUsers')->with('success', 'Usuario agregado correctamente.');
-    } 
-    
+
+        return redirect()->to('/Admin/manageUsers')->with('success', 'Usuario agregado correctamente.');
+    }
+
     return view('pages/Admin/addUser');
 }
 
@@ -186,6 +199,10 @@ public function activateUser($id)
 //categoría
     public function addCategory()
 {
+    if (!$this->checkAdmin()) {
+        return redirect()->to('/')->with('error', 'Acceso denegado.');
+    }
+
     if ($this->request->getMethod() === 'post') {
         $rules = [
             'nombre' => 'required',
@@ -215,8 +232,8 @@ public function activateUser($id)
 public function saveCategory()
 {
     if (!$this->checkAdmin()) {
-            return redirect()->to('/')->with('error', 'Acceso denegado.');
-        }
+        return redirect()->to('/')->with('error', 'Acceso denegado.');
+    }
 
     $rules = [
         'nombre' => 'required',
@@ -236,6 +253,7 @@ public function saveCategory()
 
     return redirect()->to('/Admin/manageStock')->with('success', 'Categoría agregada correctamente.');
 }
+
 
 
     //stock
@@ -355,23 +373,27 @@ public function saveStock()
     
     }
 
-    public function actualizar_producto(){
-        // CORREGIDO: Uso de backslash en el namespace
-        $request = \Config\Services::request();
-        $validation = \Config\Services::validation();
+    public function actualizar_producto()
+{
+    if (!$this->checkAdmin()) {
+        return redirect()->to('/')->with('error', 'Acceso denegado.');
+    }
 
-        $validation->setRules([
-            'nombre' => 'required|max_length[50]',
-            'descripcion' => 'required|max_length[300]',
-            'id_categoria' => 'required|is_not_unique[categoria.id_categoria]',
-            'precio' => 'required|decimal',
-            'cantidad' => 'required|integer',
-            'sexo' => 'required',
-            'talle' => 'required|decimal',
-            'imagen' => 'max_size[imagen,4096]|is_image[imagen]'
-        ],
-        [   //Errors
-            'nombre' => [
+    $request = \Config\Services::request();
+    $validation = \Config\Services::validation();
+
+    $validation->setRules([
+        'nombre' => 'required|max_length[50]',
+        'descripcion' => 'required|max_length[300]',
+        'id_categoria' => 'required|is_not_unique[categoria.id_categoria]',
+        'precio' => 'required|decimal',
+        'cantidad' => 'required|integer',
+        'sexo' => 'required',
+        'talle' => 'required|decimal',
+        'imagen' => 'max_size[imagen,4096]|is_image[imagen]'
+    ],
+    [   //Errors
+        'nombre' => [
             'required' => 'El nombre del producto es obligatorio.',
             'max_length' => 'El nombre no puede exceder los 50 caracteres.'
         ],
@@ -402,13 +424,13 @@ public function saveStock()
             'max_size' => 'La imagen no puede exceder los 4MB.',
             'is_image' => 'El archivo seleccionado debe ser una imagen válida.'
         ]
-        ]);
-        
-        if($validation->withRequest($request)->run()){
-            $id = $request->getPost('id_producto');
-            $productoModel = new ProductosModel();
-            $productoActual = $productoModel->where('id_producto', $id)->first();
-            $data = [
+    ]);
+
+    if($validation->withRequest($request)->run()){
+        $id = $request->getPost('id_producto');
+        $productoModel = new ProductosModel();
+        $productoActual = $productoModel->where('id_producto', $id)->first();
+        $data = [
             'nombre' => $request->getPost('nombre'),
             'id_categoria' => $request->getPost('id_categoria'),
             'descripcion' => $request->getPost('descripcion'),
@@ -427,38 +449,41 @@ public function saveStock()
             // Mantener la imagen anterior si no se subió una nueva
             $data['imagen'] = $productoActual['imagen'];
         }
-                $producto = new ProductosModel();
-                $producto->update($id, $data);
-                return redirect()->to('/Admin/manageStock')->with('success', '¡Producto actualizado correctamente!');
-    }else {           
-            $validationErrors = $validation->getErrors();
-            $productoModel = new ProductosModel();
-            $categoriaModel = new CategoriaModel();
-            $data['errors'] = $validationErrors;
-            $data['producto'] = $productoModel->where('id_producto', $request->getPost('id_producto'))->first();
-            $data['categorias'] = $categoriaModel->findAll();
-            $data['titulo'] = 'Editar Producto';
-            return view('pages/Admin/editStock', $data);
-        }
+        $producto = new ProductosModel();
+        $producto->update($id, $data);
+        return redirect()->to('/Admin/manageStock')->with('success', '¡Producto actualizado correctamente!');
+    } else {
+        $validationErrors = $validation->getErrors();
+        $productoModel = new ProductosModel();
+        $categoriaModel = new CategoriaModel();
+        $data['errors'] = $validationErrors;
+        $data['producto'] = $productoModel->where('id_producto', $request->getPost('id_producto'))->first();
+        $data['categorias'] = $categoriaModel->findAll();
+        $data['titulo'] = 'Editar Producto';
+        return view('pages/Admin/editStock', $data);
     }
+}
 
     public function consultarVentas()
-    {
-        $facturaModel = new FacturaModel();
-        $detalleModel = new DetalleFacturaModel();
-        $usuarioModel = new UsuariosModel();
+{
+    if (!$this->checkAdmin()) {
+        return redirect()->to('/')->with('error', 'Acceso denegado.');
+    }
 
-        // Trae todas las facturas con usuario
-        $facturas = $facturaModel->orderBy('fecha_hora', 'DESC')->findAll();
+    $facturaModel = new FacturaModel();
+    $detalleModel = new DetalleFacturaModel();
+    $usuarioModel = new UsuariosModel();
 
-        // Opcional: Traer detalles de cada factura
-        foreach ($facturas as &$factura) {
+    // Trae todas las facturas con usuario
+    $facturas = $facturaModel->orderBy('fecha_hora', 'DESC')->findAll();
+
+    // Opcional: Traer detalles de cada factura
+    foreach ($facturas as &$factura) {
         $factura['usuario'] = $usuarioModel->find($factura['id_usuario']);
         $factura['detalles'] = $detalleModel->where('id_factura', $factura['id_factura'])->findAll();
-        }
-
-        return view('pages/Admin/consultarVentas', [
-            'facturas' => $facturas
-            ]);
-        }
     }
+
+    return view('pages/Admin/consultarVentas', [
+        'facturas' => $facturas
+    ]);
+}}

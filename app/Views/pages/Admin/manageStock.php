@@ -60,7 +60,6 @@
             <?php endif; ?>
         </tbody>
     </table>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </table>
 
     <a href="<?= base_url('/Admin/addStock') ?>" class="btn btn-primary">Agregar producto</a>

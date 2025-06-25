@@ -87,6 +87,7 @@ class CarritoController extends Controller
 
         $facturaModel = new FacturaModel();
         $detalleModel = new DetalleFacturaModel();
+        $productosModel = new ProductosModel();
 
         // Creamos factura
         $facturaId = $facturaModel->insert([
@@ -99,7 +100,7 @@ class CarritoController extends Controller
             'metodo_entrega' => $metodo_entrega
         ], true);
 
-        // Creamos detalle factura
+        // Creamos detalle factura y actualizamos stock
         foreach ($carrito as $item) {
             $detalleModel->insert([
                 'id_factura' => $facturaId,
@@ -107,6 +108,13 @@ class CarritoController extends Controller
                 'cantidad' => $item['cantidad'],
                 'subtotal' => $item['precio'] * $item['cantidad']
             ]);
+
+            // Actualizar stock del producto
+            $producto = $productosModel->find($item['id_producto']);
+            if ($producto) {
+                $nuevoStock = max(0, $producto['cantidad'] - $item['cantidad']);
+                $productosModel->update($item['id_producto'], ['cantidad' => $nuevoStock]);
+            }
         }
 
         $session->remove('carrito');
