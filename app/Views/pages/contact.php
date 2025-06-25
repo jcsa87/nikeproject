@@ -1,4 +1,4 @@
-<!-- filepath: c:\xampp\htdocs\nikeproyect\app\Views\pages\home.php -->
+
 <?= $this->extend('templates/main') ?>
 
 <?= $this->section('styles') ?>
@@ -64,7 +64,6 @@
             </div>
         </form>
     </div>
-
 </div>
 
 <?= $this->endSection() ?>
